@@ -213,8 +213,9 @@ public class TagmeNED extends QanaryComponent {
                     + "  BIND (IRI(str(RAND())) AS ?a) ."//
                     + "  BIND (now() as ?time) " //
                     + "}";
-            logger.debug("Sparql query: {}", sparql);
-            myQanaryUtils.updateTripleStore(sparql);
+			logger.debug("Sparql query: {}", sparql);
+			//myQanaryUtils.updateTripleStore(sparql);
+            myQanaryUtils.updateTripleStore(sparql, myQanaryQuestion.getEndpoint().toString()); // changed by jannlemm0913
         }
 		return myQanaryMessage;
 	}
