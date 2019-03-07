@@ -7,4 +7,5 @@ mvn install -DskipDockerBuild
 Komponente starten: (in target Ordner)
 java -jar /Komponentenfile/.jar
 
-
+Stardog Query all:
+select * from <graphID> where { ?s ?p ?o . }

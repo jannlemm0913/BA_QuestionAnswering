@@ -62,7 +62,9 @@ public class TagmeNED extends QanaryComponent {
 	    
 	    logger.info("Question {}", myQuestion);
 	    try {
-			File f = new File("qanary_component-NED-tagme/src/main/resources/questions.txt");
+			//File f = new File("qanary_component-NED-tagme/src/main/resources/questions.txt");
+			// path changed, app starts from target folder (jannlemm0913)
+			File f = new File("../src/main/resources/questions.txt");
 	    	FileReader fr = new FileReader(f);
 	    	BufferedReader br  = new BufferedReader(fr);
 			int flag = 0;
@@ -72,7 +74,7 @@ public class TagmeNED extends QanaryComponent {
 //			Iterator<?> keys = jsonObject.keys();
 			
 			while((line = br.readLine()) != null && flag == 0) {
-			    String question = line.substring(0, line.indexOf("Answer:"));
+				String question = line.substring(0, line.indexOf("Answer:"));
 				logger.info("{}", line);
 				logger.info("{}", myQuestion);
 				
@@ -157,8 +159,9 @@ public class TagmeNED extends QanaryComponent {
 	            	}
 	            }
 	           }
-	         }
-	        BufferedWriter buffWriter = new BufferedWriter(new FileWriter("qanary_component-NED-tagme/src/main/resources/questions.txt", true));
+			 }
+			 // Path changed, app starts from target folder (jannlemm0913)
+	        BufferedWriter buffWriter = new BufferedWriter(new FileWriter("../src/main/resources/questions.txt", true));
 	        Gson gson = new Gson();
 	        
 	        String json = gson.toJson(links);
