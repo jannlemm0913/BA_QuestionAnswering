@@ -1,0 +1,10 @@
+Stardog starten:
+stardog-admin server start --web-console
+
+Komponente builden: (in Komponentenordner)
+mvn install -DskipDockerBuild
+
+Komponente starten: (in target Ordner)
+java -jar /Komponentenfile/.jar
+
+
