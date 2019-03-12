@@ -57,7 +57,8 @@ public class ReMatch extends QanaryComponent {
 	    //STEP2
 	    HttpClient httpclient = HttpClients.createDefault();
 	    myQuestion = java.net.URLEncoder.encode(myQuestion, "UTF-8").replaceAll("\\+", "%20");
-	    HttpGet httpget = new HttpGet("<URI of the Component>"+myQuestion);
+		//HttpGet httpget = new HttpGet("<URI of the Component>"+myQuestion);
+		HttpGet httpget = new HttpGet("http://94.130.104.232:8081"+myQuestion);
 	    try {
 	    	HttpResponse response = httpclient.execute(httpget);
 	        HttpEntity entity = response.getEntity();

@@ -54,11 +54,11 @@ public class ClsNliodCls extends QanaryComponent {
 		//String question = URLEncoder.encode(myQuestion, "UTF-8");
 		//String question = "Which comic characters are painted by Bill Finger?";
         String language1 = "en";
-        logger.info("Langauge of the Question: {}",language1);
+        logger.info("Language of the Question: {}",language1);
         HashSet<String> dbLinkListSet = new HashSet<String>();
        
         try {
-			File f = new File("questions.txt");
+			File f = new File("../questions.txt");
 	    	FileReader fr = new FileReader(f);
 	    	BufferedReader br  = new BufferedReader(fr);
 			int flag = 0;
@@ -99,8 +99,8 @@ public class ClsNliodCls extends QanaryComponent {
 		String data = "";
 		String contentType = "application/json";
 		 
-		//url = "http://ws.okbqa.org:1515/templategeneration/rocknrole";
-		url  = "http://121.254.173.90:1515/templategeneration/rocknrole";
+		url = "http://ws.okbqa.org:1515/templategeneration/rocknrole";
+		//url  = "http://121.254.173.90:1515/templategeneration/rocknrole";
 		data = "{  \"string\":\""+myQuestion+"\",\"language\":\""+language1+"\"}";//"{  \"string\": \"Which river flows through Seoul?\",  \"language\": \"en\"}";
 		System.out.println("\ndata :" +data);
 		System.out.println("\nComponent : 21");
@@ -165,7 +165,7 @@ public class ClsNliodCls extends QanaryComponent {
 				dbLinkListSet.add(dbpediaClass);
 				System.out.println("searchDbLinkInTTL: "+dbpediaClass);
 			}
-BufferedWriter buffWriter = new BufferedWriter(new FileWriter("questions.txt", true));
+BufferedWriter buffWriter = new BufferedWriter(new FileWriter("../questions.txt", true));
 		       
 		        
 		        String MainString = myQuestion + " Answer: "+dbLinkListSet.toString();
@@ -217,13 +217,14 @@ BufferedWriter buffWriter = new BufferedWriter(new FileWriter("questions.txt", t
 	}
 	 public static String runCurlPOSTWithParam(String weburl,String data,String contentType) throws Exception
 		{
-			
+			logger.info("==== Run CURL POST with Parameters");
 	    	
 	    	String xmlResp = "";
 			try {
 				URL url = new URL(weburl);
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
+				logger.info("==== Connection opened to {}",url);
 				connection.setRequestMethod("POST");
 				connection.setDoOutput(true);
 
@@ -233,7 +234,7 @@ BufferedWriter buffWriter = new BufferedWriter(new FileWriter("questions.txt", t
 				wr.writeBytes(data);
 				wr.flush();
 				wr.close();
-
+				logger.info("==== DataOutputStream closed");
 				BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 				String inputLine;
 				StringBuffer response = new StringBuffer();
@@ -247,6 +248,7 @@ BufferedWriter buffWriter = new BufferedWriter(new FileWriter("questions.txt", t
 				System.out.println("Curl Response: \n" + xmlResp);
 				logger.info("Response {}", xmlResp);
 			} catch (Exception e) {
+				logger.info("==== Something went wrong while CURLing");
 			}
 			return (xmlResp);
 

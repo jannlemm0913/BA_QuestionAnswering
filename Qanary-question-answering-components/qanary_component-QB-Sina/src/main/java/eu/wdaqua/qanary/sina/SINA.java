@@ -135,9 +135,11 @@ public class SINA extends QanaryComponent {
 		if(argument.length() > 2 && StringUtils.countMatches(argument, "dbpedia") <=3 ) {
 			argument = argument.substring(0, argument.length() - 2);
 
-			ProcessBuilder pb = new ProcessBuilder("java", "-jar", "qanary_component-QB-Sina/src/main/resources/sina-0.0.1.jar", argument);
+			//ProcessBuilder pb = new ProcessBuilder("java", "-jar", "qanary_component-QB-Sina/src/main/resources/sina-0.0.1.jar", argument);
+			ProcessBuilder pb = new ProcessBuilder("java", "-jar", "../src/main/resources/sina-0.0.1.jar", argument);
 
-			File output = new File("qanary_component-QB-Sina/src/main/resources/sinaoutput.txt");
+			//File output = new File("qanary_component-QB-Sina/src/main/resources/sinaoutput.txt");
+			File output = new File("../src/main/resources/sinaoutput.txt");
 
 			pb.redirectOutput(output);
 			Process p = pb.start();
@@ -146,7 +148,8 @@ public class SINA extends QanaryComponent {
 			String outputRetrived = "";
 			String line = "";
 			System.out.println("file data ===========================");
-			BufferedReader br = new BufferedReader(new FileReader(new File("qanary_component-QB-Sina/src/main/resources/sinaoutput.txt")));
+			//BufferedReader br = new BufferedReader(new FileReader(new File("qanary_component-QB-Sina/src/main/resources/sinaoutput.txt")));
+			BufferedReader br = new BufferedReader(new FileReader(new File("../src/main/resources/sinaoutput.txt")));
 			while ((line = br.readLine()) != null) {
 				outputRetrived += line;
 				System.out.println(line);

@@ -1,1 +1,2 @@
-What is the capital of Australia? Answer: []
+How much is the fish? Answer: []
+Where was Walt Disney born? Answer: []

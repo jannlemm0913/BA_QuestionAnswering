@@ -72,7 +72,7 @@ public class RelNliodRel extends QanaryComponent {
 		QanaryQuestion<String> myQanaryQuestion = new QanaryQuestion(myQanaryMessage);
 		String myQuestion = myQanaryQuestion.getTextualRepresentation();
 		try {
-				File f = new File("questions.txt");
+				File f = new File("../questions.txt");
 		    	FileReader fr = new FileReader(f);
 		    	BufferedReader br  = new BufferedReader(fr);
 				int flag = 0;
@@ -140,7 +140,7 @@ public class RelNliodRel extends QanaryComponent {
 				logger.info("DbLinkListSet: "+dbLinkListSet.toString());
 
 				
-				BufferedWriter buffWriter = new BufferedWriter(new FileWriter("questions.txt", true)); // TODO: move to application.properties
+				BufferedWriter buffWriter = new BufferedWriter(new FileWriter("../questions.txt", true)); // TODO: move to application.properties
 		       
 		        
 		        String MainString = myQuestion + " Answer: "+dbLinkListSet.toString();
