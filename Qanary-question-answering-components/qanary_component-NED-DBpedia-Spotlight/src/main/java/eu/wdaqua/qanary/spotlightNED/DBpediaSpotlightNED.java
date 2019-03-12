@@ -22,6 +22,8 @@ import eu.wdaqua.qanary.commons.QanaryQuestion;
 import eu.wdaqua.qanary.commons.QanaryUtils;
 import eu.wdaqua.qanary.component.QanaryComponent;
 
+import java.lang.ProcessBuilder;
+
 /**
  * represents a wrapper of the DBpedia Spotlight as NED
  *
@@ -31,7 +33,8 @@ import eu.wdaqua.qanary.component.QanaryComponent;
 @Component
 public class DBpediaSpotlightNED extends QanaryComponent {
     private static final Logger logger = LoggerFactory.getLogger(DBpediaSpotlightNED.class);
-    private String service = "http://spotlight.sztaki.hu:2222/rest/disambiguate/";
+    //private String service = "http://spotlight.sztaki.hu:2222/rest/disambiguate/";
+    private String service = "http://api.dbpedia-spotlight.org/en/annotate/";
 
     public QanaryMessage process(QanaryMessage myQanaryMessage) throws Exception {
         logger.info("process: {}", myQanaryMessage);
@@ -76,10 +79,12 @@ public class DBpediaSpotlightNED extends QanaryComponent {
         }
 
         // STEP2: Call the DBpedia NED service
+        logger.info("==== Calling the DBpedia NED service");
 
         // it will create XML content, which needs to be input in DBpedia
+        // not for our service. question has to be text
         // NED with curl command
-        String content = getXmlFromQuestion(myQuestion, links);
+        //String content = getXmlFromQuestion(myQuestion, links);
 
         RestTemplate myRestTemplate = new RestTemplate();
         //Set header
@@ -88,17 +93,21 @@ public class DBpediaSpotlightNED extends QanaryComponent {
 
         //Set Body
         MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
-        map.add("text", content);
+        //map.add("text", content);
+        map.add("text", myQuestion);
 
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
 
         String response = myRestTemplate.postForObject(service, request, String.class);
-
+        logger.info("==== Response: {}", response);
         // Now the output of DBPediaNED, which is JSON, is parsed below to
         // fetch the corresponding URIs
         JSONParser parser = new JSONParser();
         JSONObject json = (JSONObject) parser.parse(response);
+        String jsonString = json.toString();
+        logger.info("==== JSON: {}", jsonString);
         JSONArray arr = (JSONArray) json.get("Resources");
+        logger.info("==== Resources: {}",arr);
 
         int cnt = 0;
         if (arr != null) {
