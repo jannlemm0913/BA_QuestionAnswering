@@ -9,3 +9,12 @@ java -jar /Komponentenfile/.jar
 
 Stardog Query all:
 select * from <graphID> where { ?s ?p ?o . }
+
+
+
+___________________________________________________
+ENDPOINTS
+___________________________________________________
+
+http://localhost:8080/#/overview
+http://localhost:8080/startquestionansweringwithtextquestion

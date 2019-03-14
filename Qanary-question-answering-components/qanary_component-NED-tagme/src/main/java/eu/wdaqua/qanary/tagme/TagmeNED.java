@@ -47,7 +47,7 @@ public class TagmeNED extends QanaryComponent {
 	/**
 	 * implement this method encapsulating the functionality of your Qanary
 	 * component
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	@Override
 	public QanaryMessage process(QanaryMessage myQanaryMessage) throws Exception {
@@ -57,9 +57,9 @@ public class TagmeNED extends QanaryComponent {
 		QanaryUtils myQanaryUtils = this.getUtils(myQanaryMessage);
 	    QanaryQuestion<String> myQanaryQuestion = new QanaryQuestion(myQanaryMessage);
 	    String myQuestion = myQanaryQuestion.getTextualRepresentation();
-	      
+
 	    ArrayList<Link> links = new ArrayList<Link>();
-	    
+
 	    logger.info("Question {}", myQuestion);
 	    try {
 			//File f = new File("qanary_component-NED-tagme/src/main/resources/questions.txt");
@@ -72,12 +72,12 @@ public class TagmeNED extends QanaryComponent {
 //			Object obj = parser.parse(new FileReader("DandelionNER.json"));
 //			JSONObject jsonObject = (JSONObject) obj;
 //			Iterator<?> keys = jsonObject.keys();
-			
+
 			while((line = br.readLine()) != null && flag == 0) {
 				String question = line.substring(0, line.indexOf("Answer:"));
 				logger.info("{}", line);
 				logger.info("{}", myQuestion);
-				
+
 			    if(question.trim().equals(myQuestion))
 			    {
 			    	String Answer = line.substring(line.indexOf("Answer:")+"Answer:".length());
@@ -86,12 +86,12 @@ public class TagmeNED extends QanaryComponent {
 			    	JSONArray jsonArr =new JSONArray(Answer);
 			    	if(jsonArr.length()!=0)
 	 	        	   {
-	 	        		   for (int i = 0; i < jsonArr.length(); i++) 
+	 	        		   for (int i = 0; i < jsonArr.length(); i++)
 	 	        		   {
 	 	        			   JSONObject explrObject = jsonArr.getJSONObject(i);
-	 	        			  
+
 	 	        			   logger.info("Question: {}", explrObject);
-	 	        			   
+
 	 	        			  Link l = new Link();
 		    	                l.begin = (int) explrObject.get("begin");
 		    	                l.end = (int) explrObject.get("end")+1;
@@ -100,23 +100,23 @@ public class TagmeNED extends QanaryComponent {
 		            		}
 		            	}
 			    	flag=1;
-			    	
-			    	break;	
+
+			    	break;
 			    }
-			   
-			    
+
+
 			}
 			br.close();
 			if(flag==0)
 			{
-	    
+
 	    //ArrayList<Link> links = new ArrayList<Link>();
 	    logger.info("Question {}", myQuestion);
-	      
+
 	    String thePath = "";
-	    thePath = URLEncoder.encode(myQuestion, "UTF-8"); 
+	    thePath = URLEncoder.encode(myQuestion, "UTF-8");
 	    logger.info("Path {}", thePath);
-	      
+
 	    HttpClient httpclient = HttpClients.createDefault();
 	    HttpGet httpget = new HttpGet("https://tagme.d4science.org/tagme/tag?gcube-token=c0c5a908-eb13-4219-9516-450a9f6d3bc6-843339462&text="+thePath);
 	    //httpget.addHeader("User-Agent", USER_AGENT);
@@ -127,7 +127,7 @@ public class TagmeNED extends QanaryComponent {
 	        InputStream instream = entity.getContent();
 	        // String result = getStringFromInputStream(instream);
 	        String text = IOUtils.toString(instream, StandardCharsets.UTF_8.name());
-	        JSONObject response2 = new JSONObject(text); 
+	        JSONObject response2 = new JSONObject(text);
 	        logger.info("response2: {}", response2);
 	        if(response2.has("annotations")) {
 	        	JSONArray jsonArray = (JSONArray) response2.get("annotations");
@@ -146,7 +146,7 @@ public class TagmeNED extends QanaryComponent {
 	            		//String finalUri1= "http://dbpedia.org/resource/"+uri.replace("%20", "_");
 	            		logger.info("Here {}", finalUri);
 	            		//logger.info("Here {}", finalUri1);
-	            			
+
 	            		Link l = new Link();
 	    	            l.begin = begin;
 	    	            l.end = end+1;
@@ -155,7 +155,7 @@ public class TagmeNED extends QanaryComponent {
 	            		    logger.info("Adding link_probability >= 0.65 uri {}", finalUri);
 	            		    links.add(l);
 	            			}
-	    	            
+
 	            	}
 	            }
 	           }
@@ -163,10 +163,10 @@ public class TagmeNED extends QanaryComponent {
 			 // Path changed, app starts from target folder (jannlemm0913)
 	        BufferedWriter buffWriter = new BufferedWriter(new FileWriter("../src/main/resources/questions.txt", true));
 	        Gson gson = new Gson();
-	        
+
 	        String json = gson.toJson(links);
 	        logger.info("gsonwala: {}",json);
-	        
+
 	        String MainString = myQuestion + " Answer: "+json;
 	        buffWriter.append(MainString);
 	        buffWriter.newLine();
@@ -181,19 +181,19 @@ public class TagmeNED extends QanaryComponent {
 		     }
 			}
 	    }
-	    catch(FileNotFoundException e) 
-		{ 
+	    catch(FileNotFoundException e)
+		{
 		    //handle this
 			logger.info("{}", e);
 		}
-		
+
 		logger.info("store data in graph {}", myQanaryMessage.getValues().get(myQanaryMessage.getEndpoint()));
 		// TODO: insert data in QanaryMessage.outgraph
 
 		logger.info("apply vocabulary alignment on outgraph");
 		// TODO: implement this (custom for every component)
-		
-		
+
+
 		for (Link l : links) {
             String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
                     + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
@@ -218,11 +218,12 @@ public class TagmeNED extends QanaryComponent {
                     + "}";
 			logger.debug("Sparql query: {}", sparql);
 			//myQanaryUtils.updateTripleStore(sparql);
+			logger.
             myQanaryUtils.updateTripleStore(sparql, myQanaryQuestion.getEndpoint().toString()); // changed by jannlemm0913
         }
 		return myQanaryMessage;
 	}
-	
+
 	class Link {
         public int begin;
         public int end;

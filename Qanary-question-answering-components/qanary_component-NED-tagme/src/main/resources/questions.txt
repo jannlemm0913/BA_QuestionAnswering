@@ -1,1 +1,2 @@
 How many Pringles are in a can? Answer: [{"begin":9,"end":18,"link":"http://dbpedia.org/resource/Pringles"}]
+Who is the wife of Barack Obama Answer: [{"begin":19,"end":32,"link":"http://dbpedia.org/resource/Barack_Obama"}]
