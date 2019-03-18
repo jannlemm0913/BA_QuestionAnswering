@@ -218,7 +218,7 @@ public class TagmeNED extends QanaryComponent {
                     + "}";
 			logger.debug("Sparql query: {}", sparql);
 			//myQanaryUtils.updateTripleStore(sparql);
-			logger.
+			//logger.
             myQanaryUtils.updateTripleStore(sparql, myQanaryQuestion.getEndpoint().toString()); // changed by jannlemm0913
         }
 		return myQanaryMessage;
