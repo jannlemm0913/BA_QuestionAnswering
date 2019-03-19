@@ -31,13 +31,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import eu.wdaqua.qanary.commons.QanaryMessage;
+import eu.wdaqua.qanary.commons.QanaryQuestion;
 import eu.wdaqua.qanary.component.QanaryComponent;
 
 @Component
 /**
  * This component connected automatically to the Qanary pipeline. The Qanary
  * pipeline endpoint defined in application.properties (spring.boot.admin.url)
- * 
+ *
  * @see <a href=
  *      "https://github.com/WDAqua/Qanary/wiki/How-do-I-integrate-a-new-component-in-Qanary%3F"
  *      target="_top">Github wiki howto</a>
@@ -52,19 +53,19 @@ public class DiambiguationClass extends QanaryComponent {
 		URL url = new URL(weburl+"data="+URLEncoder.encode(data,"UTF-8"));
     	//URL url = new URL(weburl+"?data="+URLEncoder.encode(data,"UTF-8"));
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-		
+
 		connection.setRequestMethod("GET");
-		
+
 		//connection.setDoOutput(true);
 		//connection.setRequestProperty("data", data);
 		connection.setRequestProperty("Content-Type", contentType);
-				
+
 		/*DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
 		wr.writeBytes(data);
 		wr.flush();
 		wr.close();*/
-		
-		
+
+
 
 		BufferedReader in = new BufferedReader(
 		        new InputStreamReader(connection.getInputStream()));
@@ -127,7 +128,7 @@ public class DiambiguationClass extends QanaryComponent {
 	 * component
 	 */
 	@Override
-	public QanaryMessage process(QanaryMessage myQanaryMessage) {
+	public QanaryMessage process(QanaryMessage myQanaryMessage) throws Exception{
 		org.apache.log4j.Logger.getRootLogger().setLevel(org.apache.log4j.Level.OFF);
 		logger.info("process: {}", myQanaryMessage);
 		// TODO: implement processing of question
@@ -138,6 +139,10 @@ public class DiambiguationClass extends QanaryComponent {
 		System.out.println("Graph is" + namedGraph);
 		logger.info("Endpoint: {}", endpoint);
 		logger.info("InGraph: {}", namedGraph);
+		// get question string
+		QanaryQuestion<String>  myQanaryQuestion = new QanaryQuestion(myQanaryMessage);
+		String myQuestion = myQanaryQuestion.getTextualRepresentation();
+		logger.info("Question: {}", myQuestion);
 		// TODO: implement this (custom for every component)
 
 		// STEP2: Retrieve information that are needed for the computations
@@ -146,10 +151,16 @@ public class DiambiguationClass extends QanaryComponent {
 		// So first, Retrive the uri where the question is exposed
 		String sparql = "PREFIX qa:<http://www.wdaqua.eu/qa#> " + "SELECT ?questionuri " + "FROM <" + namedGraph + "> "
 				+ "WHERE {?questionuri a qa:Question}";
+		logger.info("Sparql {}", sparql);
 
-		ResultSet result = selectTripleStore(sparql, endpoint);
+
+		/*ResultSet result = selectTripleStore(sparql, endpoint);
+		logger.info("Result", result);
 		String uriQuestion = result.next().getResource("questionuri").toString();
 		logger.info("Uri of the question: {}", uriQuestion);
+		*/
+		String uriQuestion = myQanaryQuestion.getUri().toString();
+
 		// Retrive the question itself
 		RestTemplate restTemplate = new RestTemplate();
 		// TODO: pay attention to "/raw" maybe change that
@@ -164,7 +175,7 @@ public class DiambiguationClass extends QanaryComponent {
 				+ " ?anno <http://www.w3.org/ns/openannotation/core/hasBody> ?lang ."
 				+ " ?anno a qa:AnnotationOfQuestionLanguage}";
 		// Now fetch the language, in our case it is "en".
-		ResultSet result1 = selectTripleStore(questionlang, endpoint);
+		//ResultSet result1 = selectTripleStore(questionlang, endpoint);
 		String language1 = "en";
 		logger.info("Langauge of the Question: {}", language1);
 
@@ -181,7 +192,8 @@ public class DiambiguationClass extends QanaryComponent {
 
 		// now arrange the Web service and input parameters in the way, which is needed
 		// for CURL command
-		url = "http://121.254.173.90:1515/templategeneration/rocknrole";
+		//url = "http://121.254.173.90:1515/templategeneration/rocknrole";
+		url = "http://ws.okbqa.org:1515/templategeneration/rocknrole";
 		data = "{  \"string\":\"" + question + "\",\"language\":\"" + language1 + "\"}";// "{ \"string\": \"Which river
 																						// flows through Seoul?\",
 																						// \"language\": \"en\"}";
@@ -192,6 +204,7 @@ public class DiambiguationClass extends QanaryComponent {
 
 		try {
 			output1 = DiambiguationClass.runCurlPOSTWithParam(url, data, contentType);
+		
 		} catch (Exception e) {
 		}
 		// System.out.println("The output template is:" +output1);
@@ -202,14 +215,15 @@ public class DiambiguationClass extends QanaryComponent {
 		 * and Class. Then push this information back to triplestore The below code
 		 * before step 4 does parse the template. For parsing PropertyRetrival.java file
 		 * is used, which is in the same package.
-		 * 
+		 *
 		 * for this, we create a new object property of Property class.
-		 * 
+		 *
 		 */
 
-		url = "http://121.254.173.90:2357/agdistis/run?";
+		//url = "http://121.254.173.90:2357/agdistis/run?";
+		url = "http://ws.okbqa.org:2357/agdistis/run?";
 		data = output1.substring(1,output1.length()-1);
-		
+
 		contentType = "application/json";
 
 		System.out.println("\ndata :" + data);
