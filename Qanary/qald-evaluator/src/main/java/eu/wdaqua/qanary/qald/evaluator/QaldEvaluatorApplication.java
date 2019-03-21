@@ -10,6 +10,8 @@ import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.json.JSONObject;
+// added import
+import org.json.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -84,7 +86,7 @@ public class QaldEvaluatorApplication {
             String endpoint = responseJson.getString("endpoint").concat("/query");  // Stardog v5 changes
             String namedGraph = responseJson.getString("outGraph"); // statt graph neu outGraph... ffs
             logger.debug("{}. named graph: {}", questions.get(i).getQaldId(), namedGraph);
-            String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+            /*String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
                     + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
                     + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
                     + "SELECT ?uri { " //
@@ -92,14 +94,60 @@ public class QaldEvaluatorApplication {
                     + "    ?a a qa:AnnotationOfInstance . " //
                     + "    ?a oa:hasBody ?uri " //
                     + "} }";
+            */
+            //custom sparql (jannlemm0913) to get answers instead of entities
+            String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+                    + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
+                    + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+                    + "SELECT ?body FROM <" + namedGraph + "> { " //
+                    + "    ?s oa:hasBody ?body .  " //
+                    + "    ?s rdf:type qa:AnnotationOfAnswerJSON . " //
+                    + "}"; // custom sparql finished
+
             logger.debug("SPARQL: {}", sparql);
             ResultSet r = selectTripleStore(sparql, endpoint);
             List<String> systemAnswers = new ArrayList<String>();
+           /*
             while (r.hasNext()) {
                 QuerySolution s = r.next();
                 if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
                     logger.info("System answers: {} ", s.getResource("uri").toString());
                     systemAnswers.add(s.getResource("uri").toString());
+                }
+            }
+            */
+            //custom result handling to get answer uris from string
+            while (r.hasNext()) {
+                QuerySolution s = r.next();
+                if (s.getLiteral("body") != null && !s.getLiteral("body").toString().endsWith("null")) {
+                    JSONObject bodyJson = new JSONObject(s.getLiteral("body"));
+                    logger.info(bodyJson.toString());
+                    try {
+                        JSONObject testJson = new JSONObject(bodyJson.getString("value"));
+                        logger.info("==== Got the value");
+                        JSONArray bindingsJson = testJson.getJSONObject("results").getJSONArray("bindings");
+                        logger.info("{}",testJson.getJSONObject("results"));
+                        logger.info("==== Got the bindings");
+                        if(bindingsJson != null) {
+                            for(int j = 0; j < bindingsJson.length(); j++) {
+                                JSONObject test2Json = bindingsJson.getJSONObject(j);
+                                logger.info("{}",test2Json);
+                                String answerUri = test2Json.getJSONObject("uri").getString("value");
+                                logger.info("System answers: {} ", answerUri);
+                                systemAnswers.add(answerUri);
+                            }
+                        }
+                    } catch (Exception e) {
+                        logger.error("==== Not a JSON Object in value!");
+                    }
+                //    JSONObject test1Json = testJson.getJSONObject("results");
+                //    JSONArray bindingsJson = test1Json.getJSONArray("bindings");
+                    
+                    //JSONObject test3Json = test2Json.getJSONObject();
+                    //String answerUri = test3Json.getString("value");
+                    //String urisJson = bodyJson.getString("value");
+                    //logger.info("System answers: {} ", answerUri);
+                    //systemAnswers.add(answerUri);
                 }
             }
 
@@ -179,7 +227,7 @@ public class QaldEvaluatorApplication {
     public static void main(String... args) throws UnsupportedEncodingException, IOException {
 
         // TODO:
-        int maxQuestions = 50; // 350;
+        int maxQuestions = 50; // 350; has no impact?
 
         QaldEvaluatorApplication app = new QaldEvaluatorApplication();
 
@@ -209,7 +257,7 @@ public class QaldEvaluatorApplication {
         } */
 
         // Test für erste Pipeline
-        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,DiambiguationProperty");
+        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,DiambiguationProperty,QueryBuilder");
 
         for (String componentConfiguration : componentConfigurations) {
             app.process(componentConfiguration, maxQuestions);

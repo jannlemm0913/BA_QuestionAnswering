@@ -248,12 +248,17 @@ public class QueryBuilder extends QanaryComponent {
 
 			Query query = QueryFactory.create(generatedQuery);
 			QueryExecution exec = QueryExecutionFactory.sparqlService(dbpediaSparqEndpoint, query);
+			String json = "{}";
+			// new by jannlemm0913. ResultSetException on question 8, "not a ResultSet"
+			try {
+				ResultSet results = ResultSetFactory.copyResults(exec.execSelect());
+				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
-			ResultSet results = ResultSetFactory.copyResults(exec.execSelect());
-			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-
-			ResultSetFormatter.outputAsJSON(outputStream, results);
-			String json = new String(outputStream.toByteArray(), "UTF-8");
+				ResultSetFormatter.outputAsJSON(outputStream, results);
+				json = new String(outputStream.toByteArray(), "UTF-8");
+			} catch (Exception e) {
+				logger.error("==== Could not get a ResultSet for this question!");
+			}
 
 			logger.info("Push the the JSON object to the named graph reserved for the answer.");
 			sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
@@ -274,7 +279,6 @@ public class QueryBuilder extends QanaryComponent {
 					+ "  BIND (<" + answerID + "> as ?answer) ." //
 					+ "}";
 			myQanaryUtils.updateTripleStore(sparql, myQanaryMessage.getEndpoint().toString());
-
 		}
 		return myQanaryMessage;
 	}

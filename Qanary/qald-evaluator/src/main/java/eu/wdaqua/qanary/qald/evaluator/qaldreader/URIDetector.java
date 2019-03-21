@@ -41,7 +41,7 @@ public class URIDetector {
     }
 
     private void processQuery(String query) {
-        Query q = QueryFactory.create(query); // SPARQL 1.1
+    /*   Query q = QueryFactory.create(query); // SPARQL 1.1
 
         // This will walk through all parts of the query
         ElementWalker.walk(q.getQueryPattern(),
@@ -63,5 +63,7 @@ public class URIDetector {
         logger.debug("subjects: {}", subjects);
         logger.debug("predicates: {}", predicates);
         logger.debug("objects: {}", objects);
+    */
+    //new
     }
 }
