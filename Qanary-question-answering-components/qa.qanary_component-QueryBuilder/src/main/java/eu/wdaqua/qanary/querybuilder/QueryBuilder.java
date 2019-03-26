@@ -314,7 +314,7 @@ public class QueryBuilder extends QanaryComponent {
 			QuerySolution s = r.next();
 			// hier wird der Pfad zum CLS target ordner ausgegeben statt der gefundenen class
 			// regex ob dbpedia im link steht
-			if(Pattern.matches("*dbpedia.org*",s.getResource("uri").getURI())) {
+			if(Pattern.matches(".*dbpedia.org.*",s.getResource("uri").getURI())) {
 				classes.add(s.getResource("uri").getURI());
 				logger.info("class: {}", s.getResource("uri").getURI());
 			}
@@ -350,8 +350,10 @@ public class QueryBuilder extends QanaryComponent {
 
 		while (r.hasNext()) {
 			QuerySolution s = r.next();
-			properties.add(s.getResource("uri").getURI());
-			logger.info("property: {}", s.getResource("uri").getURI());
+			if(Pattern.matches(".*dbpedia.org.*",s.getResource("uri").getURI())) {
+				properties.add(s.getResource("uri").getURI());
+				logger.info("property: {}", s.getResource("uri").getURI());
+			}
 		}
 		return properties;
 	}

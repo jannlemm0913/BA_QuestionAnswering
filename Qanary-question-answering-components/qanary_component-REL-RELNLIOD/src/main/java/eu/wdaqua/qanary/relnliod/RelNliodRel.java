@@ -178,7 +178,7 @@ public class RelNliodRel extends QanaryComponent {
 		                 + "           a    oa:SpecificResource; "
 		                 + "           oa:hasSource    <" + myQanaryQuestion.getUri() + ">; "
 		                 + "  ] ; "
-		                 + "     oa:hasBody <" + urls + "> ;" 
+		                 + "     oa:hasBody <" + urls.replace(" ", "") + "> ;" 
 		                 + "     oa:annotatedBy <http://RelNliodRel.com> ; "
 		                 + "	    oa:AnnotatedAt ?time  "
 		                 + "}} "

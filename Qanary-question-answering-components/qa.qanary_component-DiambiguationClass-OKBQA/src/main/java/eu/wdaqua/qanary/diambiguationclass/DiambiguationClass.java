@@ -288,15 +288,35 @@ public class DiambiguationClass extends QanaryComponent {
 			int count = 0;
 			for (String urls : allUrls.keySet()) {
 				System.out.println("Inside : Literal: " + urls);
-				sparql = "prefix qa: <http://www.wdaqua.eu/qa#> "
+				/*sparql = "prefix qa: <http://www.wdaqua.eu/qa#> "
 						+ "prefix oa: <http://www.w3.org/ns/openannotation/core/> "
 						+ "prefix xsd: <http://www.w3.org/2001/XMLSchema#> " + "INSERT { " + "GRAPH <" + namedGraph+ "> { " + " ?a a qa:AnnotationOfClass . " + " ?a oa:hasTarget [ " + " a oa:SpecificClass; "
 						+ " oa:hasSource <" + uriQuestion + ">; " + " ] . " + " ?a oa:hasBody <" + urls + "> ;"
 						+ " oa:annotatedBy <http://okbqa.disambiguationclass.com> ; " + " oa:AnnotatedAt ?time "
 						+ "}} " + "WHERE { "
 						+ "BIND (IRI(str(RAND())) AS ?a) ." + "BIND (now() as ?time) " + "}";
+						*/
+				sparql = "prefix qa: <http://www.wdaqua.eu/qa#> "
+	                 + "prefix oa: <http://www.w3.org/ns/openannotation/core/> "
+	                 + "prefix xsd: <http://www.w3.org/2001/XMLSchema#> "
+	                 + "prefix dbp: <http://dbpedia.org/property/> "
+	                 + "INSERT { "
+	                 + "GRAPH <" +  namedGraph  + "> { "
+	                 + "  ?a a qa:AnnotationOfClass . "
+	                 + "  ?a oa:hasTarget [ "
+	                 + "           a    oa:SpecificClass; "
+	                 + "           oa:hasSource    <" + uriQuestion + ">; "
+	                 + "  ] ; "
+	                 + "     oa:hasBody <" + urls + "> ;" 
+	                 + "     oa:annotatedBy <http://okbqa.disambiguationclass.com> ; "
+	                 + "	    oa:AnnotatedAt ?time  "
+	                 + "}} "
+	                 + "WHERE { "
+	                 + "BIND (IRI(str(RAND())) AS ?a) ."
+	                 + "BIND (now() as ?time) "
+	                 + "}";
 				logger.info("Sparql query {}", sparql);
-				loadTripleStore(sparql, endpoint);
+				loadTripleStore(sparql, endpoint+"/update");
 				count++;
 			}
 			System.out.println("Count is : "+ count);

@@ -257,7 +257,9 @@ public class QaldEvaluatorApplication {
         } */
 
         // Test für erste Pipeline
-        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,DiambiguationProperty,ClsNliodCls,QueryBuilder");
+        //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,DiambiguationProperty,ClsNliodCls,QueryBuilder");
+        //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,DiambiguationProperty,DiambiguationClass,QueryBuilder");
+        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,ClsNliodCls,QueryBuilder");
 
         for (String componentConfiguration : componentConfigurations) {
             app.process(componentConfiguration, maxQuestions);
