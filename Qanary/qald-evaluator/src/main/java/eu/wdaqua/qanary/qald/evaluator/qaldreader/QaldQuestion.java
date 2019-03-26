@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonElement;
 
 /**
  * represents the information extracted from the QALD-6 question
@@ -31,8 +32,10 @@ public class QaldQuestion {
     private String question;
 
     // neu für Antworten
+    private JsonArray answerdata;
     private JsonArray bindingsdata;
     private String answerType;
+    private JsonObject qaldQuestion;
 
     /**
      * might be null if not provided by QALD
@@ -56,19 +59,34 @@ public class QaldQuestion {
         URIDetector uriDetector;
 
         // neu
-        JsonArray answersdata;
+        //JsonArray answersdata;
         //JsonArray bindingsdata;
+        this.qaldQuestion = qaldQuestion;
 
         questiondata = qaldQuestion.getAsJsonArray("question");
         qaldId = qaldQuestion.get("id").getAsInt();
 
         // neu. logger info für Anzahl erwarteten Lösungen und ob es URIs, Strings oder Zahlen sind
-        answersdata = qaldQuestion.getAsJsonArray("answers");
-        this.bindingsdata = answersdata.get(0).getAsJsonObject().get("results").getAsJsonObject().getAsJsonArray("bindings");
-        this.answerType = answersdata.get(0).getAsJsonObject().get("head").getAsJsonObject().getAsJsonArray("vars").get(0).getAsString();
-        logger.info("==== Bindings found: " + bindingsdata.size());
-        logger.info("==== Answer Type: " + this.answerType);
+        /*answersdata = qaldQuestion.getAsJsonArray("answers");
+        bindingsdata = answersdata.get(0).getAsJsonObject().get("results").getAsJsonObject().getAsJsonArray("bindings");
+        JsonObject test1 = answersdata.get(0).getAsJsonObject();
+        JsonObject test2 = test1.get("head").getAsJsonObject();
+        JsonArray  test3 = test2.getAsJsonArray("vars");
+        if(test3 == null) {
+             logger.info("==== vars is null, can happen when answer is boolean");
+             
+             }
+             else {
 
+             }
+        //JsonElement test5 = test3.get(0);
+        String     test4 = test3.getAsString();
+        // logger.info("==== Answer Type: {}",test4);
+        //answerType = answersdata.get(0).getAsJsonObject().get("head").getAsJsonObject().getAsJsonArray("vars").get(0).getAsString();
+        */
+        answerType = qaldQuestion.get("answertype").getAsString();
+        logger.info("==== Answer Type: {}",answerType);
+        
         // check all languages until "en" was found
         for (int j = 0; j < questiondata.size(); j++) {
             language = questiondata.get(j).getAsJsonObject().get("language").getAsString();
@@ -218,9 +236,54 @@ public class QaldQuestion {
     public List<String> getAnswersAsString() {
         List<String> result = new LinkedList<>();
         // get all expected answers from bindings array
-        for (int j = 0; j < bindingsdata.size(); j++) {
-           String expectedAnswer = bindingsdata.get(j).getAsJsonObject().get(this.answerType).getAsJsonObject().get("value").getAsString();
-            result.add(expectedAnswer);
+        switch(answerType){
+            case "resource" : 
+                result = getResults("uri");    
+                break;
+            case "string" :
+                result = getResults("string");
+                break;
+            case "date" :
+                result = getResults("date");
+                break;
+            case "number" :
+                result = getResults("c");
+                break;
+            case "boolean" :
+                answerdata = qaldQuestion.getAsJsonArray("answers");
+                String expectedAnswer = answerdata.get(0).getAsJsonObject().get("boolean").getAsString();
+                result.add(expectedAnswer);
+                break;
+            default:
+                result.add("No resource question");
+        }
+        /*
+        try {
+            for (int j = 0; j < bindingsdata.size(); j++) {
+                String expectedAnswer = bindingsdata.get(j).getAsJsonObject().get(this.answerType).getAsJsonObject().get("value").getAsString();
+                 result.add(expectedAnswer);
+            }
+        } catch (Exception e) {
+            logger.error("==== Error with bindingsdata from QaldQuestion");
+        }
+        */
+        return result;
+    }
+
+    public List<String> getResults(String fieldName) {
+        List<String> result = new LinkedList<>();
+        try {
+            answerdata = qaldQuestion.getAsJsonArray("answers");
+            bindingsdata = answerdata.get(0).getAsJsonObject().get("results").getAsJsonObject().getAsJsonArray("bindings");
+            for (int j = 0; j < bindingsdata.size(); j++) {
+                String expectedAnswer = bindingsdata.get(j).getAsJsonObject().get(fieldName).getAsJsonObject().get("value").getAsString();
+                result.add(expectedAnswer);
+            }
+        }
+        catch(Exception e) {
+            logger.error("==== Error from getResults");
+            e.printStackTrace();
+            result.add("");
         }
         return result;
     }

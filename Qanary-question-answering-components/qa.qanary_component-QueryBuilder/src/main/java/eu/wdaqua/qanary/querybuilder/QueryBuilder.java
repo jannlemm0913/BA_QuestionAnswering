@@ -22,6 +22,8 @@ import eu.wdaqua.qanary.commons.QanaryQuestion;
 import eu.wdaqua.qanary.commons.QanaryUtils;
 import eu.wdaqua.qanary.component.QanaryComponent;
 
+import java.util.regex.Pattern;
+
 @Component
 /**
  * This component connected automatically to the Qanary pipeline. The Qanary
@@ -310,8 +312,12 @@ public class QueryBuilder extends QanaryComponent {
 
 		while (r.hasNext()) {
 			QuerySolution s = r.next();
-			classes.add(s.getResource("uri").getURI());
-			logger.info("class: {}", s.getResource("uri").getURI());
+			// hier wird der Pfad zum CLS target ordner ausgegeben statt der gefundenen class
+			// regex ob dbpedia im link steht
+			if(Pattern.matches("*dbpedia.org*",s.getResource("uri").getURI())) {
+				classes.add(s.getResource("uri").getURI());
+				logger.info("class: {}", s.getResource("uri").getURI());
+			}
 		}
 
 		return classes;
