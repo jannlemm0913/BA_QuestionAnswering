@@ -1,5 +1,9 @@
-﻿{{
-    "id" : "173",
+﻿{
+  "dataset" : {
+    "id" : "qald-9-test-date-multilingual"
+  },
+  "questions" : [ {
+    "id" : "1",
     "answertype" : "date",
     "aggregation" : false,
     "onlydbo" : true,
@@ -192,7 +196,7 @@
         } ]
       }
     } ]
-  },, {
+  }, {
     "id" : "102",
     "answertype" : "date",
     "aggregation" : false,
@@ -330,7 +334,7 @@
         } ]
       }
     } ]
-  },, {
+  }, {
     "id" : "108",
     "answertype" : "date",
     "aggregation" : false,
@@ -402,7 +406,7 @@
         } ]
       }
     } ]
-  },, {
+  }, {
     "id" : "82",
     "answertype" : "date",
     "aggregation" : false,
@@ -469,7 +473,7 @@
         } ]
       }
     } ]
-  },, {
+  }, {
     "id" : "201",
     "answertype" : "date",
     "aggregation" : false,
@@ -536,7 +540,7 @@
         } ]
       }
     } ]
-  },, {
+  }, {
     "id" : "171",
     "answertype" : "date",
     "aggregation" : false,
@@ -603,7 +607,7 @@
         } ]
       }
     } ]
-  },, {
+  }, {
     "id" : "175",
     "answertype" : "date",
     "aggregation" : false,
@@ -670,7 +674,7 @@
         } ]
       }
     } ]
-  },, {
+  }, {
     "id" : "78",
     "answertype" : "date",
     "aggregation" : false,
@@ -737,7 +741,7 @@
         } ]
       }
     } ]
-  },, {
+  }, {
     "id" : "94",
     "answertype" : "date",
     "aggregation" : false,
@@ -808,5 +812,5 @@
         } ]
       }
     } ]
-  }
+  } ]
 }

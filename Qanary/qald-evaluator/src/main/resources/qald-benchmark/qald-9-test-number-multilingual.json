@@ -1,4 +1,8 @@
-﻿{{
+﻿{
+  "dataset" : {
+    "id" : "qald-9-test-number-multilingual"
+  },
+  "questions" : [ {
     "id" : "73",
     "answertype" : "number",
     "aggregation" : false,
@@ -1212,5 +1216,5 @@
         } ]
       }
     } ]
-  }
+  } ]
 }

@@ -123,8 +123,13 @@ public class QaldEvaluatorApplication {
                     JSONObject bodyJson = new JSONObject(s.getLiteral("body"));
                     logger.info(bodyJson.toString());
                     try {
+                        // dateityp aus head vars auslesen todo
                         JSONObject testJson = new JSONObject(bodyJson.getString("value"));
                         logger.info("==== Got the value");
+                        JSONObject headJson = testJson.getJSONObject("head");
+                        logger.info("==== head {}", headJson);
+                        String typeJson = headJson.getJSONArray("vars").get(0).toString();
+                        logger.info("==== type {}", typeJson);
                         JSONArray bindingsJson = testJson.getJSONObject("results").getJSONArray("bindings");
                         logger.info("{}",testJson.getJSONObject("results"));
                         logger.info("==== Got the bindings");
@@ -132,12 +137,13 @@ public class QaldEvaluatorApplication {
                             for(int j = 0; j < bindingsJson.length(); j++) {
                                 JSONObject test2Json = bindingsJson.getJSONObject(j);
                                 logger.info("{}",test2Json);
-                                String answerUri = test2Json.getJSONObject("uri").getString("value");
+                                String answerUri = test2Json.getJSONObject(typeJson).getString("value");
                                 logger.info("System answers: {} ", answerUri);
                                 systemAnswers.add(answerUri);
                             }
                         }
                     } catch (Exception e) {
+                        e.printStackTrace();
                         logger.error("==== Not a JSON Object in value!");
                     }
                 //    JSONObject test1Json = testJson.getJSONObject("results");
