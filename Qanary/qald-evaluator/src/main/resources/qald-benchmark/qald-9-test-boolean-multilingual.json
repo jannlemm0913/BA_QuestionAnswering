@@ -1,0 +1,238 @@
+﻿{{
+    "id" : "6",
+    "answertype" : "boolean",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Sind Taiko eine Art japanische Musikinstrumente?",
+      "keywords" : "Taiko,  Art,  japanisches Musikinstrument"
+    }, {
+      "language" : "ru",
+      "string" : "Находятся Тайко  своего рода из Японский музыкальный инструменты? ",
+      "keywords" : "Тайко ,   своего рода из ,   Японский музыкальный инструмент "
+    }, {
+      "language" : "pt",
+      "string" : "Estamos Taiko uma tipo do japonês musical instrumentos? ",
+      "keywords" : "Taiko ,   tipo do ,   japonês musical instrumento "
+    }, {
+      "language" : "hi_IN",
+      "string" : "Taiko एक तरह के जापानी संगीत वाद्ययंत्र हैं?",
+      "keywords" : "Taiko,  एक तरह का,  जापानी संगीत साधन"
+    }, {
+      "language" : "en",
+      "string" : "Are Taiko some kind of Japanese musical instrument?",
+      "keywords" : "Taiko,  some kind of,  Japanese musical instrument"
+    }, {
+      "language" : "fa",
+      "string" : "آیا تایکو یک نوع ابزار موسیقی ژاپنی است؟",
+      "keywords" : "تایکو، نوع، ابزار موسیقی ژاپنی"
+    }, {
+      "language" : "it",
+      "string" : "I Taiko sono una serie di strumenti musicali giapponesi?",
+      "keywords" : "Taiko,  strumenti musicali,  giapponesi"
+    }, {
+      "language" : "fr",
+      "string" : "Les taiko sont-ils des intstruments de musique japonais?",
+      "keywords" : "Taiko,  instruments de musique,  Japon"
+    }, {
+      "language" : "ro",
+      "string" : "Sunt Taiko un fel de instrumente muzicale japoneze?",
+      "keywords" : "Taiko,  un fel de,  instrumente muzicale japoneze"
+    }, {
+      "language" : "es",
+      "string" : "¿Es el Taiko un tipo de instrumento musical?",
+      "keywords" : "Taiko,  tipo de instrumento musical"
+    }, {
+      "language" : "nl",
+      "string" : "Zijn Taiko een soort Japanse musiekinstrumenten?",
+      "keywords" : "Taiko,  soort,  Japanse musiekinstrumenten"
+    } ],
+    "query" : {
+      "sparql" : "ASK WHERE { <http://dbpedia.org/resource/Taiko> a <http://dbpedia.org/class/yago/WikicatJapaneseMusicalInstruments> }"
+    },
+    "answers" : [ {
+      "head" : { },
+      "results" : { },
+      "boolean" : true
+    } ]
+  }, {
+    "id" : "117",
+    "answertype" : "boolean",
+    "aggregation" : false,
+    "onlydbo" : false,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Ist Pamela Anderson Veganer?",
+      "keywords" : "Pamela Anderson,  Veganer"
+    }, {
+      "language" : "ru",
+      "string" : "Является Памела Андерсон  веган? ",
+      "keywords" : "Памела Андерсон ,   вегетарианский "
+    }, {
+      "language" : "pt",
+      "string" : "É Pamela Anderson uma vegan? ",
+      "keywords" : "Pamela Anderson ,   vegan "
+    }, {
+      "language" : "hi_IN",
+      "string" : "है पामेला एंडरसन ए शाकाहारी? ",
+      "keywords" : "पामेला एंडरसन ,   शाकाहारी "
+    }, {
+      "language" : "en",
+      "string" : "Is Pamela Anderson a vegan?",
+      "keywords" : "Pamela Anderson,  vegan"
+    }, {
+      "language" : "fa",
+      "string" : "آیا پاملا اندرسون یک گیاهخوار است؟",
+      "keywords" : "پاملا اندرسون، گیاهخوار"
+    }, {
+      "language" : "it",
+      "string" : "Pamela Anderson è vegana?",
+      "keywords" : "Pamela Anderson,  vegana"
+    }, {
+      "language" : "fr",
+      "string" : "Pamela Anderson est-elle une végétarienne?",
+      "keywords" : "Pamela Anderson,  végétarien"
+    }, {
+      "language" : "ro",
+      "string" : "Este Pamela Anderson un vegan?",
+      "keywords" : "Pamela Anderson,  vegan"
+    }, {
+      "language" : "es",
+      "string" : "¿Es Pamela Anderson vegana?",
+      "keywords" : "Pamela Anderson,  vegano"
+    }, {
+      "language" : "nl",
+      "string" : "Is Pamela Anderson vegetariër?",
+      "keywords" : "Pamela Anderson,  vegetariër"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbr: <http://dbpedia.org/resource/> ASK WHERE { dbr:Pamela_Anderson a <http://dbpedia.org/class/yago/WikicatAmericanVegans> }"
+    },
+    "answers" : [ {
+      "head" : { },
+      "results" : { },
+      "boolean" : true
+    } ]
+  },{
+    "id" : "79",
+    "answertype" : "boolean",
+    "aggregation" : false,
+    "onlydbo" : false,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Gibt es irgendwelche Schlösser in den Vereinigten Staaten?",
+      "keywords" : "Schlösser,  Vereinigte Staaten"
+    }, {
+      "language" : "ru",
+      "string" : "Находятся там Любые замки в  объединенный Состояния? ",
+      "keywords" : "замки ,   объединенный состояния "
+    }, {
+      "language" : "pt",
+      "string" : "Estamos há qualquer castelos dentro a Unidos Estados? ",
+      "keywords" : "castelos ,   Unidos Estados "
+    }, {
+      "language" : "hi_IN",
+      "string" : "कर रहे हैं क्या आप वहां मौजूद हैं कोई महल में  यूनाइटेड राज्य अमेरिका? ",
+      "keywords" : "महल ,   यूनाइटेड राज्य अमेरिका "
+    }, {
+      "language" : "en",
+      "string" : "Are there any castles in the United States?",
+      "keywords" : "castles,  United States"
+    }, {
+      "language" : "fa",
+      "string" : "آیا در ایالات متحده یک قلعه وجود دارد؟",
+      "keywords" : "  قلعه ها,     ایالت ها  یونایتد"
+    }, {
+      "language" : "it",
+      "string" : "Ci sono castelli negli Stati Uniti?",
+      "keywords" : "castelli,  Stati Uniti"
+    }, {
+      "language" : "fr",
+      "string" : "Y a-t-il des châteaux aux États-Unis?",
+      "keywords" : "châteaux,  États-Unis"
+    }, {
+      "language" : "ro",
+      "string" : "Există castele în Statele Unite?",
+      "keywords" : "castele ,   Unit statele "
+    }, {
+      "language" : "es",
+      "string" : "¿Hay castillos en los Estados Unidos?",
+      "keywords" : "castillos ,   Unido Estados "
+    }, {
+      "language" : "nl",
+      "string" : "Zijn er kastelen in de Verenigde Staten?",
+      "keywords" : "kastelen ,   Verenigd Staten "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dct: <http://purl.org/dc/terms/> PREFIX dbc: <http://dbpedia.org/resource/Category:> ASK WHERE { ?uri dct:subject dbc:Castles_in_the_United_States }"
+    },
+    "answers" : [ {
+      "head" : { },
+      "results" : { },
+      "boolean" : true
+    } ]
+  },{
+    "id" : "92",
+    "answertype" : "boolean",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wird die Ehefrau von Präsident Obama Michelle genannt? ",
+      "keywords" : "Ehefrau ,   Präsident ,   Obama ,   genannt ,   Michelle "
+    }, {
+      "language" : "ru",
+      "string" : "Является  жена из президент Обама называется Мишель? ",
+      "keywords" : "жена ,   президент ,   обама ,   называется ,   Michelle "
+    }, {
+      "language" : "pt",
+      "string" : "É a esposa do Presidente Obama chamado Michelle? ",
+      "keywords" : "esposa ,   Presidente ,   obama ,   chamado ,   Michelle "
+    }, {
+      "language" : "hi_IN",
+      "string" : "राष्ट्रपति ओबामा की पत्नी मिशेल कहलाती है?",
+      "keywords" : "पत्नी ,   अध्यक्ष ,   ओबामा ,   बुलाया ,   मिशेल "
+    }, {
+      "language" : "en",
+      "string" : "Is the wife of President Obama called Michelle?",
+      "keywords" : "wife,  president,  obama,  called,  michelle"
+    }, {
+      "language" : "it",
+      "string" : "È il moglie di Presidente Obama chiamato Michelle? ",
+      "keywords" : "moglie ,   Presidente ,   obama ,   chiamato ,   michelle "
+    }, {
+      "language" : "fa",
+      "string" : "  میشل؟  به نام  اوباما  رئيس جمهور  از  همسر  این  است",
+      "keywords" : "  همسر,     رئيس جمهور,     اوباما,     به نام,     میشل"
+    }, {
+      "language" : "fr",
+      "string" : "Est la femme de Président Obama appelé Michelle? ",
+      "keywords" : "femme ,   Président ,   Obama ,   appelé ,   michelle "
+    }, {
+      "language" : "ro",
+      "string" : "Este  soție de Președintele Obama denumit Michelle? ",
+      "keywords" : "soție ,   președinte ,   obama ,   denumit ,   michelle "
+    }, {
+      "language" : "es",
+      "string" : "Es el esposa de presidente Obama llamado Michelle? ",
+      "keywords" : "esposa ,   presidente ,   obama ,   llamado ,   michelle "
+    }, {
+      "language" : "nl",
+      "string" : "is de vrouw van President Obama riep Michelle? ",
+      "keywords" : "vrouw ,   president ,   obama ,   riep ,   michelle "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX onto: <http://dbpedia.org/ontology/> ASK WHERE { res:Barack_Obama onto:spouse ?spouse . ?spouse rdfs:label ?name FILTER regex(?name, \"Michelle\") }"
+    },
+    "answers" : [ {
+      "head" : { },
+      "results" : { },
+      "boolean" : true
+    } ]
+  }
+}

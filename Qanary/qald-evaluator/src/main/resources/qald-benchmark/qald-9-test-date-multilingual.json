@@ -1,0 +1,812 @@
+﻿{{
+    "id" : "173",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann ist Finnland in die EU eingetreten? ",
+      "keywords" : "Finnland ,   europäisch Union ,   Beitritt "
+    }, {
+      "language" : "ru",
+      "string" : "когда сделал Финляндия присоединиться  США? ",
+      "keywords" : "Финляндия ,   Европейская союз ,   присоединиться "
+    }, {
+      "language" : "pt",
+      "string" : "Quando fez Finlândia Junte-se a EU? ",
+      "keywords" : "Finlândia ,   europeu União ,   Junte-se "
+    }, {
+      "language" : "hi_IN",
+      "string" : " फिनलैंड यूरोपीय संघ में कब शामिल हुआ?",
+      "keywords" : "फिनलैंड ,   यूरोपीय संघ ,   में शामिल होने के "
+    }, {
+      "language" : "en",
+      "string" : "When did Finland join the EU?",
+      "keywords" : "Finland,  European Union,  join"
+    }, {
+      "language" : "it",
+      "string" : "quando fatto Finlandia aderire il Stati Uniti? ",
+      "keywords" : "Finlandia ,   europeo Unione ,   aderire "
+    }, {
+      "language" : "fa",
+      "string" : "  اتحادیه اروپا؟  این  پیوستن  فنلاند  انجام داد  چه زمانی",
+      "keywords" : "  فنلاند,     اتحادیه  اروپایی,     پیوستن"
+    }, {
+      "language" : "fr",
+      "string" : "Quand fait Finlande joindre la UE? ",
+      "keywords" : "Finlande ,   européen syndicat ,   joindre "
+    }, {
+      "language" : "ro",
+      "string" : "Cand făcut Finlanda a adera  SUA? ",
+      "keywords" : "Finlanda ,   european Uniune ,   a adera "
+    }, {
+      "language" : "es",
+      "string" : "Cuando hizo Finlandia unirse el EE.UU.? ",
+      "keywords" : "Finlandia ,   europeo Unión ,   unirse "
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer deed Finland toetreden de VS? ",
+      "keywords" : "Finland ,   Europese Unie ,   toetreden "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?date WHERE { res:Finland dbp:accessioneudate ?date }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "1995-01-01"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "124",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann wurde Carlo Giuliani erschossen?",
+      "keywords" : "Datum,  Carlo Giuliani,  erschossen"
+    }, {
+      "language" : "ru",
+      "string" : "когда был Карло Giuliani выстрел? ",
+      "keywords" : "Дата ,   Карло Giuliani ,   выстрел "
+    }, {
+      "language" : "pt",
+      "string" : "Quando estava Carlo Giuliani tiro? ",
+      "keywords" : "encontro ,   Carlo Giuliani ,   tiro "
+    }, {
+      "language" : "hi_IN",
+      "string" : "कब था कार्लो गियूलियानी शॉट? ",
+      "keywords" : "तारीख ,   कार्लो गियूलियानी ,   शॉट "
+    }, {
+      "language" : "en",
+      "string" : "When was Carlo Giuliani shot?",
+      "keywords" : "date,  Carlo Giuliani,  shot"
+    }, {
+      "language" : "fa",
+      "string" : "  شات؟  جولیانی  کارلو  بود  چه زمانی",
+      "keywords" : "  تاریخ,     جولیانی  کارلو,     شات"
+    }, {
+      "language" : "it",
+      "string" : "Quando è stato ucciso Carlo Giuliani?",
+      "keywords" : "data,  Carlo Giuliani,  ucciso"
+    }, {
+      "language" : "fr",
+      "string" : "Quand a été tué Carlo Giuliani?",
+      "keywords" : "date de décès,  Carlo Guiliani"
+    }, {
+      "language" : "ro",
+      "string" : "Când a fost ucis Carlo Giuliani?",
+      "keywords" : "dată,  Carlo Giuliani,  ucis"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuándo fue disparado Carlo Giuliani?",
+      "keywords" : "fecha,  disparo,  Carlo Giuliani"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer werd Carlo Giuliani neergeschoten?",
+      "keywords" : "datum,  Carlo Giuliani,  neergeschoten"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT xsd:date(?date) WHERE { res:Death_of_Carlo_Giuliani dbo:deathDate ?date }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : { }
+    } ]
+  },{
+    "id" : "135",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann starb Michael Jackson?",
+      "keywords" : "Michael Jackson,  gestorben"
+    }, {
+      "language" : "ru",
+      "string" : "когда сделал Майкл Джексон ? ",
+      "keywords" : "Майкл Джексон ,    "
+    }, {
+      "language" : "pt",
+      "string" : "Quando fez Michael Jackson o? ",
+      "keywords" : "Michael Jackson ,   o "
+    }, {
+      "language" : "hi_IN",
+      "string" : "कब किया माइकल जैक्सन ? ",
+      "keywords" : "माइकल जैक्सन ,    "
+    }, {
+      "language" : "en",
+      "string" : "When did Michael Jackson die?",
+      "keywords" : "Michael Jackson,  die"
+    }, {
+      "language" : "fa",
+      "string" : "مایکل جکسون کی مرد؟",
+      "keywords" : "مایکل جکسون، مرد"
+    }, {
+      "language" : "it",
+      "string" : "Quando è morto Michael Jackson?",
+      "keywords" : "Michael Jackson,  morto"
+    }, {
+      "language" : "fr",
+      "string" : "Quand mourut Michael Jackson?",
+      "keywords" : "Michael Jackson,  mort"
+    }, {
+      "language" : "ro",
+      "string" : "Când a murit Michael Jackson?",
+      "keywords" : "Michael Jackson,  muri"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuándo murió Michael Jackson?",
+      "keywords" : "Michael Jackson,  muerto"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer overleed Michael Jackson?",
+      "keywords" : "overleden,  Michael Jackson"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Michael_Jackson> <http://dbpedia.org/ontology/deathDate> ?date }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "2009-6-25"
+          }
+        } ]
+      }
+    } ]
+  },, {
+    "id" : "102",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann ist Draculas Schöpfer gestorben?",
+      "keywords" : "Dracula,  Schöpfer,  gestorben"
+    }, {
+      "language" : "ru",
+      "string" : "когда сделал Дракулы создатель ? ",
+      "keywords" : "Дракула ,   создатель ,    "
+    }, {
+      "language" : "pt",
+      "string" : "Quando fez Drácula O Criador o? ",
+      "keywords" : "Drácula ,   O Criador ,   o "
+    }, {
+      "language" : "en",
+      "string" : "When did Dracula's creator die?",
+      "keywords" : "Dracula,  creator,  die"
+    }, {
+      "language" : "hi_IN",
+      "string" : "ड्रेकुला के निर्माता का निधन कब हुआ?",
+      "keywords" : "ड्रेकुला,  निर्माता,  निधन"
+    }, {
+      "language" : "pt_BR",
+      "string" : "Quando morreu o criador de Drácula?",
+      "keywords" : "morte,  criador,  Drácula"
+    }, {
+      "language" : "fa",
+      "string" : "چه زمانی خالق دراکولا فوت کرد؟",
+      "keywords" : "خالق، دراکولا، فوت"
+    }, {
+      "language" : "it",
+      "string" : "Quando è morto il creatore di Dracula?",
+      "keywords" : "Dracula,  creatore,  morire"
+    }, {
+      "language" : "fr",
+      "string" : "Quand est mort le créateur de Dracula?",
+      "keywords" : "mort,  créateur,  Dracula"
+    }, {
+      "language" : "ro",
+      "string" : "Când a murit creatorul Dracula?",
+      "keywords" : "Dracula,  creator,  a muri"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuando murió el creador de Drácula?",
+      "keywords" : "muerte,  creador,  Drácula"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer stierf de bedenker van Dracula?",
+      "keywords" : "stierf,  bedenker,  Dracula"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT xsd:date(?date) WHERE { <http://dbpedia.org/resource/Count_Dracula> <http://dbpedia.org/ontology/creator> ?x . ?x <http://dbpedia.org/ontology/deathDate> ?date. }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "1912-04-20"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "51",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : false,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann kommt der Film Worst Case Scenario in den Niederlanden in die Kinos?",
+      "keywords" : "Film,  Worst Case Scenario,  Kino,  Niederlande"
+    }, {
+      "language" : "ru",
+      "string" : "когда является  кино Наихудший случай сценарий собирается в быть в кинотеатры в  Нидерланды? ",
+      "keywords" : "кино ,   Наихудший случай сценарий ,   кино ,   Нидерланды "
+    }, {
+      "language" : "pt",
+      "string" : "Quando é a filme Pior Caso Cenário indo para estar dentro cinemas dentro a Países Baixos? ",
+      "keywords" : "filme ,   Pior Caso Cenário ,   cinema ,   Países Baixos "
+    }, {
+      "language" : "hi_IN",
+      "string" : "कब है  चलचित्र सबसे खराब मामला परिदृश्य जा रहा सेवा मेरे होना में सिनेमाघरों में  नीदरलैंड? ",
+      "keywords" : "चलचित्र ,   सबसे खराब मामला परिदृश्य ,   सिनेमा ,   नीदरलैंड "
+    }, {
+      "language" : "en",
+      "string" : "When is the movie Worst Case Scenario going to be in cinemas in the Netherlands?",
+      "keywords" : "movie,  Worst Case Scenario,  cinema,  Netherlands"
+    }, {
+      "language" : "fa",
+      "string" : "فیلم ورست کیس سناریو از کی در هلند نمایش داده خواهد شد؟",
+      "keywords" : "فیلم، ورست کیس سناریو، هلند، نمایش"
+    }, {
+      "language" : "it",
+      "string" : "Quando verrà proiettato il film Worst Case Scenario al cinema nei Paesi Bassi?",
+      "keywords" : "film,  Worst Case Scenario,  cinema,  Paesi Bassi"
+    }, {
+      "language" : "fr",
+      "string" : "Quand sera la film Worst Case Scenario à voir dans les cinémas néerlandais?",
+      "keywords" : "Worst Case Scenario,  cinémas néerlandais"
+    }, {
+      "language" : "ro",
+      "string" : "Când va fi filmul Worst Case Scenario în cinematografele din Olanda?",
+      "keywords" : "film,  Worst Case Scenario,  cinematograf,  Olanda"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuándo se estrena la película Worst Case Scenario en los países bajos?",
+      "keywords" : "película,  Worst Case Scenario,  cines,  páises bajos"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer komt de film Worst Case Scenario in Nederland in de bioscoop?",
+      "keywords" : "film,  Worst Case Scenario,  bioscoop,  Nederland"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT DISTINCT ?rel WHERE { <http://dbpedia.org/resource/Worst_Case_Scenario_(film)> ?p ?o ; dbo:releaseDate ?rel FILTER contains(lcase(str(?o)), \"netherlands\") }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "2008-01-30"
+          }
+        } ]
+      }
+    } ]
+  },, {
+    "id" : "108",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann hat Paraguay seine Unabhängigkeit verkündet?",
+      "keywords" : "Paraguay,  Unabhängigkeit,  verkündet"
+    }, {
+      "language" : "ru",
+      "string" : "когда сделал Парагвай провозглашать его независимость? ",
+      "keywords" : "Парагвай ,   провозглашать ,   независимость "
+    }, {
+      "language" : "pt",
+      "string" : "Quando fez Paraguai proclamar Está independência? ",
+      "keywords" : "Paraguai ,   proclamar ,   independência "
+    }, {
+      "language" : "hi_IN",
+      "string" : "कब किया परागुआ प्रचार आईटी इस आजादी? ",
+      "keywords" : "परागुआ ,   प्रचार ,   आजादी "
+    }, {
+      "language" : "en",
+      "string" : "When did Paraguay proclaim its independence?",
+      "keywords" : "Paraguay, proclaim, independence"
+    }, {
+      "language" : "fa",
+      "string" : "وقتی پاراگوئه استقلال خود را اعلام کرد؟",
+      "keywords" : "پاراگوئه, اعلام, استقلال"
+    }, {
+      "language" : "it",
+      "string" : "Quando si dichiarò indipendente il Paraguay?",
+      "keywords" : "dichiarò, indipendente,  Paraguay"
+    }, {
+      "language" : "fr",
+      "string" : "Quand est-ce que le Paraguay a prononcé son indépendance?",
+      "keywords" : "Paraguay,  prononcé,  indépendance"
+    }, {
+      "language" : "ro",
+      "string" : "Când a proclamat Paraguay independența sa?",
+      "keywords" : "Paraguay, proclama, independenţă"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuándo proclamó el Paraguay su independencia?",
+      "keywords" : "Paraguay, proclamar, independencia"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer verkondigde Paraguay zijn onafhankelijkheid?",
+      "keywords" : "Paraguay, verkondigen, onafhankelijkheid"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Paraguay> <http://dbpedia.org/ontology/foundingDate> ?date }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "1811-05-14"
+          }
+        }, {
+          "date" : {
+            "type" : "literal",
+            "value" : "1811-05-15"
+          }
+        } ]
+      }
+    } ]
+  },, {
+    "id" : "82",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann wurde Jack Wolfskin gegründet?",
+      "keywords" : "Jack Wolfskin,  gegründet"
+    }, {
+      "language" : "ru",
+      "string" : "когда был разъем волчья шкура основана? ",
+      "keywords" : "разъем волчья шкура ,   основанный "
+    }, {
+      "language" : "pt",
+      "string" : "Quando estava Jack Wolfskin fundado? ",
+      "keywords" : "Jack Wolfskin ,   fundado "
+    }, {
+      "language" : "en",
+      "string" : "When was Jack Wolfskin founded?",
+      "keywords" : "Jack Wolfskin,  founded"
+    }, {
+      "language" : "hi_IN",
+      "string" : "जैक वुल्फस्किन की स्थापना कब हुई थी?",
+      "keywords" : "जैक वुल्फस्किन,  स्थापना"
+    }, {
+      "language" : "fa",
+      "string" : "جک ولفیش کی تأسیس شد؟",
+      "keywords" : "جک ولفیش، تأسیس"
+    }, {
+      "language" : "it",
+      "string" : "Quando è stata fondata Jack Wolfskin?",
+      "keywords" : "Jack Wolfskin,  fondata"
+    }, {
+      "language" : "fr",
+      "string" : "Quand a été fondé Jack Wolfskin?",
+      "keywords" : "fondé,  Jack Wolfskin"
+    }, {
+      "language" : "ro",
+      "string" : "Când a fost fondat Jack Wolfskin?",
+      "keywords" : "Jack Wolfskin,  fondat"
+    }, {
+      "language" : "es",
+      "string" : "¿Cúando se fundó Jack Wolfskin?",
+      "keywords" : "Jack Wolfskin,  fundada"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer werd Jack Wolfskin opgericht?",
+      "keywords" : "Jack Wolfskin,  opgericht"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT xsd:date(?year) WHERE { res:Jack_Wolfskin dbo:foundingYear ?year }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "1981-01-01"
+          }
+        } ]
+      }
+    } ]
+  },, {
+    "id" : "201",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "In welchem Jahr wurde die Brauerei gegründet, die Pilsner Urquell herstellt?",
+      "keywords" : "Pilsner Urquell,  Brauerei,  gründen"
+    }, {
+      "language" : "ru",
+      "string" : "Какие является  учредительный год из  пивоваренный завод что производит Pilsner Urquell? ",
+      "keywords" : "Pilsner Urquell ,   пивоваренный завод ,   учредительный год "
+    }, {
+      "language" : "pt",
+      "string" : "o que é a fundando ano do a cervejaria aquele produz Pilsner Urquell? ",
+      "keywords" : "Pilsner Urquell ,   cervejaria ,   fundando ano "
+    }, {
+      "language" : "hi_IN",
+      "string" : "क्या है  स्थापना साल का  शराब की भठ्ठी उस पैदा करता है Pilsner आर्केल? ",
+      "keywords" : "Pilsner आर्केल ,   शराब की भठ्ठी ,   स्थापना साल "
+    }, {
+      "language" : "en",
+      "string" : "What is the founding year of the brewery that produces Pilsner Urquell?",
+      "keywords" : "Pilsner Urquell,  brewery,  founding year"
+    }, {
+      "language" : "fa",
+      "string" : "سال تأسیس کارخانه آبجوسازی که پیلزنر اورکوئل را تولید می کند چیست؟",
+      "keywords" : "سال تأسیس، کارخانه آبجوسازی، پیلزنر اورکوئل"
+    }, {
+      "language" : "it",
+      "string" : "In che anno è stato fondato il birrificio che produce la Pilsner Urquell?",
+      "keywords" : "Pilsner Urquell,  birrificio,  anno di fondazione"
+    }, {
+      "language" : "fr",
+      "string" : "Quelle est l'année de fondation de la brasserie qui produit Pilsner Urquell?",
+      "keywords" : "année de fondation,  brasserie,  produit,  Pilsner Urquell"
+    }, {
+      "language" : "ro",
+      "string" : "Care este anul înființării berăriei ce produce Pilsner Urquell?",
+      "keywords" : "Pilsner Urquell,  berărie,  anul înființării"
+    }, {
+      "language" : "es",
+      "string" : "¿En qué año fue fundada la cervecería que produce Pilsner Urquell?",
+      "keywords" : "Pilsner Urquell,  cervecería,  fundada"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer werd de brouwerij opgericht die Pilsner Urquell produceert?",
+      "keywords" : "brouwerij,  opgericht,  produceert,  Pilsner Urquell"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT xsd:date(?num) WHERE { <http://dbpedia.org/resource/Pilsner_Urquell> <http://dbpedia.org/property/brewery> ?uri . ?uri dbo:foundingYear ?num }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "1842-01-01"
+          }
+        } ]
+      }
+    } ]
+  },, {
+    "id" : "171",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann fand die Boston Tea Party statt?",
+      "keywords" : "Datum,  Boston Tea Party"
+    }, {
+      "language" : "ru",
+      "string" : "когда сделал  Бостон Чай Вечеринка принимать место? ",
+      "keywords" : "Бостон Чай Вечеринка ,   принимать место "
+    }, {
+      "language" : "pt",
+      "string" : "Quando fez a Boston Chá Festa levar Lugar, colocar? ",
+      "keywords" : "Boston Chá Festa ,   levar Lugar,   colocar "
+    }, {
+      "language" : "hi_IN",
+      "string" : "बोस्टन टी पार्टी कब हुई थी?",
+      "keywords" : "बोस्टान चाय पार्टी ,   लेना जगह "
+    }, {
+      "language" : "en",
+      "string" : "When did the Boston Tea Party take place?",
+      "keywords" : "Boston Tea Party,  take place"
+    }, {
+      "language" : "fa",
+      "string" : "مهمانی چای بوستون کی رخ داد؟",
+      "keywords" : "مهمانی چای بوستون، رخ داد"
+    }, {
+      "language" : "it",
+      "string" : "Dove ha avuto luogo il Boston Tea Party",
+      "keywords" : "Boston Tea Party,  aver luogo"
+    }, {
+      "language" : "fr",
+      "string" : "Quand se passa le Boston Tea Party?",
+      "keywords" : "data,  Boston Tea Party"
+    }, {
+      "language" : "ro",
+      "string" : "Când a avut loc Partida de ceai de la Boston",
+      "keywords" : "Partida de ceai de la Boston,  avut loc"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuándo tiene lugar el Boston Tea Party?",
+      "keywords" : "Boston Tea party,  fecha"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer vond de Boston Tea Party plaats?",
+      "keywords" : "Boston Tea Party,  datum"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?d WHERE { <http://dbpedia.org/resource/Boston_Tea_Party> <http://dbpedia.org/property/date> ?d }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "1773-12-16"
+          }
+        } ]
+      }
+    } ]
+  },, {
+    "id" : "175",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann ist Muhammad gestorben?",
+      "keywords" : "Muhammad,  gestorben"
+    }, {
+      "language" : "ru",
+      "string" : "Когда умер Мухаммед?",
+      "keywords" : "Мухаммед,  умереть"
+    }, {
+      "language" : "pt",
+      "string" : "Quando Muhammad morreu?",
+      "keywords" : "Maomé,  morrer"
+    }, {
+      "language" : "hi_IN",
+      "string" : "मुहम्मद कब मर गए?",
+      "keywords" : "मुहम्मद,  मरना"
+    }, {
+      "language" : "en",
+      "string" : "When did Muhammad die?",
+      "keywords" : "Muhammad,  die"
+    }, {
+      "language" : "fa",
+      "string" : "هنگام مرگ محمد؟",
+      "keywords" : "محمد,  مرگ"
+    }, {
+      "language" : "it",
+      "string" : "Quando morì Maometto?",
+      "keywords" : "morì,  Maometto"
+    }, {
+      "language" : "fr",
+      "string" : "Quand est mort Mahomet?",
+      "keywords" : "mort,  Mahomet"
+    }, {
+      "language" : "ro",
+      "string" : "Când a murit Mohamed?",
+      "keywords" : "Muhammad,  a muri"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuándo murió Muhammad?",
+      "keywords" : "Mahoma,  morir"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer stierf Mohammed?",
+      "keywords" : "Mohammed,  dood gaan"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT xsd:date(?date) WHERE { res:Muhammad dbo:deathDate ?date }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "0632-06-08"
+          }
+        } ]
+      }
+    } ]
+  },, {
+    "id" : "78",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann wurde De Beers gegründet?",
+      "keywords" : "De Beers,  gegründet"
+    }, {
+      "language" : "ru",
+      "string" : "Когда была основана компания De Beers?",
+      "keywords" : "Компания De Beers,   основанный "
+    }, {
+      "language" : "pt",
+      "string" : "Quando foi fundada a empresa De Beers?",
+      "keywords" : "Empresa De Beers ,   fundado "
+    }, {
+      "language" : "hi_IN",
+      "string" : "डी बीयर कंपनी की स्थापना कब हुई थी?",
+      "keywords" : "डी बीयर कंपनी ,   स्थापित"
+    }, {
+      "language" : "en",
+      "string" : "When was the De Beers company founded?",
+      "keywords" : "De Beers company,  founded"
+    }, {
+      "language" : "it",
+      "string" : "Quando fu fondata l'azienda De Beers?",
+      "keywords" : "Società De Beers,  fondato"
+    }, {
+      "language" : "fa",
+      "string" : "هنگامی که شرکت De Beers تاسیس شد؟",
+      "keywords" : "  شرکت De Beers,   تأسیس شد"
+    }, {
+      "language" : "fr",
+      "string" : "Quand a été fondée la société De Beers?",
+      "keywords" : "Société De Beers,  fondé"
+    }, {
+      "language" : "ro",
+      "string" : "Când a fost fondată compania De Beers?",
+      "keywords" : "Compania De Beers ,   fondat\r\n "
+    }, {
+      "language" : "es",
+      "string" : "¿Cuándo se fundó la empresa De Beers?",
+      "keywords" : "Empresa De Beers ,   fundado "
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer werd het bedrijf De Beers opgericht?",
+      "keywords" : "Bedrijf De Beers ,  Gesticht"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT xsd:date(?date) WHERE { res:De_Beers dbo:foundingYear ?date }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "1888-01-01"
+          }
+        } ]
+      }
+    } ]
+  },, {
+    "id" : "94",
+    "answertype" : "date",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wann ist Prinzessin Diana gestorben?",
+      "keywords" : "Prinzessin Diana,  Todestag"
+    }, {
+      "language" : "ru",
+      "string" : "когда сделал принцесса Диана ? ",
+      "keywords" : "Дата ,   принцесса Диана ,   умер "
+    }, {
+      "language" : "pt",
+      "string" : "Quando fez Princesa Diana o? ",
+      "keywords" : "encontro ,   Princesa Diana ,   morreu "
+    }, {
+      "language" : "en",
+      "string" : "When did princess Diana die?",
+      "keywords" : "date,  princess Diana,  died"
+    }, {
+      "language" : "hi_IN",
+      "string" : "राजकुमारी डायना का निधन कब हुआ?",
+      "keywords" : "राजकुमारी डायना,  निधन"
+    }, {
+      "language" : "pt_BR",
+      "string" : "Quando a princesa Diana morreu?",
+      "keywords" : "princesa Diana,  morreu"
+    }, {
+      "language" : "fa",
+      "string" : "شاهزاده دیانا کی فوت کرد؟",
+      "keywords" : "شاهزاده دیانا، فوت"
+    }, {
+      "language" : "it",
+      "string" : "Quando è morta la principessa Diana?",
+      "keywords" : "data di morte,  principessa Diana"
+    }, {
+      "language" : "fr",
+      "string" : "Donne moi la date de décès de Princesse Diana.",
+      "keywords" : "date de décès,  Princesse Diana"
+    }, {
+      "language" : "ro",
+      "string" : "Când a murit prințesa Diana?",
+      "keywords" : "data morții,  prințesa Diana"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuándo murió la princesa Diana?",
+      "keywords" : "fecha fallecimiento,  princesa Diana"
+    }, {
+      "language" : "nl",
+      "string" : "Wanneer is prinses Diana overleden?",
+      "keywords" : "prinses Diana,  overleden,  datum"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT xsd:date(?d) WHERE { <http://dbpedia.org/resource/Diana,_Princess_of_Wales> <http://dbpedia.org/ontology/deathDate> ?d }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "date" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "date" : {
+            "type" : "literal",
+            "value" : "1997-08-31"
+          }
+        } ]
+      }
+    } ]
+  }
+}
