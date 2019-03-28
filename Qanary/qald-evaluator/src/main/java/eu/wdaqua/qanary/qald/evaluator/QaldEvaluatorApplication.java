@@ -10,8 +10,7 @@ import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.json.JSONObject;
-// added import
-import org.json.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -28,6 +27,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+//added imports
+import org.json.*;
 
 /**
  * start the spring application
@@ -146,14 +148,6 @@ public class QaldEvaluatorApplication {
                         e.printStackTrace();
                         logger.error("==== Not a JSON Object in value!");
                     }
-                //    JSONObject test1Json = testJson.getJSONObject("results");
-                //    JSONArray bindingsJson = test1Json.getJSONArray("bindings");
-                    
-                    //JSONObject test3Json = test2Json.getJSONObject();
-                    //String answerUri = test3Json.getString("value");
-                    //String urisJson = bodyJson.getString("value");
-                    //logger.info("System answers: {} ", answerUri);
-                    //systemAnswers.add(answerUri);
                 }
             }
 

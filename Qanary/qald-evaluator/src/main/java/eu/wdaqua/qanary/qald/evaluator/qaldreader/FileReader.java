@@ -17,7 +17,7 @@ public class FileReader {
     private HashMap<Integer, QaldQuestion> questions = new HashMap<>();
 
     public FileReader() throws UnsupportedEncodingException, IOException {
-        Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-test-date-multilingual.json"),
+        Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-test-multilingual.json"),
         //Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-train-multilingual.json"),
         //Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-train-multilingual-short.json"),
         //Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-test-multilingual-fixed.json"), //...gual-short.json

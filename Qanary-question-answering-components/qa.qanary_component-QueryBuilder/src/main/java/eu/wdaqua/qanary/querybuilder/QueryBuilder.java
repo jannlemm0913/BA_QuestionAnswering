@@ -23,6 +23,8 @@ import eu.wdaqua.qanary.commons.QanaryUtils;
 import eu.wdaqua.qanary.component.QanaryComponent;
 
 import java.util.regex.Pattern;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 @Component
 /**
@@ -282,6 +284,15 @@ public class QueryBuilder extends QanaryComponent {
 					+ "}";
 			myQanaryUtils.updateTripleStore(sparql, myQanaryMessage.getEndpoint().toString());
 		}
+
+		// print infos to file
+		BufferedWriter buffWriter = new BufferedWriter(new FileWriter("../../../Qanary/eval-results/eval-results.txt", true));
+		String MainString = "outgraph: " + answerID + "\r\n" + myQuestion + "\r\nNumber of entities: " + entities.size() + "\r\nNumber of properties: " + properties.size() //
+		+ "\r\nNumber of classes: " + classes.size() + "\r\nLength of generated query: " + generatedQuery.length() + "\r\n";
+		buffWriter.append(MainString);
+		buffWriter.newLine();
+		buffWriter.close();
+
 		return myQanaryMessage;
 	}
 
