@@ -1,0 +1,1009 @@
+﻿{{
+    "id" : "64",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was ist der Beruf von Frank Herbert? ",
+      "keywords" : "Beruf ,   frank ,   Herbert "
+    }, {
+      "language" : "ru",
+      "string" : "Какие является  профессия из Фрэнк Герберт? ",
+      "keywords" : "профессия ,   откровенный ,   Герберт "
+    }, {
+      "language" : "pt",
+      "string" : "o que é a profissão do Frank Herbert? ",
+      "keywords" : "profissão ,   franco ,   Herbert "
+    }, {
+      "language" : "hi_IN",
+      "string" : "फ्रैंक हरबर्ट का पेशा क्या है?",
+      "keywords" : "व्यवसाय ,   खुलकर ,   हर्बर्ट "
+    }, {
+      "language" : "en",
+      "string" : "What is the profession of Frank Herbert?",
+      "keywords" : "profession,  frank,  herbert"
+    }, {
+      "language" : "it",
+      "string" : "Che cosa è il professione di Franco Herbert? ",
+      "keywords" : "professione ,   Franco ,   herbert "
+    }, {
+      "language" : "fa",
+      "string" : "  هربرت؟  صریح  از  حرفه  این  است  چی",
+      "keywords" : "  حرفه,     صریح,     هربرت"
+    }, {
+      "language" : "fr",
+      "string" : "Quelle est la métier de Franc Herbert? ",
+      "keywords" : "métier ,   franc ,   herbert "
+    }, {
+      "language" : "ro",
+      "string" : "Ce este  profesie de Sincer Herbert? ",
+      "keywords" : "profesie ,   sincer ,   herbert "
+    }, {
+      "language" : "es",
+      "string" : "Qué es el profesión de Franco Herbert? ",
+      "keywords" : "profesión ,   franco ,   Herbert "
+    }, {
+      "language" : "nl",
+      "string" : "Wat is de beroep van openhartig Herbert? ",
+      "keywords" : "beroep ,   openhartig ,   Herbert "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbpedia2: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Frank_Herbert dbpedia2:occupation ?string }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "Novelist"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "37",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was sind die Spitznamen von San Francisco?",
+      "keywords" : "San Francisco,  Spitzname"
+    }, {
+      "language" : "ru",
+      "string" : " Париж из  запад ",
+      "keywords" : "Сан - Франциско ,   прозвище "
+    }, {
+      "language" : "pt",
+      "string" : "o Paris do a Oeste ",
+      "keywords" : "San Francisco ,   apelido "
+    }, {
+      "language" : "hi_IN",
+      "string" : " पेरिस का  पश्चिम ",
+      "keywords" : "सैन फ्रांसिस्को ,   उपनाम "
+    }, {
+      "language" : "en",
+      "string" : "What are the nicknames of San Francisco?",
+      "keywords" : "San Francisco,  nickname"
+    }, {
+      "language" : "fa",
+      "string" : "  غرب  این  از  پاریس  این",
+      "keywords" : "  فرانسیسکو  سان,     نام مستعار"
+    }, {
+      "language" : "it",
+      "string" : "Quali sono i soprannomi di San Francisco?",
+      "keywords" : "San Francisco,  soprannome"
+    }, {
+      "language" : "fr",
+      "string" : "Quels sont les surnoms de San Francisco?",
+      "keywords" : "surnoms,  San Francisco"
+    }, {
+      "language" : "ro",
+      "string" : " Paris de  Vest ",
+      "keywords" : "San Francisco ,   poreclă "
+    }, {
+      "language" : "es",
+      "string" : "¿Cuál es el apodo de San Francisco?",
+      "keywords" : "San Francisco,  apodo"
+    }, {
+      "language" : "nl",
+      "string" : "Wat zijn bijnamen van San Francisco?",
+      "keywords" : "bijnaam,  San Francisco"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?string WHERE { res:San_Francisco foaf:nick ?string }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "The City; The City by the Bay; Fog City; San Fran;Frisco (locally disparaged); The City that Knows How (past); Baghdadby the Bay (past); The Paris of the West"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "32",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was ist der Geburtsname von Angela Merkel?",
+      "keywords" : "Geburtsname,  Angela Merkel"
+    }, {
+      "language" : "ru",
+      "string" : "Angela Доротея казнеровский ",
+      "keywords" : "рождение имя ,   Angela Меркель "
+    }, {
+      "language" : "pt",
+      "string" : "Angela Dorothea Kasner ",
+      "keywords" : "nascimento nome ,   Angela Merkel "
+    }, {
+      "language" : "hi_IN",
+      "string" : "एंजेला डोरोथिया Kasner ",
+      "keywords" : "जन्म नाम ,   एंजेला मार्केल "
+    }, {
+      "language" : "en",
+      "string" : "What is Angela Merkel’s birth name?",
+      "keywords" : "birth name,  Angela Merkel"
+    }, {
+      "language" : "fa",
+      "string" : "الجنآ  aehtoroD  رنسک  ",
+      "keywords" : "دلوت  مان  ,   الجنآ  لکرم  "
+    }, {
+      "language" : "it",
+      "string" : "Qual è il nome da nubile di Angela Merkel?",
+      "keywords" : "nome da nubile,  Angela Merkel"
+    }, {
+      "language" : "fr",
+      "string" : "Quel est le nom de jeune fille d'Angela Merkel?",
+      "keywords" : "nom de jeune fille,  Angela Merkel"
+    }, {
+      "language" : "ro",
+      "string" : "Care este numele de domnișoară al Angelei Merkel?",
+      "keywords" : "nume de domnișoară,  Angela Merkel"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuál es el nombre de soltera de Angela Merkel?",
+      "keywords" : "nombre de soltera,  Angela Merkel"
+    }, {
+      "language" : "nl",
+      "string" : "Wat is de meisjesnaam van Angela Merkel?",
+      "keywords" : "meisjesnaam,  Angela Merkel"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?string WHERE { res:Angela_Merkel dbp:birthName ?string }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "Angela Dorothea Kasner"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "31",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wer ist der Bürgermeister von Berlin?",
+      "keywords" : "Berlin,  Bürgermeister"
+    }, {
+      "language" : "ru",
+      "string" : "Кто является  мэр из Берлин? ",
+      "keywords" : "Берлин ,   мэр "
+    }, {
+      "language" : "pt",
+      "string" : "Quem é a prefeito do Berlim? ",
+      "keywords" : "Berlim ,   prefeito "
+    }, {
+      "language" : "hi_IN",
+      "string" : " बर्लिन के मेयर कौन है?",
+      "keywords" : "बर्लिन ,   महापौर "
+    }, {
+      "language" : "en",
+      "string" : "Who is the mayor of Berlin?",
+      "keywords" : "Berlin,  mayor"
+    }, {
+      "language" : "fa",
+      "string" : "  برلین  از  شهردار  این  است  که",
+      "keywords" : "  برلین,     شهردار"
+    }, {
+      "language" : "it",
+      "string" : "Chi è il sindaco di Berlino?",
+      "keywords" : "Berlino,  sindaco"
+    }, {
+      "language" : "fr",
+      "string" : "Qui est le maire de Berlin?",
+      "keywords" : "Berlin,  maire"
+    }, {
+      "language" : "ro",
+      "string" : "Cine este primarul din Berlin?",
+      "keywords" : "Berlin,  primar"
+    }, {
+      "language" : "es",
+      "string" : "¿Quién es el alcalde de Berlin?",
+      "keywords" : "Berlin,  alcalde"
+    }, {
+      "language" : "nl",
+      "string" : "Wie is de burgemeester van Berlijn?",
+      "keywords" : "Berlijn,  burgemeester"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Berlin dbp:leader ?uri }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "Michael Müller"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "203",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Woran ist Michael Jackson gestorben?",
+      "keywords" : "Michael Jackson,  Todesursache"
+    }, {
+      "language" : "ru",
+      "string" : "Как сделал Майкл Джексон ? ",
+      "keywords" : "как ,   Майкл Джексон ,    "
+    }, {
+      "language" : "pt",
+      "string" : "Como fez Michael Jackson o? ",
+      "keywords" : "como ,   Michael Jackson ,   o "
+    }, {
+      "language" : "hi_IN",
+      "string" : " माइकल जैक्सन कैसे मर गया?",
+      "keywords" : "किस तरह,  माइकल जैक्सन,  मरना"
+    }, {
+      "language" : "en",
+      "string" : "How did Michael Jackson die?",
+      "keywords" : "how,  Michael Jackson,  die"
+    }, {
+      "language" : "fa",
+      "string" : "مایکل جکسون چگونه مرد؟",
+      "keywords" : "مایکل جکسون، مرد"
+    }, {
+      "language" : "it",
+      "string" : "Come è morto Michael Jackson?",
+      "keywords" : "tipo di morte,  Michael Jackson"
+    }, {
+      "language" : "fr",
+      "string" : "Comment est mort Michael Jackson?",
+      "keywords" : "type de mort,  Michael Jackson"
+    }, {
+      "language" : "ro",
+      "string" : "Cum a murit Michael Jackson?",
+      "keywords" : "cum,  murit,  Michael Jackson"
+    }, {
+      "language" : "es",
+      "string" : "¿Cómo murió Michael Jackson?",
+      "keywords" : "tipo de muerte,  Michael Jackson"
+    }, {
+      "language" : "nl",
+      "string" : "Hoe is Michael Jackson overleden?",
+      "keywords" : "Michael Jackson,  doodsoorzaak"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?s WHERE { <http://dbpedia.org/resource/Michael_Jackson> <http://dbpedia.org/property/deathCause> ?s }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "Homicide"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "196",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Zu welcher Klasse gehört der Tausendfüßler? ",
+      "keywords" : "Tausendfüßler ,   Klasse ,   gehören "
+    }, {
+      "language" : "ru",
+      "string" : "Который класс делает  многоножка принадлежать к? ",
+      "keywords" : "многоножка ,   класс ,   принадлежать "
+    }, {
+      "language" : "pt",
+      "string" : "Qual classe faz a centopéia pertencer para? ",
+      "keywords" : "centopéia ,   classe ,   pertencer "
+    }, {
+      "language" : "hi_IN",
+      "string" : "मिललेपिडे किस वर्ग से संबंधित है?",
+      "keywords" : "मिललेपिडे,  वर्ग,  संबंधित"
+    }, {
+      "language" : "en",
+      "string" : "Which classes does the Millepede belong to?",
+      "keywords" : "millepede, classes, belong"
+    }, {
+      "language" : "it",
+      "string" : "Quale classe fa il Millepede appartenere a? ",
+      "keywords" : "millepede ,   classe ,   appartenere "
+    }, {
+      "language" : "fa",
+      "string" : "  به؟  تعلق داشتن  هزار پا  این  میکند  کلاس  کدام",
+      "keywords" : "  هزار پا,     کلاس,     تعلق داشتن"
+    }, {
+      "language" : "fr",
+      "string" : "Lequel classe Est-ce que la mille-pattes appartenir à? ",
+      "keywords" : "mille-pattes ,   classe ,   appartenir "
+    }, {
+      "language" : "ro",
+      "string" : "Care clasă face  miriapod aparține la? ",
+      "keywords" : "miriapod ,   clasă ,   aparține "
+    }, {
+      "language" : "es",
+      "string" : "Cual clase hace el milpiés pertenecer a ¿a? ",
+      "keywords" : "milpiés ,   clase ,   pertenecer a "
+    }, {
+      "language" : "nl",
+      "string" : "Welke klasse doet de duizendpoot behoren naar? ",
+      "keywords" : "duizendpoot ,   klasse ,   behoren "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?String WHERE { res:Millipede dbp:taxon ?String }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "Diplopoda"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "62",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was ist die höchste Stelle des Karakorum?",
+      "keywords" : "Karakorum,  höchste Stelle"
+    }, {
+      "language" : "ru",
+      "string" : "Какие является  наибольший место из Каракорум? ",
+      "keywords" : "Каракорум ,   наибольший место "
+    }, {
+      "language" : "pt",
+      "string" : "o que é a maior Lugar, colocar do Karakoram? ",
+      "keywords" : "Karakoram ,   maior Lugar,   colocar "
+    }, {
+      "language" : "hi_IN",
+      "string" : "क्या है  उच्चतम जगह का काराकोरम? ",
+      "keywords" : "काराकोरम ,   उच्चतम जगह "
+    }, {
+      "language" : "en",
+      "string" : "What is the highest place of Karakoram?",
+      "keywords" : "Karakoram,  highest place"
+    }, {
+      "language" : "fa",
+      "string" : "  کاراکورام؟  از  محل  بالاترین  این  است  چی",
+      "keywords" : "  کاراکورام,     محل  بالاترین"
+    }, {
+      "language" : "it",
+      "string" : "Qual è il punto più alto del Karakoram?",
+      "keywords" : "Karakoram,  punto più alto"
+    }, {
+      "language" : "fr",
+      "string" : "Quel est l'endroit le plus haut du Karakoram?",
+      "keywords" : "Karakoram,  endroit le plus haut"
+    }, {
+      "language" : "ro",
+      "string" : "Ce este  cel mai inalt loc de Karakoram? ",
+      "keywords" : "Karakoram ,   cel mai inalt loc "
+    }, {
+      "language" : "es",
+      "string" : "¿Cuál es el punto más alto del Karakorum?",
+      "keywords" : "Karakorum,  punto más alto"
+    }, {
+      "language" : "nl",
+      "string" : "Wat is het hoogste punt van de Karakoram?",
+      "keywords" : "hoogste punt,  Karakoram"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Karakoram dbp:highest ?uri }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "K2"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "155",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : false,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was ist der Spitzname von Bagdad? ",
+      "keywords" : "Bagdad ,  Spitzname "
+    }, {
+      "language" : "ru",
+      "string" : "какие является  Ник имя из Багдад? ",
+      "keywords" : "Багдад "
+    }, {
+      "language" : "pt",
+      "string" : "o que é a usuario nome do Bagdá? ",
+      "keywords" : "Bagdá "
+    }, {
+      "language" : "hi_IN",
+      "string" : "बगदाद का उपनाम क्या है?",
+      "keywords" : "बगदाद "
+    }, {
+      "language" : "en",
+      "string" : "What is the nick name of Baghdad?",
+      "keywords" : "Baghdad ,  nickname"
+    }, {
+      "language" : "it",
+      "string" : "che cosa è il tacca nome di Baghdad? ",
+      "keywords" : "Baghdad "
+    }, {
+      "language" : "fa",
+      "string" : "  بغداد؟  از  نام  نیک  این  است  چی",
+      "keywords" : "  بغداد"
+    }, {
+      "language" : "fr",
+      "string" : "quelle est la entaille prénom de Bagdad? ",
+      "keywords" : "Bagdad "
+    }, {
+      "language" : "ro",
+      "string" : "ce este  nick Nume de Bagdad? ",
+      "keywords" : "Bagdad "
+    }, {
+      "language" : "es",
+      "string" : "qué es el mella nombre de ¿Bagdad? ",
+      "keywords" : "Bagdad "
+    }, {
+      "language" : "nl",
+      "string" : "wat is de Nick naam van Bagdad? ",
+      "keywords" : "Bagdad "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?nm WHERE { dbr:Baghdad foaf:nick ?nm }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "'The City of Peace'"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "143",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was ist die Vorwahl von Berlin?",
+      "keywords" : "Berlin,  Vorwahl"
+    }, {
+      "language" : "ru",
+      "string" : "Какие является  площадь код из Берлин? ",
+      "keywords" : "Берлин ,   площадь код "
+    }, {
+      "language" : "pt",
+      "string" : "o que é a área código do Berlim? ",
+      "keywords" : "Berlim ,   área código "
+    }, {
+      "language" : "en",
+      "string" : "What is the area code of Berlin?",
+      "keywords" : "Berlin,  area code"
+    }, {
+      "language" : "hi_IN",
+      "string" : "बर्लिन का क्षेत्र कोड क्या है?",
+      "keywords" : "बर्लिन,  क्षेत्र कोड"
+    }, {
+      "language" : "fa",
+      "string" : "  برلین  از  کد  حوزه  این  است  چی",
+      "keywords" : "  برلین,     کد  حوزه"
+    }, {
+      "language" : "it",
+      "string" : "Qual è il prefisso di Berlino?",
+      "keywords" : "prefisso,  Berlino"
+    }, {
+      "language" : "fr",
+      "string" : "Quel est l'indicatif téléphonique de Berlin?",
+      "keywords" : "indicatif téléphonique,  Berlin"
+    }, {
+      "language" : "ro",
+      "string" : "Ce este  zonă cod de Berlin? ",
+      "keywords" : "Berlin ,   zonă cod "
+    }, {
+      "language" : "es",
+      "string" : "¿Cuál es el prefijo de Berlin?",
+      "keywords" : "prefijo,  Berlin"
+    }, {
+      "language" : "nl",
+      "string" : "Wat is het kengetal van Berlijn?",
+      "keywords" : "kengetal,  Berlijn"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Berlin dbo:areaCode ?string }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "030"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "134",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : false,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was ist Batmans richtiger Name?",
+      "keywords" : "Batman,  richtiger Name"
+    }, {
+      "language" : "ru",
+      "string" : "Какие является Бэтмена реальный имя? ",
+      "keywords" : "реальный имя ,   Бэтмен "
+    }, {
+      "language" : "pt",
+      "string" : "o que é Batman real nome? ",
+      "keywords" : "real nome ,   homem Morcego "
+    }, {
+      "language" : "en",
+      "string" : "What is Batman's real name?",
+      "keywords" : "real name,  Batman"
+    }, {
+      "language" : "hi_IN",
+      "string" : "बैटमैन का असली नाम क्या है?",
+      "keywords" : "बैटमैन,  असली नाम"
+    }, {
+      "language" : "pt_BR",
+      "string" : "Qual é o nome verdadeiro do Batman?",
+      "keywords" : "nome real,  Batman"
+    }, {
+      "language" : "fa",
+      "string" : "نام واقعی بتمن چیست؟",
+      "keywords" : "نام واقعی، بتمن"
+    }, {
+      "language" : "it",
+      "string" : "Qual è il vero nome di Batman?",
+      "keywords" : "Batman,  vero nome"
+    }, {
+      "language" : "fr",
+      "string" : "Quel est le vrai nom de Batman?",
+      "keywords" : "vrai nom,  Batman"
+    }, {
+      "language" : "ro",
+      "string" : "Care este numele real al lui Batman?",
+      "keywords" : "nume real,  Batman"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuál es el verdadero nombre de Batman?",
+      "keywords" : "verdadero nombre Batman"
+    }, {
+      "language" : "nl",
+      "string" : "Wat is de echte naam van Batman?",
+      "keywords" : "Batman,  echte naam"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?label WHERE { <http://dbpedia.org/resource/Batman> <http://xmlns.com/foaf/0.1/name> ?label FILTER ( str(?label) != \"Batman\" ) }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "Bruce Wayne"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "151",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Gib mir alle B-Seiten der Ramones.",
+      "keywords" : "Ramones,  B-Seiten"
+    }, {
+      "language" : "ru",
+      "string" : "Идти Главная Анна ",
+      "keywords" : "Ramones ,   B-сайда "
+    }, {
+      "language" : "pt",
+      "string" : "Ir Casa Ann ",
+      "keywords" : "Ramones ,   Lados B "
+    }, {
+      "language" : "hi_IN",
+      "string" : "चले जाओ होम ऐन ",
+      "keywords" : "रमोंस ,   बी पक्षों "
+    }, {
+      "language" : "en",
+      "string" : "Give me all B-sides of the Ramones.",
+      "keywords" : "Ramones,  B-sides"
+    }, {
+      "language" : "fa",
+      "string" : "  ان  خانه  برو",
+      "keywords" : "  Ramones,     طرفهای B"
+    }, {
+      "language" : "it",
+      "string" : "Dammi tutti i lati B dei Ramones.",
+      "keywords" : "Ramones,  lato B"
+    }, {
+      "language" : "fr",
+      "string" : "Donnes-moi tous les faces B des Ramones.",
+      "keywords" : "faces B,  Ramones"
+    }, {
+      "language" : "ro",
+      "string" : "Merge Acasă Ann ",
+      "keywords" : "Ramones ,   B-side "
+    }, {
+      "language" : "es",
+      "string" : "Dame todas las caras B de los Ramones.",
+      "keywords" : "Ramones,  cara B"
+    }, {
+      "language" : "nl",
+      "string" : "Geef alle B-kantjes van singles van de Ramones.",
+      "keywords" : "B-kant,  single,  de Ramones"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?string WHERE { ?x dbo:musicalArtist res:Ramones ; dbo:bSide ?string }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"No-One Could Ever Love You More\" (Norway)"
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"Babysitter\""
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "Censorshit"
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"I Don't Care\""
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"Go Home Ann\" (12\" only)"
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"Gee Girl\""
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"Miss Joan And Mr. Sam\""
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"Do You Wanna Dance?\""
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"California Sun\" / \"I Dont Wanna Walk Around With You\" (live)"
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"Daytime Dilemma (Dangers of Love)\""
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "\"Saturday Night Out\""
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "133",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wie heißen die Teenage Mutant Ninja Turtles?",
+      "keywords" : "Teenage Mutant Ninja Turtles,  Namen"
+    }, {
+      "language" : "ru",
+      "string" : "Какие находятся  имена из  Подростковая мутант Ниндзя Черепахи? ",
+      "keywords" : "имена ,   Подростковая мутант Ниндзя Черепахи "
+    }, {
+      "language" : "pt",
+      "string" : "o que estamos a nomes do a Adolescência Mutante Ninja Tartarugas ",
+      "keywords" : "nomes ,   Adolescência Mutante Ninja Tartarugas "
+    }, {
+      "language" : "hi_IN",
+      "string" : " किशोर उत्परिवर्ती निंजा कछुए के नाम क्या हैं?",
+      "keywords" : "नाम ,   किशोर का उत्परिवर्ती निंजा कछुए "
+    }, {
+      "language" : "en",
+      "string" : "What are the names of the Teenage Mutant Ninja Turtles?",
+      "keywords" : "names,  Teenage Mutant Ninja Turtles"
+    }, {
+      "language" : "fa",
+      "string" : "نام لاک پشت های نینجا چیست؟",
+      "keywords" : "نام، لاک پشت های نینجا"
+    }, {
+      "language" : "it",
+      "string" : "Quali sono i nomi delle Tartarughe Ninja?",
+      "keywords" : "nomi,  Tartarughe Ninja"
+    }, {
+      "language" : "fr",
+      "string" : "Quels sont les noms des Teenage Mutant Ninja Turtles?",
+      "keywords" : "noms,  Teenage Mutant Ninja Turtles"
+    }, {
+      "language" : "ro",
+      "string" : "Care sunt numele Țestoaselor Ninja?",
+      "keywords" : "fume,  Țestoase Ninja"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuáles son los nombres de las Tortugas Ninja Mutantes Adolescentes?",
+      "keywords" : "nombres,  Tortugas Ninja Mutantes Adolescentes"
+    }, {
+      "language" : "nl",
+      "string" : "Wat zijn de namen van de Teenage Mutant Ninja Turtles?",
+      "keywords" : "Teenage Mutant Ninja Turtles,  namen"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?s WHERE { <http://dbpedia.org/resource/Teenage_Mutant_Ninja_Turtles> <http://dbpedia.org/property/members> ?x . ?x foaf:givenName ?s }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "Leonardo"
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "Raphael"
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "Donatello"
+          }
+        }, {
+          "string" : {
+            "type" : "literal",
+            "value" : "Michelangelo"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "60",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wer ist der Gouverneur von Texas? ",
+      "keywords" : "Gouverneur ,   Texas "
+    }, {
+      "language" : "ru",
+      "string" : "Кто является  губернатор из Техас? ",
+      "keywords" : "губернатор ,   Техас "
+    }, {
+      "language" : "pt",
+      "string" : "Quem é a governador do Texas? ",
+      "keywords" : "governador ,   Texas "
+    }, {
+      "language" : "hi_IN",
+      "string" : "कौन है  राज्यपाल का टेक्सास? ",
+      "keywords" : "राज्यपाल ,   टेक्सास "
+    }, {
+      "language" : "en",
+      "string" : "Who is the governor of Texas?",
+      "keywords" : "governor,  Texas"
+    }, {
+      "language" : "it",
+      "string" : "Chi è il governatore di Texas? ",
+      "keywords" : "governatore ,   Texas "
+    }, {
+      "language" : "fa",
+      "string" : "  تگزاس  از  فرماندار  این  است  که",
+      "keywords" : "  فرماندار,     تگزاس"
+    }, {
+      "language" : "fr",
+      "string" : "Qui est la gouverneur de Texas? ",
+      "keywords" : "gouverneur ,   Texas "
+    }, {
+      "language" : "ro",
+      "string" : "Care este  guvernator de Texas? ",
+      "keywords" : "guvernator ,   Texas "
+    }, {
+      "language" : "es",
+      "string" : "Quien es el gobernador de ¿Texas? ",
+      "keywords" : "gobernador ,   Texas "
+    }, {
+      "language" : "nl",
+      "string" : "Wie is de gouverneur van Texas? ",
+      "keywords" : "gouverneur ,   Texas "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?string WHERE { res:Texas dbp:governor ?string }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "Greg Abbott"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "189",
+    "answertype" : "string",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "In welchem Studio haben die Beatles ihr erstes Album aufgenommen?",
+      "keywords" : "Beatles,  erstes Album,  aufgenommen,  Studio"
+    }, {
+      "language" : "ru",
+      "string" : "В который студия сделал  Битлз запись их первый альбом? ",
+      "keywords" : "Битлз ,   запись ,   первый альбом ,   студия "
+    }, {
+      "language" : "pt",
+      "string" : "Dentro qual estúdio fez a Beatles registro deles primeiro álbum? ",
+      "keywords" : "Beatles ,   registro ,   primeiro álbum ,   estúdio "
+    }, {
+      "language" : "hi_IN",
+      "string" : "में कौन कौन से स्टूडियो किया  बीटल्स अभिलेख जो अपने प्रथम एल्बम? ",
+      "keywords" : "बीटल्स ,   अभिलेख ,   प्रथम एल्बम ,   स्टूडियो "
+    }, {
+      "language" : "en",
+      "string" : "In which studio did the Beatles record their first album?",
+      "keywords" : "Beatles,  record,  first album,  studio"
+    }, {
+      "language" : "fa",
+      "string" : "بیتلز اولین آلبوم خود را در کدام استودیو ضبط کردند؟",
+      "keywords" : "بیتلز، اولین آلبوم، استودیو، ضبط"
+    }, {
+      "language" : "it",
+      "string" : "In quali studio i Beatles hanno registrato il loro primo album?",
+      "keywords" : "Beatles,  registrare,  primo album,  studio"
+    }, {
+      "language" : "fr",
+      "string" : "Dans quel studio a été enregistré le premier album des Beatles?",
+      "keywords" : "Beatles,  enregistré,  premier album,  studio"
+    }, {
+      "language" : "ro",
+      "string" : "În ce studio au înregistrat Beatles primul lor albunm?",
+      "keywords" : "Beatles,  înregistrat,  primul album,  studio"
+    }, {
+      "language" : "es",
+      "string" : "¿En qué estudio grabaron los Beatles su primer album?",
+      "keywords" : "Beatles,  primer album,  estudio"
+    }, {
+      "language" : "nl",
+      "string" : "In welke studio hadden de Beatles hun eerste album opgenomen?",
+      "keywords" : "Beatles,  eerste album,  opgenomen,  studio"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX db: <http://dbpedia.org/> SELECT ?studio WHERE { ?album dbo:artist dbr:The_Beatles ; rdf:type dbo:Album ; dbo:releaseDate ?date ; dbp:studio ?studio } ORDER BY ASC(?date) LIMIT 1"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "string" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "string" : {
+            "type" : "literal",
+            "value" : "EMI Studios, London"
+          }
+        } ]
+      }
+    } ]
+  }
+}

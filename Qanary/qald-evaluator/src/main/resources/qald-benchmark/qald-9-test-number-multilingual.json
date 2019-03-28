@@ -1,0 +1,1216 @@
+﻿{{
+    "id" : "73",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviele Goldmedaillen hat Michael Phelps während der Olympischen Spiele 2008 gewonnen?",
+      "keywords" : "Michael Phelps,  Goldmedaillen,  Olympische Spiele 2008"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие золото медали сделал Майкл Фелпс выиграть в  2008 Олимпийские игры? ",
+      "keywords" : "Майкл Фелпс ,   золото медали ,   2008 Олимпийские игры "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos ouro medalhas fez Michael Phelps ganhar a a 2008 Olimpíadas? ",
+      "keywords" : "Michael Phelps ,   ouro medalhas ,   2008 Olimpíadas "
+    }, {
+      "language" : "hi_IN",
+      "string" : "किस तरह अनेक सोना पदक किया माइकल फेल्प्स जीत पर  2008 ओलंपिक? ",
+      "keywords" : "माइकल फेल्प्स ,   सोना पदक ,   2008 ओलंपिक "
+    }, {
+      "language" : "en",
+      "string" : "How many gold medals did Michael Phelps win at the 2008 Olympics?",
+      "keywords" : "Michael Phelps,  gold medals,  2008 Olpympics"
+    }, {
+      "language" : "fa",
+      "string" : "مایکل فلپس چه تعداد مدال طلا در المپیک 2008 برد؟",
+      "keywords" : "مایکل فلپس، مدال طلا، المپیک 2008"
+    }, {
+      "language" : "it",
+      "string" : "Quante medaglie d'oro ha vinto Michael Phelps alle Olimpiadi del 2008?",
+      "keywords" : "Michael Phelps,  medaglie d'oro,  Olimpiadi del 2008"
+    }, {
+      "language" : "fr",
+      "string" : "Combien de médailles d'or Michael Phelps a-t-il gagné aux jeux olympiques de 2008?",
+      "keywords" : "Michael Phelps,  médailles d'or,  jeux olympiques,  2008"
+    }, {
+      "language" : "ro",
+      "string" : "Câte medalii de aur a câștigat Michael Phelps la olimpiada din 2008?",
+      "keywords" : "Michael Phelps,  medalii de aur,  olimpiada din 2008"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántas medallas de oro ganó Michael Phelps durante los juegos olímpicos de 2008?",
+      "keywords" : "Michael Phelps,  medallas de oro,  juegos olímpicos,  2008"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel gouden medailles heeft Michael Phelps op de Olympische Spelen van 2008 gewonnen?",
+      "keywords" : "Michael Phelps,  gouden medailles,  gewonnen,  Olympische Spelen 2008"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT Count(?sub) as ?c WHERE { ?sub dbo:goldMedalist dbr:Michael_Phelps . filter (contains (str(?sub), \"2008\") && contains (str(?sub), \"Olympics\")) }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "8"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "56",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviele Plätze hat das Heimstadium des FC Porto?",
+      "keywords" : "FC Porto,  Heimstadium,  wieviele,  Plätze"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие места делает  Главная стадион из FC Порту иметь? ",
+      "keywords" : "Как многие места ,   стадион из FC Порту "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos assentos faz a casa estádio do FC Porto ter? ",
+      "keywords" : "Como muitos assentos ,   estádio do FC Porto "
+    }, {
+      "language" : "en",
+      "string" : "How many seats does the home stadium of FC Porto have?",
+      "keywords" : "How many seats,  stadium of FC Porto"
+    }, {
+      "language" : "hi_IN",
+      "string" : "एफसी पोर्टो के घर स्टेडियम में कितनी सीटें हैं?",
+      "keywords" : "एफसी पोर,  सीटें,  स्टेडियम"
+    }, {
+      "language" : "pt_BR",
+      "string" : "Quantas cadeiras tem o estádio do Futebol Clube do Porto",
+      "keywords" : "cadeiras,  estádio,  Futebol Clube do Porto"
+    }, {
+      "language" : "fa",
+      "string" : "ورزشگاه باشگاه پورتو چند صندلی دارد؟",
+      "keywords" : "ورزشگاه باشگاه پورتو، چند صندلی"
+    }, {
+      "language" : "it",
+      "string" : "Quanti posti a sedere ha lo stadio del FC Porto",
+      "keywords" : "posti a sedere,  stadio del FC Porto"
+    }, {
+      "language" : "fr",
+      "string" : "Quel est le nombre de sièges dans le stade de FC Porto?",
+      "keywords" : "nombre de sièges,  stade,  FC Porto"
+    }, {
+      "language" : "ro",
+      "string" : "Câte locuri are stadionul lui FC Porto?",
+      "keywords" : "Câte locuri,  stadionul lui FC Porto"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántos asientos tiene el estadio del FC Porto?",
+      "keywords" : "asientos,  estadio FC Porto"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel plaatsen heeft het stadion van FC Porto?",
+      "keywords" : "plaatsen,  stadion,  FC Porto"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX db: <http://dbpedia.org/> SELECT ?capacity WHERE { { dbr:FC_Porto dbo:ground ?ground . ?ground dbo:capacity ?capacity } UNION { dbr:FC_Porto dbo:ground ?ground . ?ground dbp:capacity ?capacity } }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "52000"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "22",
+    "answertype" : "number",
+    "aggregation" : true,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviele Enkel hatte Jacques Cousteau?",
+      "keywords" : "wieviele,  Enkel,  Jacques Cousteau"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие внуками детей сделал Жак Кусто иметь? ",
+      "keywords" : "как многие ,   внуками детей ,   Жак Кусто "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos netos fez Jacques Cousteau ter? ",
+      "keywords" : "como muitos ,   netos ,   Jacques Cousteau "
+    }, {
+      "language" : "hi_IN",
+      "string" : "जैक्स कूस्टौ के कितने पोते थे?",
+      "keywords" : "कितने,  भव्य बच्चों,  जैक्स कौस्टौ"
+    }, {
+      "language" : "en",
+      "string" : "How many grand-children did Jacques Cousteau have?",
+      "keywords" : "how many,  grand-children,  Jacques Cousteau"
+    }, {
+      "language" : "fa",
+      "string" : "ژاک کوستو چند نوه دارد؟",
+      "keywords" : "ژاک کوستو، نوه، چند"
+    }, {
+      "language" : "it",
+      "string" : "Quanti nipoti aveva Jacques Cousteau?",
+      "keywords" : "quanti,  nipoti,  Jacques Cousteau"
+    }, {
+      "language" : "fr",
+      "string" : "Donne-moi le nombre de petit-fils de Jacques Cousteau.",
+      "keywords" : "nombre de petit-fils,  Jacques Cousteau"
+    }, {
+      "language" : "ro",
+      "string" : "Câți nepoți a avut Jacques Cousteau?",
+      "keywords" : "cați,  nepoți,  Jacques Cousteau"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántos nietos tuvo Jacques Cousteau?",
+      "keywords" : "numero nietos,  Jacques Cousteau"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel kleinkinderen had Jacques Cousteau?",
+      "keywords" : "Jacques Cousteau,  kleinkinderen"
+    } ],
+    "query" : {
+      "sparql" : "SELECT COUNT(DISTINCT ?y) WHERE { <http://dbpedia.org/resource/Jacques_Cousteau> <http://dbpedia.org/ontology/child> ?x . ?x <http://dbpedia.org/ontology/child> ?y . }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "4"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "140",
+    "answertype" : "number",
+    "aggregation" : true,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviele Wissenschaftler haben einen Abschluss von einer Ivy-League-Universität?",
+      "keywords" : "Wissenschaftler,  Abschluss von,  Ivy-League-Universität"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие ученые закончил из  плющ лига Университет? ",
+      "keywords" : "ученые ,   закончил ,   плющ лига Университет "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos cientistas graduado a partir de a Hera Liga universidade? ",
+      "keywords" : "cientistas ,   graduado ,   Hera Liga universidade "
+    }, {
+      "language" : "hi_IN",
+      "string" : "किस तरह अनेक वैज्ञानिकों स्नातक की उपाधि प्राप्त से एक आइवी लता संघ विश्वविद्यालय? ",
+      "keywords" : "वैज्ञानिकों ,   स्नातक की उपाधि प्राप्त ,   आइवी लता संघ विश्वविद्यालय "
+    }, {
+      "language" : "en",
+      "string" : "How many scientists graduated from an Ivy League university?",
+      "keywords" : "scientists,  graduated,  Ivy League university"
+    }, {
+      "language" : "fa",
+      "string" : "چند دانشمند از یک دانشگاه آیوی لیگ فارغ التحصیل شدند؟",
+      "keywords" : "دانشمند، دانشگاه آیوی لیگ، فارغ التحصیل"
+    }, {
+      "language" : "it",
+      "string" : "Quanti scienziati si sono laureati in un'Università dell'Ivy League?",
+      "keywords" : "scienziati,  laureati,  Università dell'Ivy League"
+    }, {
+      "language" : "fr",
+      "string" : "Combien de chercheurs ont étudié à des universités de l'Ivy League?",
+      "keywords" : "nombre de chercheurs,  étudié,  universités de l'Ivy League"
+    }, {
+      "language" : "ro",
+      "string" : "Câți oameni de știință au absolvit la universitatea Ivy League?",
+      "keywords" : "oameni de știință,  absolvit,  universitatea Ivy League"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántos científicos se han graduado en un Universidad de la Ivy League?",
+      "keywords" : "científicos,  graduado,  Universidad Ivy League"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel wetenschappers hebben afgestudeerd aan een Ivy League-universiteit?",
+      "keywords" : "wetenschappers,  afgestudeerd,  Ivy League-universiteit"
+    } ],
+    "query" : {
+      "sparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Scientist> ; <http://dbpedia.org/ontology/almaMater> ?university . ?university <http://dbpedia.org/ontology/affiliation> <http://dbpedia.org/resource/Ivy_League> ; a <http://dbpedia.org/ontology/University> }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "403"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "136",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviele Monde hat der Mars?",
+      "keywords" : "wieviele,  Monde,  Mars"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие спутники делает Марс иметь? ",
+      "keywords" : "как многие ,   спутники ,   Марс "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos luas faz Marte ter? ",
+      "keywords" : "como muitos ,   luas ,   Marte "
+    }, {
+      "language" : "hi_IN",
+      "string" : "मंगल ग्रह के कितने चंद्रमा है?",
+      "keywords" : "कितने,  चांद,  मंगल ग्रह"
+    }, {
+      "language" : "en",
+      "string" : "How many moons does Mars have?",
+      "keywords" : "how many,  moons,  Mars"
+    }, {
+      "language" : "fa",
+      "string" : "مریخ چند ماه دارد؟",
+      "keywords" : "مریخ، ماه"
+    }, {
+      "language" : "it",
+      "string" : "Quanti satelliti ha Marte?",
+      "keywords" : "quanti,  satelliti,  Marte"
+    }, {
+      "language" : "fr",
+      "string" : "Combien de lunes a Mars?",
+      "keywords" : "nombre de lunes,  Mars"
+    }, {
+      "language" : "ro",
+      "string" : "Câte luni are Marte?",
+      "keywords" : "câte,  luni,  Marte"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántas lunas tiene Marte?",
+      "keywords" : "Numero lunas,  Marte"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel manen heeft Mars?",
+      "keywords" : "antaal,  manen,  Mars"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Mars> <http://dbpedia.org/property/satellites> ?n }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "2"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "125",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wie viele Jahre wurde das Ford Model T hergestellt?",
+      "keywords" : "Jahre,  Ford Model T,  hergestellt"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие лет был  брод Модель T изготовлен? ",
+      "keywords" : "лет ,   брод Модель T ,   изготовлен "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos anos estava a Ford Modelo T fabricado? ",
+      "keywords" : "anos ,   Ford Modelo T ,   fabricado "
+    }, {
+      "language" : "hi_IN",
+      "string" : "किस तरह अनेक वर्षों था  पायाब आदर्श टी निर्मित? ",
+      "keywords" : "वर्षों ,   पायाब आदर्श टी ,   निर्मित "
+    }, {
+      "language" : "en",
+      "string" : "How many years was the Ford Model T manufactured?",
+      "keywords" : "years,  Ford Model T,  manufactured"
+    }, {
+      "language" : "fa",
+      "string" : "چند سال مدل فورد مدل T ساخته شد؟",
+      "keywords" : "  سال ها,     T  مدل  فورد,     ساخته"
+    }, {
+      "language" : "it",
+      "string" : "Per quanti anni fu prodotta la Ford T?",
+      "keywords" : "anni,  Ford T,  prodotta"
+    }, {
+      "language" : "fr",
+      "string" : "Pendant combien d'années la Ford T a-t-elle été fabriquée?",
+      "keywords" : "années,  Ford T,  frabriquée"
+    }, {
+      "language" : "ro",
+      "string" : "Câte ani a fost fabricat modelul Ford T?",
+      "keywords" : "ani ,   Vad Model T ,   fabricat "
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántos años se fabricó el Ford Modelo T?",
+      "keywords" : "años ,   Vado Modelo T ,   fabricado "
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel jaar is de Ford Model T gefabriceerd?",
+      "keywords" : "jaar ,   doorwaadbare plaats Model T ,   geproduceerd "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX res: <http://dbpedia.org/resource/> SELECT ?years WHERE { res:Ford_Model_T dbo:productionEndYear ?end ; dbo:productionStartYear ?start. BIND ( ( year(xsd:date(?end)) - year(xsd:date(?start)) ) AS ?years) }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "19"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "111",
+    "answertype" : "number",
+    "aggregation" : true,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wie viele Auszeichnungen hat Bertrand Russell? ",
+      "keywords" : "Bertrand Russell ,  Auszeichnungen "
+    }, {
+      "language" : "ru",
+      "string" : "как многие награды имеет Bertrand Рассел? ",
+      "keywords" : "Bertrand Рассел "
+    }, {
+      "language" : "pt",
+      "string" : "como muitos prêmios tem Bertrand Russell? ",
+      "keywords" : "Bertrand Russell "
+    }, {
+      "language" : "hi_IN",
+      "string" : "बर्ट्रैंड रसेल को कौन से पुरस्कार दिए गए थे?",
+      "keywords" : "बर्ट्रेंड रसेल,  पुरस्कार"
+    }, {
+      "language" : "en",
+      "string" : "How many awards has Bertrand Russell?",
+      "keywords" : "Bertrand Russell,  awards"
+    }, {
+      "language" : "it",
+      "string" : "Come molti premi ha Bertrand Russell? ",
+      "keywords" : "Bertrand Russell "
+    }, {
+      "language" : "fa",
+      "string" : "روطچ  یرایسب  زیاوج  یاراد  دنارترب  ؟لسار  ",
+      "keywords" : "دنارترب  لسار  "
+    }, {
+      "language" : "fr",
+      "string" : "Comment beaucoup prix a Bertrand Russell? ",
+      "keywords" : "Bertrand Russell, prix"
+    }, {
+      "language" : "ro",
+      "string" : "Cum mulți premii are Bertrand Russell? ",
+      "keywords" : "Bertrand Russell "
+    }, {
+      "language" : "es",
+      "string" : "cómo muchos premios tiene Bertrand Russell? ",
+      "keywords" : "Bertrand Russell "
+    }, {
+      "language" : "nl",
+      "string" : "hoe veel awards heeft Bertrand Russell? ",
+      "keywords" : "Bertrand Russell "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT (COUNT(?Awards) AS ?Counter) WHERE { dbr:Bertrand_Russell dbp:awards ?Awards }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "5"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "10",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviele Studenten hat die Freie Universität in Amsterdam?",
+      "keywords" : "Freie Universität,  Amsterdam,  Studenten"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие студенты делает  Свободно Университет в Амстердам иметь? ",
+      "keywords" : "Свободно Университет ,   Амстердам ,   студенты "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos alunos faz a Livre Universidade dentro Amsterdã ter? ",
+      "keywords" : "Livre Universidade ,   Amsterdã ,   alunos "
+    }, {
+      "language" : "hi_IN",
+      "string" : "एम्स्टर्डम में फ्री यूनिवर्सिटी के कितने छात्र हैं?",
+      "keywords" : "मुक्त विश्वविद्यालय ,   एम्स्टर्डम ,   छात्रों "
+    }, {
+      "language" : "en",
+      "string" : "How many students does the Free University of Amsterdam have?",
+      "keywords" : "Free University,  Amsterdam,  students"
+    }, {
+      "language" : "fa",
+      "string" : "دانشگاه آزاد در آمستردام چه تعداد دانشجو دارد؟",
+      "keywords" : "دانشگاه آزاد، آمستردام، دانشجو"
+    }, {
+      "language" : "it",
+      "string" : "Quanti studenti ci sono nella Libera Università di Amsterdam?",
+      "keywords" : "Libera Università,  Amsterdam,  studenti"
+    }, {
+      "language" : "fr",
+      "string" : "Combien d'étudiants a l'université libre d'Amsterdam?",
+      "keywords" : "Université libre,  Amsterdam,  étudiants"
+    }, {
+      "language" : "ro",
+      "string" : "Câți studenți are Universitatea Liberă din Amsterdam?",
+      "keywords" : "Universitatea Liberă,  Amsterdam,  studenți"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántos estudiantes tiene la Universidad Libre de Amsterdam?",
+      "keywords" : "Universidad Libre,  Amsterdam,  estudiantes"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel studenten heeft de Vrije Universiteit in Amsterdam?",
+      "keywords" : "Vrije Universiteit,  Amsterdam,  studenten"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?num WHERE { dbr:Vrije_Universiteit_Amsterdam <http://dbpedia.org/ontology/numberOfStudents> ?num }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "23656"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "1",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was sind die Einnahmen von IBM? ",
+      "keywords" : "Einnahmen ,  ibm "
+    }, {
+      "language" : "ru",
+      "string" : "Какие является  доход из IBM? ",
+      "keywords" : "доход ,  IBM "
+    }, {
+      "language" : "pt",
+      "string" : "o que é a receita do IBM? ",
+      "keywords" : "receita ,  ibm "
+    }, {
+      "language" : "hi_IN",
+      "string" : "क्या है  राजस्व का आईबीएम? ",
+      "keywords" : "राजस्व ,  आईबीएम "
+    }, {
+      "language" : "en",
+      "string" : "What is the revenue of IBM?",
+      "keywords" : "revenue,  ibm"
+    }, {
+      "language" : "it",
+      "string" : "Che cosa è il reddito di IBM? ",
+      "keywords" : "reddito ,  ibm "
+    }, {
+      "language" : "fa",
+      "string" : "یچ  تسا  نیا  دمآرد  زا  ؟ما یب یآ  ",
+      "keywords" : "دمآرد  ,  ما یب یآ  "
+    }, {
+      "language" : "fr",
+      "string" : "Quelle est la revenu de IBM? ",
+      "keywords" : "revenu ,  ibm "
+    }, {
+      "language" : "ro",
+      "string" : "Ce este  venituri de IBM? ",
+      "keywords" : "venituri ,  ibm "
+    }, {
+      "language" : "es",
+      "string" : "Qué es el ingresos de IBM? ",
+      "keywords" : "ingresos ,  ibm "
+    }, {
+      "language" : "nl",
+      "string" : "Wat is de omzet van IBM? ",
+      "keywords" : "omzet ,  ibm "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX onto: <http://dbpedia.org/ontology/> SELECT ?number WHERE { res:IBM onto:revenue ?number }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "8.1741E10"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "178",
+    "answertype" : "number",
+    "aggregation" : true,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviele James-Bond-Filme gibt es?",
+      "keywords" : "wieviele,  Jamee-Bond-Filme"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие Джеймс облигация кино находятся там? ",
+      "keywords" : "как многие ,   Джеймс облигация кино "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos James Ligação filmes estamos há? ",
+      "keywords" : "como muitos ,   James Ligação filmes "
+    }, {
+      "language" : "hi_IN",
+      "string" : "कितनी जेम्स बॉन्ड फिल्में बनाई गई हैं?",
+      "keywords" : "कितनी,  जेम्स बंधन चलचित्र"
+    }, {
+      "language" : "en",
+      "string" : "How many James Bond movies do exist?",
+      "keywords" : "how many,  James Bond movies"
+    }, {
+      "language" : "fa",
+      "string" : "چه تعداد فیلم جیمز باند موجود است؟",
+      "keywords" : "فیلم جیمز باند"
+    }, {
+      "language" : "it",
+      "string" : "Quanti film di James Bond ci sono stati?",
+      "keywords" : "quanti,  film di James Bond"
+    }, {
+      "language" : "fr",
+      "string" : "Combien de films de James Bond existe-t-il?",
+      "keywords" : "nomber de films,  James Bond"
+    }, {
+      "language" : "ro",
+      "string" : "Câte filme Jamesc Bond există?",
+      "keywords" : "câte,  filme James Bond"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántas películas de James Bond existen?",
+      "keywords" : "número de películas,  James Bond"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel James Bond films zijn er?",
+      "keywords" : "hoeveel,  James Bond films"
+    } ],
+    "query" : {
+      "sparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri dct:subject <http://dbpedia.org/resource/Category:James_Bond_films> }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "34"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "162",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wie tief ist der Chiemsee?",
+      "keywords" : "Chiemsee,  Tiefe"
+    }, {
+      "language" : "ru",
+      "string" : "Как глубоко является Озеро Кимзе? ",
+      "keywords" : "Озеро Кимзе ,   глубина "
+    }, {
+      "language" : "pt",
+      "string" : "Como profundo é Lago Chiemsee? ",
+      "keywords" : "Lago Chiemsee ,   profundidade "
+    }, {
+      "language" : "hi_IN",
+      "string" : "किस तरह गहरा है झील Chiemsee? ",
+      "keywords" : "झील Chiemsee ,   गहराई "
+    }, {
+      "language" : "en",
+      "string" : "How deep is Lake Chiemsee?",
+      "keywords" : "Lake Chiemsee,  depth"
+    }, {
+      "language" : "fa",
+      "string" : "دریاچه چیمسی چقدر عمیق است؟",
+      "keywords" : "دریاچه چیمسی، عمیق"
+    }, {
+      "language" : "it",
+      "string" : "Quanto è profondo il Chiemsee?",
+      "keywords" : "Chiemsee,  profondità"
+    }, {
+      "language" : "fr",
+      "string" : "Quelle est la profondeur du Chiemsee?",
+      "keywords" : "profondeur,  Chiemsee"
+    }, {
+      "language" : "ro",
+      "string" : "Cât de adânc este lacul Chiemsee?",
+      "keywords" : "lacul Chiemsee,  adânc"
+    }, {
+      "language" : "es",
+      "string" : "Cómo de hondo es el Chiemsee?",
+      "keywords" : "Chiemsee,  profundidad"
+    }, {
+      "language" : "nl",
+      "string" : "Hoe diep is de Chiemsee?",
+      "keywords" : "Chiemsee,  diepte"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Chiemsee> <http://dbpedia.org/ontology/maximumDepth> ?n }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "72.7"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "88",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was ist die Wellenlänge von Indigo?",
+      "keywords" : "Wellenlänge,  Indigo"
+    }, {
+      "language" : "ru",
+      "string" : "Какие является  длина волны из индиго? ",
+      "keywords" : "длина волны ,   индиго "
+    }, {
+      "language" : "pt",
+      "string" : "o que é a Comprimento de onda do índigo? ",
+      "keywords" : "Comprimento de onda ,   índigo "
+    }, {
+      "language" : "hi_IN",
+      "string" : "इंडिगो रंग की तरंगदैर्ध्य क्या है?",
+      "keywords" : "तरंग दैर्ध्य ,   नील "
+    }, {
+      "language" : "en",
+      "string" : "What is the wavelength of Indigo?",
+      "keywords" : "wavelength,  indigo"
+    }, {
+      "language" : "fa",
+      "string" : "طول موج Indigo چیست؟",
+      "keywords" : "جوم لوط  ,   یجنران  "
+    }, {
+      "language" : "it",
+      "string" : "Qual è la lunghezza d'onda dell'indaco?",
+      "keywords" : "lunghezza d'onda,  indaco"
+    }, {
+      "language" : "fr",
+      "string" : "Quelle est la longueur d'onde de l'indigo?",
+      "keywords" : "longueur d'onde,  indigo"
+    }, {
+      "language" : "ro",
+      "string" : "Care este lungimea de undă a Indigo?",
+      "keywords" : "lungime de undă ,   indigo "
+    }, {
+      "language" : "es",
+      "string" : "¿Cuál es la longitud de onda de Indigo?",
+      "keywords" : "longitud de onda ,   índigo "
+    }, {
+      "language" : "nl",
+      "string" : "Wat is de golflengte van Indigo?",
+      "keywords" : "golflengte ,   indigo "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?n WHERE { dbr:Indigo dbo:wavelength ?n }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "4.5e-07"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "24",
+    "answertype" : "number",
+    "aggregation" : true,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviele Kaiser hatte China?",
+      "keywords" : "wieviele,  Kaiser,  China"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие императоры сделал Китай иметь? ",
+      "keywords" : "Как многие императоры ,   Китай "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos imperadores fez China ter? ",
+      "keywords" : "Como muitos imperadores ,   China "
+    }, {
+      "language" : "hi_IN",
+      "string" : "चीन के कितने सम्राट थे?",
+      "keywords" : "कितने सम्राट,  चीन"
+    }, {
+      "language" : "en",
+      "string" : "How many emperors did China have?",
+      "keywords" : "How many emperors,  China"
+    }, {
+      "language" : "fa",
+      "string" : "چین چند امپراتور داشته است؟",
+      "keywords" : "چین، امپراتور"
+    }, {
+      "language" : "it",
+      "string" : "Quanti imperatori ci sono stati in Cina?",
+      "keywords" : "quanti,  imperatori,  Cina"
+    }, {
+      "language" : "fr",
+      "string" : "Combien d'empereurs a eu la Chine?",
+      "keywords" : "nombre d'empereurs,  Chine"
+    }, {
+      "language" : "ro",
+      "string" : "Câți împărați a avut China?",
+      "keywords" : "câți împărați,  China"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántos emperadores tuvo China?",
+      "keywords" : "Numero,  emperadores China"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel keizers heeft China gehad?",
+      "keywords" : "antaal,  keizers,  China"
+    } ],
+    "query" : {
+      "sparql" : "SELECT COUNT(DISTINCT ?uri) WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/Emperor_of_China> . }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "245"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "15",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wie klein ist der kleinste aktive NBA-Spieler?",
+      "keywords" : "Größe,  kleinster NBA-Spieler"
+    }, {
+      "language" : "ru",
+      "string" : "Как короткая является  самый короткий активный NBA игрок? ",
+      "keywords" : "Как короткая ,   самый короткий активный игрок ,   NBA "
+    }, {
+      "language" : "pt",
+      "string" : "Como curto é a mais curto ativo NBA jogador? ",
+      "keywords" : "Como curto ,   mais curto ativo jogador ,   NBA "
+    }, {
+      "language" : "hi_IN",
+      "string" : "सबसे कम सक्रिय एनबीए प्लेयर कितना छोटा है?",
+      "keywords" : "कितना छोटा,  सबसे कम सक्रिय खिलाड़ी,  एनबीए"
+    }, {
+      "language" : "en",
+      "string" : "How short is the shortest active NBA player?",
+      "keywords" : "How short,  shortest active player,  NBA"
+    }, {
+      "language" : "fa",
+      "string" : "کوتاه ترین بازیکن فعال در ان.بی.ای چقدر کوتاه است؟",
+      "keywords" : "کوتاه ترین بازیکن، فعال، ان.بی.ای"
+    }, {
+      "language" : "it",
+      "string" : "Quanto è basso il giocatore attivo più basso dell'NBA?",
+      "keywords" : "statura,  giocatore attivo più basso,  NBA"
+    }, {
+      "language" : "fr",
+      "string" : "Quelle est la taille du plus petit joueur actif de la NBA?",
+      "keywords" : "taille,  plus petit joueur,  actif,  NBA"
+    }, {
+      "language" : "ro",
+      "string" : "Cât de scund este cel mai scund jucător activ din NBA?",
+      "keywords" : "cât de scund,  cel mai scund jucător activ,  NBA"
+    }, {
+      "language" : "es",
+      "string" : "¿Como de bajo es el jugador activo mas bajo de la NBA?",
+      "keywords" : "tamaño,  jugador mas bajo,  NBA?"
+    }, {
+      "language" : "nl",
+      "string" : "Hoe klein is de kleinste NBA speler?",
+      "keywords" : "grote,  kleinste NBA speler"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?n WHERE { ?x a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/National_Basketball_Association> ; <http://dbpedia.org/ontology/height> ?n FILTER NOT EXISTS { ?x <http://dbpedia.org/ontology/activeYearsEndYear> ?d } } ORDER BY ASC(?n) OFFSET 0 LIMIT 1"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "1.7526"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "114",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wie groß ist der Durchmesser der Erde?",
+      "keywords" : "Durchmesser,  Erde"
+    }, {
+      "language" : "ru",
+      "string" : "Как большой является  земной диаметр? ",
+      "keywords" : "большой ,   Земля ,   диаметр "
+    }, {
+      "language" : "pt",
+      "string" : "Como grande é a terra diâmetro? ",
+      "keywords" : "grande ,   terra ,   diâmetro "
+    }, {
+      "language" : "hi_IN",
+      "string" : "किस तरह बड़े है  पृथ्वी की व्यास? ",
+      "keywords" : "बड़े ,   पृथ्वी ,   व्यास "
+    }, {
+      "language" : "en",
+      "string" : "How big is the earth's diameter?",
+      "keywords" : "earth,  diameter"
+    }, {
+      "language" : "fa",
+      "string" : "قطر زمین چقدر بزرگ است؟",
+      "keywords" : "  بزرگ,     زمین,     قطر"
+    }, {
+      "language" : "it",
+      "string" : "Quanto è grande il diametro della Terra?",
+      "keywords" : "grande,  diametro,  Terra"
+    }, {
+      "language" : "fr",
+      "string" : "Quelle est la longueur du diamètre de la Terre?",
+      "keywords" : "longueur,  diamètre,  Terre"
+    }, {
+      "language" : "ro",
+      "string" : "Cât de mare este diametrul pământului?",
+      "keywords" : "mare ,   Pământ ,   diametru "
+    }, {
+      "language" : "es",
+      "string" : "¿Qué tan grande es el diámetro de la tierra?",
+      "keywords" : "grande ,   tierra ,   diámetro "
+    }, {
+      "language" : "nl",
+      "string" : "Hoe groot is de diameter van de aarde?",
+      "keywords" : "groot ,   aarde ,   diameter "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT (( xsd:double(?radius) * 2 ) AS ?diameter) WHERE { res:Earth dbo:meanRadius ?radius }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "1.2742e+07"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "20",
+    "answertype" : "number",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviel Kalorien hat ein Baguette?",
+      "keywords" : "Baguett,  Kalorien"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие калорий делает  багет иметь? ",
+      "keywords" : "калорий ,   багет "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos calorias faz uma baguete ter? ",
+      "keywords" : "calorias ,   baguete "
+    }, {
+      "language" : "hi_IN",
+      "string" : "बैगूएट की कितनी कैलोरी होती है?",
+      "keywords" : "कैलोरी,  बैगूएट"
+    }, {
+      "language" : "en",
+      "string" : "How many calories does a baguette have?",
+      "keywords" : "calories,  baguette"
+    }, {
+      "language" : "fa",
+      "string" : "یک باگت چقدر کالری دارد؟",
+      "keywords" : "باگت، کالری"
+    }, {
+      "language" : "it",
+      "string" : "Quante calorie ha una baguette?",
+      "keywords" : "calorie,  baguette"
+    }, {
+      "language" : "fr",
+      "string" : "Combien de calories a une baguette?",
+      "keywords" : "nombre de calories,  baguette"
+    }, {
+      "language" : "ro",
+      "string" : "Câte calorii are o baghetă?",
+      "keywords" : "calorii,  baghetă"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántas calorías tiene una baguette?",
+      "keywords" : "calorías,  baguette"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel calorieën heeft een baguette?",
+      "keywords" : "calorieën,  baguette"
+    } ],
+    "query" : {
+      "sparql" : "SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Baguette> <http://dbpedia.org/property/calories> ?n }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "263"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "115",
+    "answertype" : "number",
+    "aggregation" : true,
+    "onlydbo" : false,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wie viele Flüsse und Seen gibt es in South Carolina?",
+      "keywords" : "Flüsse,  Seen,  South Carolina"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие реки а также озера находятся в юг Каролина? ",
+      "keywords" : "реки ,   озера ,   юг Каролина "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos rios e lagos estamos dentro Sul Carolina? ",
+      "keywords" : "rios ,   lagos ,   Sul Carolina "
+    }, {
+      "language" : "hi_IN",
+      "string" : "किस तरह अनेक नदियों तथा झीलों कर रहे हैं में दक्षिण कैरोलिना? ",
+      "keywords" : "नदियों ,   झीलों ,   दक्षिण कैरोलिना "
+    }, {
+      "language" : "en",
+      "string" : "How many rivers and lakes are in South Carolina?",
+      "keywords" : "rivers,  lakes,  South Carolina"
+    }, {
+      "language" : "fa",
+      "string" : "چند رودخانه و دریاچه در کارولینای جنوبی وجود دارد؟",
+      "keywords" : "  رودخانه ها,     دریاچه ها,     کارولینا  جنوب"
+    }, {
+      "language" : "it",
+      "string" : "Quanti fiumi e laghi ci sono in Carolina del Sud?",
+      "keywords" : "fiumi,  laghi,  Carolina del Sud"
+    }, {
+      "language" : "fr",
+      "string" : "Combien de rivières et de lacs y a-t-il en Caroline du Sud?",
+      "keywords" : "rivières,  lacs,  Caroline du Sud"
+    }, {
+      "language" : "ro",
+      "string" : "Câte râuri și lacuri sunt în Carolina de Sud?",
+      "keywords" : "râuri ,   lacuri ,   Sud Carolina "
+    }, {
+      "language" : "es",
+      "string" : "¿Cuántos ríos y lagos hay en Carolina del Sur?",
+      "keywords" : "ríos ,   lagos ,   Sur Carolina "
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel rivieren en meren zijn er in South Carolina?",
+      "keywords" : "rivieren ,   meren ,   zuiden Carolina "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dct: <http://purl.org/dc/terms/> PREFIX dbc: <http://dbpedia.org/resource/Category:> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { { ?uri dbo:location dbr:South_Carolina ; rdf:type dbo:Lake } UNION { ?uri dct:subject dbc:Rivers_and_streams_of_South_Carolina } }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "15"
+          }
+        } ]
+      }
+    } ]
+  },{
+    "id" : "101",
+    "answertype" : "number",
+    "aggregation" : true,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Wieviele Firmen hat der Gründer von Facebook gegründet?",
+      "keywords" : "Firmen,  gegründet,  Gründer,  Facebook"
+    }, {
+      "language" : "ru",
+      "string" : "Как многие компании мы основанный от  основатель из Facebook? ",
+      "keywords" : "компании ,   основанный от ,   основатель ,   facebook "
+    }, {
+      "language" : "pt",
+      "string" : "Como muitos empresas estavam fundado de a fundador do Facebook? ",
+      "keywords" : "empresas ,   fundado de ,   fundador ,   Facebook "
+    }, {
+      "language" : "en",
+      "string" : "How many companies were founded by the founder of Facebook?",
+      "keywords" : "companies,  founded by,  founder,  Facebook"
+    }, {
+      "language" : "hi_IN",
+      "string" : "फेसबुक के संस्थापक द्वारा कितनी कंपनियों की स्थापना की गई थी?",
+      "keywords" : "फेसबुक,  संस्थापक,  कंपनियों की स्थापना"
+    }, {
+      "language" : "pt_BR",
+      "string" : "Quantas companhias foram fundadas pelo fundador do Facebook?",
+      "keywords" : "compahias,  fundadas,  fundador,  Facebook"
+    }, {
+      "language" : "fa",
+      "string" : "چه تعداد شرکت توسط مؤسس فیسبوک تأسیس شدند؟",
+      "keywords" : "شرکت، مؤسس، فیسبوک، تأسیس"
+    }, {
+      "language" : "it",
+      "string" : "Quante società sono state fondate dal fondatore di Facebook?",
+      "keywords" : "società,  fondate,  fondatore,  Facebook"
+    }, {
+      "language" : "fr",
+      "string" : "Combien de companies ont été fondées par le fondateur de Facebook?",
+      "keywords" : "nombre,  companies,  fondées,  fondateur,  Facebook"
+    }, {
+      "language" : "ro",
+      "string" : "Câte companii au fost înființate de fondatorul Facebook?",
+      "keywords" : "companii,  înființate,  fondator,  Facebook"
+    }, {
+      "language" : "es",
+      "string" : "¿Cuantas compañías han sido fundadas por el fundador de Facebook?",
+      "keywords" : "compañías,  fundadas,  fundador Facebook"
+    }, {
+      "language" : "nl",
+      "string" : "Hoeveel bedrijven werden opgericht door de oprichter van Facebook?",
+      "keywords" : "bedrijven,  opgericht,  oprichter,  Facebook"
+    } ],
+    "query" : {
+      "sparql" : "SELECT (COUNT(DISTINCT ?x) AS ?c) WHERE { <http://dbpedia.org/resource/Facebook> <http://dbpedia.org/ontology/foundedBy> ?uri . ?x <http://dbpedia.org/ontology/foundedBy> ?uri }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "c" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "c" : {
+            "type" : "literal",
+            "value" : "3"
+          }
+        } ]
+      }
+    } ]
+  }
+}
