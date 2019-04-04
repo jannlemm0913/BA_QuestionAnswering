@@ -260,7 +260,7 @@ public class QaldEvaluatorApplication {
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,DiambiguationProperty,ClsNliodCls,QueryBuilder");
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,DiambiguationProperty,DiambiguationClass,QueryBuilder");
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,ClsNliodCls,QueryBuilder");
-        componentConfigurations.add("NER-Stanford,NED-DBpediaSpotlight,RelNliodRel,ClsNliodCls,QueryBuilder");
+        componentConfigurations.add("NERD-DBpediaSpotlight,RelNliodRel,ClsNliodCls,QueryBuilder");
         
 
         for (String componentConfiguration : componentConfigurations) {
