@@ -26,7 +26,9 @@ import java.util.ArrayList;
 
 @Component
 public class Agdistis extends QanaryComponent {
-    private final String agdistisService = "http://139.18.2.164:8080/AGDISTIS";
+    // http://agdistis.aksw.org/demo/ "Command Line Usage"
+    private final String agdistisService = "http://akswnc9.informatik.uni-leipzig.de:8113/AGDISTIS";
+    //private final String agdistisService = "http://139.18.2.164:8080/AGDISTIS";
     private static final Logger logger = LoggerFactory.getLogger(Agdistis.class);
 
     public QanaryMessage process(QanaryMessage myQanaryMessage) throws Exception {
