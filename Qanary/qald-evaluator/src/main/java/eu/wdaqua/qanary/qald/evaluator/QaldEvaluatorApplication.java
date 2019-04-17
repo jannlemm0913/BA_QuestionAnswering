@@ -59,7 +59,8 @@ public class QaldEvaluatorApplication {
 
         FileReader filereader = new FileReader();
 
-        filereader.getQuestion(1).getUris();
+        //filereader.getQuestion(1).getUris();
+        filereader.getQuestion(19).getUris();
 
         // send to pipeline
         List<QaldQuestion> questions = new LinkedList<>(filereader.getQuestions());
@@ -138,7 +139,6 @@ public class QaldEvaluatorApplication {
                         if(bindingsJson != null) {
                             for(int j = 0; j < bindingsJson.length(); j++) {
                                 JSONObject test2Json = bindingsJson.getJSONObject(j);
-                                logger.info("{}",test2Json);
                                 String answerUri = test2Json.getJSONObject(typeJson).getString("value");
                                 logger.info("System answers: {} ", answerUri);
                                 systemAnswers.add(answerUri);
@@ -261,7 +261,8 @@ public class QaldEvaluatorApplication {
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,DiambiguationProperty,DiambiguationClass,QueryBuilder");
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,ClsNliodCls,QueryBuilder");
         //componentConfigurations.add("NERD-DBpediaSpotlight,RelNliodRel,ClsNliodCls,QueryBuilder");
-        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,DiambiguationClass,QueryBuilder");
+        //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,DiambiguationClass,SINA");
+        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,EarlRelationLinking,DiambiguationClass,SINA");
 
 
         for (String componentConfiguration : componentConfigurations) {

@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.InputStreamReader;
+import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.jena.query.QuerySolution;
@@ -16,6 +19,21 @@ import eu.wdaqua.qanary.commons.QanaryMessage;
 import eu.wdaqua.qanary.commons.QanaryQuestion;
 import eu.wdaqua.qanary.commons.QanaryUtils;
 import eu.wdaqua.qanary.component.QanaryComponent;
+
+//new imports for query execution
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.apache.jena.query.ResultSetFactory;
+import org.apache.jena.query.ResultSetFormatter;
+import java.util.UUID;
+import java.io.ByteArrayOutputStream;
+
+//new import for regex
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 @Component
 /**
@@ -37,14 +55,46 @@ public class SINA extends QanaryComponent {
 	 */
 	@Override
 	public QanaryMessage process(QanaryMessage myQanaryMessage) throws Exception {
+		final long startTime = System.currentTimeMillis();
+		logger.info("StartTime: {}", startTime);
 		logger.info("process: {}", myQanaryMessage);
 		// TODO: implement processing of question
-		QanaryUtils myQanaryUtils = this.getUtils(myQanaryMessage);
-		QanaryQuestion<String> myQanaryQuestion = new QanaryQuestion(myQanaryMessage);
+		/*QanaryUtils myQanaryUtils = this.getUtils(myQanaryMessage);
+				QanaryQuestion<String> myQanaryQuestion = new QanaryQuestion(myQanaryMessage);
 		String myQuestion = myQanaryQuestion.getTextualRepresentation();
-		logger.info("myQuestion: {}", myQuestion);
+		//String myQuestion = "What is Bob Adams (American football) known for ? ";
+		//logger.info("myQuestion: {}", myQuestion);
+		try {
+		String argument = "";
+		String sparql = "";
+		
+		//File f = new File("src/main/resources/benchmark.csv");
+		//File f = new File("qanary_component-QB-Sina/src/main/resources/benchmark.csv");
+		File f = new File("qanary_component-QB-Sina/src/main/resources/benchmark_qald.csv");
+		FileReader fileReader = new FileReader(f);
+      	BufferedReader bufferReader  = new BufferedReader(fileReader);
+      	String qline;
+      	while((qline = bufferReader.readLine()) != null) {
+      		//logger.info("Questionline: {}", qline);
+      		String questionsArray[] = qline.split("\",\"");
+      		//logger.info("questionsArray: {}", questionsArray[1]);
+      	     
+      		if(questionsArray[1].trim().equals(myQuestion.trim()))
+		    {   
+      			String str = "";
+      			if (questionsArray[2] != null && questionsArray[2].length() > 0 && questionsArray[2].charAt(questionsArray[2].length() - 1) == '\"')
+      			{
+      				str = questionsArray[2].substring(0, questionsArray[2].length() - 1);
+      		    }
+      			argument = str;
+      			break;
+		    }
+      		
+      		
+      	}
+		
 		//entity fetching from triplestore
-		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> "
+	/*	String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> "
 				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> "
 				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> "//
 				+ "SELECT ?start ?end ?uri " + "FROM <" + myQanaryQuestion.getInGraph() + "> " //
@@ -127,68 +177,231 @@ public class SINA extends QanaryComponent {
 			entityTemp3.uri = s.getResource("uri").getURI();
 			argument += entityTemp3.uri + ", ";
 			logger.info("uri info {}", s.getResource("uri").getURI());
+		} */
+		
+		logger.info("process: {}", myQanaryMessage);
+		String detectedPattern = "";
+		try {
+		List<String> classes = new ArrayList<String>();
+		List<String> properties = new ArrayList<String>();
+		List<String> entities = new ArrayList<String>();
+		String graph = "<http://dbpedia.org>";
+		QanaryUtils myQanaryUtils = this.getUtils(myQanaryMessage);
+		QanaryQuestion<String> myQanaryQuestion = this.getQanaryQuestion(myQanaryMessage);
+		String myQuestion = myQanaryQuestion.getTextualRepresentation();
+		logger.info("Question: {}", myQuestion);
+
+		// random answer URI
+		String answerID = "urn:qanary:answer:" + UUID.randomUUID().toString();
+
+		// entities
+
+		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> "
+				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> "
+				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> "//
+				+ "SELECT ?start ?end ?uri " + "FROM <" + myQanaryQuestion.getInGraph() + "> " //
+				+ "WHERE { " //
+				+ "    ?a a qa:AnnotationOfInstance . " + "?a oa:hasTarget [ "
+				+ "		     a               oa:SpecificResource; " //
+				+ "		     oa:hasSource    ?q; " //
+				+ "	         oa:hasSelector  [ " //
+				+ "			         a        oa:TextPositionSelector ; " //
+				+ "			         oa:start ?start ; " //
+				+ "			         oa:end   ?end " //
+				+ "		     ] " //
+				+ "    ] . " //
+				+ " ?a oa:hasBody ?uri . " + "} " + "ORDER BY ?start ";
+
+		ResultSet r = myQanaryUtils.selectFromTripleStore(sparql);
+		String argument = "";
+		while (r.hasNext()) {
+			QuerySolution s = r.next();
+			entities.add(s.getResource("uri").getURI());
+			logger.info("uri info {}", s.getResource("uri").getURI());
+			Entity entityTemp = new Entity();
+			entityTemp.uri = s.getResource("uri").getURI();
+			argument += entityTemp.uri + ", ";
 		}
+
+		// property
+		sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> "
+				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> "//
+				+ "SELECT  ?uri " + "FROM <" + myQanaryQuestion.getInGraph() + "> " //
+				+ "WHERE { " //
+				+ "  ?a a qa:AnnotationOfRelation . " + "  ?a oa:hasTarget [ " + " a    oa:SpecificResource; "
+				+ "           oa:hasSource    ?q; " + "  ]; " + "     oa:hasBody ?uri ;}";
+
+		r = myQanaryUtils.selectFromTripleStore(sparql);
+
+		while (r.hasNext()) {
+			QuerySolution s = r.next();
+			properties.add(s.getResource("uri").getURI());
+			logger.info("uri info {}", s.getResource("uri").getURI());
+			Entity entityTemp = new Entity();
+			entityTemp.uri = s.getResource("uri").getURI();
+			argument += entityTemp.uri + ", ";
+		}
+
+		// classes
+		sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> "
+				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> "//
+				+ "SELECT  ?uri " + "FROM <" + myQanaryQuestion.getInGraph() + "> " //
+				+ "WHERE { " //
+				+ "  ?a a qa:AnnotationOfClass . " + "  ?a oa:hasTarget [ " + " a    oa:SpecificResource; "
+				+ "           oa:hasSource    ?q; " + "  ]; " + "     oa:hasBody ?uri ;}";
+
+
+		r = myQanaryUtils.selectFromTripleStore(sparql);
+
+		while (r.hasNext()) {
+			QuerySolution s = r.next();
+			classes.add(s.getResource("uri").getURI());
+			logger.info("uri info {}", s.getResource("uri").getURI());
+			Entity entityTemp = new Entity();
+			entityTemp.uri = s.getResource("uri").getURI();
+			argument += entityTemp.uri + ", ";
+		}
+
 
 		logger.info("Sina Argument: {}", argument+": "+argument.length());
 		logger.info("Sina Argument Count: {}",StringUtils.countMatches(argument, "dbpedia"));
 		
 		if(argument.length() > 2 && StringUtils.countMatches(argument, "dbpedia") <=3 ) {
-			argument = argument.substring(0, argument.length() - 2);
+			if(argument == "\"\"")
+				argument = argument.substring(0, argument.length() -2); 
+			else
+				argument = argument.substring(0, argument.length() -2); 
+			
+			//Argument should look like: http://dbpedia.org/resource/Barack_Obama, http://dbpedia.org/ontology/spouse
 
-			//ProcessBuilder pb = new ProcessBuilder("java", "-jar", "qanary_component-QB-Sina/src/main/resources/sina-0.0.1.jar", argument);
+            
+			logger.info("Sina Argument1: {}", argument+": "+argument.length());
 			ProcessBuilder pb = new ProcessBuilder("java", "-jar", "../src/main/resources/sina-0.0.1.jar", argument);
+			//ProcessBuilder pb = new ProcessBuilder("java", "-jar", "src/main/resources/sina-0.0.1.jar", argument);
 
-			//File output = new File("qanary_component-QB-Sina/src/main/resources/sinaoutput.txt");
-			File output = new File("../src/main/resources/sinaoutput.txt");
+			 File output = new File("../src/main/resources/sinaoutput.txt");
+			 File error = new File("../src/main/resources/sinaerror.txt");
+			//File output = new File("src/main/resources/sinaoutput.txt");
 
 			pb.redirectOutput(output);
+			pb.redirectError(error);
 			Process p = pb.start();
-			p.waitFor();
-			p.destroy();
-			String outputRetrived = "";
-			String line = "";
-			System.out.println("file data ===========================");
-			//BufferedReader br = new BufferedReader(new FileReader(new File("qanary_component-QB-Sina/src/main/resources/sinaoutput.txt")));
-			BufferedReader br = new BufferedReader(new FileReader(new File("../src/main/resources/sinaoutput.txt")));
-			while ((line = br.readLine()) != null) {
-				outputRetrived += line;
-				System.out.println(line);
+			logger.error("Error: {}", new BufferedReader(new InputStreamReader(p.getErrorStream())).toString());
+			if(true == p.waitFor(100L, TimeUnit.SECONDS)) {
+				//p.wait();
+				p.destroy();
+				String outputRetrived = "";
+				String line = "";
+				System.out.println("file data ===========================");
+				BufferedReader br = new BufferedReader(new FileReader(new File("../src/main/resources/sinaoutput.txt")));
+				//BufferedReader br = new BufferedReader(new FileReader(new File("src/main/resources/sinaoutput.txt")));
+				while ((line = br.readLine()) != null) {
+					outputRetrived += line;
+					//System.out.println(line);
+				}
+				br.close();
+
+				String ar = "";
+				try{
+					ar = outputRetrived
+						.substring(outputRetrived.indexOf("list of final templates:") + "list of final templates:".length());
+					//REGEX um fehlerhafte Queries durch Ueberschreiben des Files zu fixen
+					Pattern pattern = Pattern.compile("\\[.*?\\]");
+					Matcher m = pattern.matcher(ar);
+					if(m.find()){
+						ar = m.group(0);
+					}
+					ar = ar.replaceAll("\\s(http.*?)\\s", " <$1> ");
+				} catch (Exception e) {
+					ar = "[]";
+				}
+
+				logger.info("Result {}", ar);
+				ar = ar.trim();
+				ar = ar.substring(1, ar.length() - 1);
+				String[] parts = ar.split(",");
+				logger.info("store data in graph {}", myQanaryMessage.getValues().get(myQanaryMessage.getEndpoint()));
+				// TODO: insert data in QanaryMessage.outgraph
+
+				logger.info("apply vocabulary alignment on outgraph");
+				// TODO: implement this (custom for every component)
+				String sparqlPart1 = "";
+				String sparqlPart2 = "";
+				int x = 10;
+				
+				for (int i = 0; i < parts.length; i++) {
+					sparqlPart1 += "?a" + i + " a qa:AnnotationOfAnswerSPARQL . " + "  ?a" + i + " oa:hasTarget <URIAnswer> . "
+							+ "  ?a" + i + " oa:hasBody \"" + parts[i].replace("\n", " ") + "\" ;"
+							+ "     oa:annotatedBy <www.wdaqua.sina> ; " + "         oa:annotatedAt ?time ; "
+							+ "         qa:hasScore " + x-- + " . \n";
+					sparqlPart2 += "BIND (IRI(str(RAND())) AS ?a" + i + ") . \n";
+
+					logger.info("==== string der zu query wird: {}", parts[i].replace("\n", " "));
+
+					Query query = QueryFactory.create(parts[i].replace("\n", " "));
+					QueryExecution exec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
+					String json = "{}";
+					// new by jannlemm0913. ResultSetException on question 8, "not a ResultSet"
+					try {
+						ResultSet results = ResultSetFactory.copyResults(exec.execSelect());
+						ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+						ResultSetFormatter.outputAsJSON(outputStream, results);
+						json = new String(outputStream.toByteArray(), "UTF-8");
+					} catch (Exception e) {
+						logger.error("==== Could not get a ResultSet for this question!");
+					}
+					
+					if(!json.equals("{}") || (i == parts.length - 1)){
+						logger.info("Push the the JSON object to the named graph reserved for the answer.");
+						sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+								+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+								+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+								+ "INSERT { " //
+								+ "GRAPH <" + myQanaryUtils.getOutGraph() + "> { " //
+								+ "  ?answer a qa:Answer . " // 
+								+ "  ?b a qa:AnnotationOfAnswerJSON ; " //
+								+ "     oa:hasTarget <" + answerID + "> ; " //
+								+ "     oa:hasBody \"" + json.replace("\n", " ").replace("\"", "\\\"") + "\" ;" //
+								+ "     oa:annotatedBy <www.wdaqua.sina> ; " //
+								+ "     oa:annotatedAt ?time  " //
+								+ "}} " //
+								+ "WHERE { " //
+								+ "  BIND (IRI(str(RAND())) AS ?b) ." //
+								+ "  BIND (now() as ?time) " //
+								+ "  BIND (<" + answerID + "> as ?answer) ." //
+								+ "}";
+						myQanaryUtils.updateTripleStore(sparql, myQanaryMessage.getEndpoint().toString());
+						break;
+					} else {
+						logger.info("==== json empty, next query");
+					}
+				}
+				logger.info("SparqlPart1: {}",sparqlPart1);
+				logger.info("SparqlPart2: {}", sparqlPart2);
+				sparql = "prefix qa: <http://www.wdaqua.eu/qa#> " + "prefix oa: <http://www.w3.org/ns/openannotation/core/> "
+						+ "prefix xsd: <http://www.w3.org/2001/XMLSchema#> " + "INSERT { " + "GRAPH <"
+										+ myQanaryUtils.getInGraph() + "> { " + sparqlPart1 + "}} " + "WHERE { " + sparqlPart2
+						+ "BIND (IRI(str(RAND())) AS ?b) ." + "BIND (now() as ?time) " + "}";
+						myQanaryUtils.updateTripleStore(sparql, myQanaryMessage.getEndpoint().toString());
+		}
+			else {
+				final long endTime = System.currentTimeMillis();
+				logger.info("Total Response Time(ms): {}", endTime-startTime);
+				logger.info("------------------Process Timeout-------------------------");
 			}
-			br.close();
-
-			System.out.println("The retrived output : " + outputRetrived);
-			String ar = outputRetrived
-					.substring(outputRetrived.indexOf("list of final templates:") + "list of final templates:".length());
-			// logger.info("Check {}", result);
-			logger.info("Result {}", ar);
-			ar = ar.trim();
-			ar = ar.substring(1, ar.length() - 1);
-			String[] parts = ar.split(",");
-			logger.info("store data in graph {}", myQanaryMessage.getValues().get(myQanaryMessage.getEndpoint()));
-			// TODO: insert data in QanaryMessage.outgraph
-
-			logger.info("apply vocabulary alignment on outgraph");
-			// TODO: implement this (custom for every component)
-			String sparqlPart1 = "";
-			String sparqlPart2 = "";
-			int x = 10;
-			for (int i = 0; i < parts.length; i++) {
-				sparqlPart1 += "?a" + i + " a qa:AnnotationOfAnswerSPARQL . " + "  ?a" + i + " oa:hasTarget <URIAnswer> . "
-						+ "  ?a" + i + " oa:hasBody \"" + parts[i].replace("\n", " ") + "\" ;"
-						+ "     oa:annotatedBy <www.wdaqua.sina> ; " + "         oa:annotatedAt ?time ; "
-						+ "         qa:hasScore " + x-- + " . \n";
-				sparqlPart2 += "BIND (IRI(str(RAND())) AS ?a" + i + ") . \n";
-			}
-
-			sparql = "prefix qa: <http://www.wdaqua.eu/qa#> " + "prefix oa: <http://www.w3.org/ns/openannotation/core/> "
-					+ "prefix xsd: <http://www.w3.org/2001/XMLSchema#> " + "INSERT { " + "GRAPH <"
-					+ myQanaryUtils.getInGraph() + "> { " + sparqlPart1 + "}} " + "WHERE { " + sparqlPart2
-					+ "BIND (IRI(str(RAND())) AS ?b) ." + "BIND (now() as ?time) " + "}";
-			myQanaryUtils.updateTripleStore(sparql, myQanaryMessage.getEndpoint().toString());
 		}
 		else {
-			logger.info("Argument is Null {}", argument);
+			logger.info("Argument is Null: {}", argument);
 		}
+		}
+	     catch(InterruptedException e1) {
+			logger.info("Except: {}", e1);
+		}
+		catch (Exception e1) {
+	     	logger.info("Except: {}", e1);
+	        // TODO Auto-generated catch block
+	    }
 		return myQanaryMessage;
 	}
 	class Entity {

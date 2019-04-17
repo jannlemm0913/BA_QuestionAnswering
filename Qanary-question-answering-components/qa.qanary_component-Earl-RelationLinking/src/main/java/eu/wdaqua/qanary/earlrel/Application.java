@@ -1,4 +1,4 @@
-package eu.wdaqua.qanary.sina;
+package eu.wdaqua.qanary.earlrel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-import eu.wdaqua.qanary.commons.QanaryMessage;
 import eu.wdaqua.qanary.component.QanaryComponent;
 
 @SpringBootApplication
@@ -26,13 +25,11 @@ public class Application {
 	*/
 	@Bean
 	public QanaryComponent qanaryComponent() {
-		return new SINA();
+		return new EarlRelationLinking();
 	}
 	
 	
-    public static void main(String[] args) throws Exception {
-    SpringApplication.run(Application.class, args);
-    //	SINA s = new SINA();
-    	//s.process(new QanaryMessage());
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
     }
 }
