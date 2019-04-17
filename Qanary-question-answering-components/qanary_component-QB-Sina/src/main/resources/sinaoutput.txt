@@ -1,0 +1,56 @@
+Hi Saeedeh
+testing is gonna start
+ uri of path http://aksw.org/notInWiki/500000type 14
+ uri of path http://dbpedia.org/ontology/Websitetype 11
+ uri of path http://dbpedia.org/ontology/Companytype 11
+print iri....http://aksw.org/notInWiki/500000
+print iri....http://dbpedia.org/ontology/Website
+print iri....http://dbpedia.org/ontology/Company
+Propertyhttp://aksw.org/notInWiki/500000
+Domain=[]
+Range=[]
+DomainP=[]
+RangeP=[]
+entity....?v0
+entity Type....[http://dbpedia.org/ontology/Website]
+Including  Domain=[]
+entity Type....[http://dbpedia.org/ontology/Website]
+Including  Range=[]
+entity....?v1
+entity Type....[http://dbpedia.org/ontology/LawFirm, http://dbpedia.org/ontology/RecordLabel, http://dbpedia.org/ontology/Company, http://dbpedia.org/ontology/Airline]
+Including  Domain=[]
+entity Type....[http://dbpedia.org/ontology/LawFirm, http://dbpedia.org/ontology/RecordLabel, http://dbpedia.org/ontology/Company, http://dbpedia.org/ontology/Airline]
+Including  Range=[]
+inside connecting function ... p
+entity:   ?v0
+entity class type:   [http://dbpedia.org/ontology/Website]
+entity:   ?v1
+entity class type:   [http://dbpedia.org/ontology/LawFirm, http://dbpedia.org/ontology/RecordLabel, http://dbpedia.org/ontology/Company, http://dbpedia.org/ontology/Airline]
+triple:   ?v0  a  http://dbpedia.org/ontology/Website
+triple:   ?v1  a  http://dbpedia.org/ontology/Company
+triple:   ?v0  ?p  ?v1
+ PropertySet..... [<http://dbpedia.org/ontology/parentCompany>, <http://dbpedia.org/ontology/owningCompany>, <http://dbpedia.org/ontology/developer>]
+entity:   ?v2
+entity class type:   []
+entity:   ?v3
+entity class type:   []
+triple:   ?v2  http://aksw.org/notInWiki/500000  ?v3
+entity:   ?v1
+entity class type:   [http://dbpedia.org/ontology/LawFirm, http://dbpedia.org/ontology/RecordLabel, http://dbpedia.org/ontology/Company, http://dbpedia.org/ontology/Airline]
+entity:   ?v0
+entity class type:   [http://dbpedia.org/ontology/Website]
+triple:   ?v1  a  http://dbpedia.org/ontology/Company
+triple:   ?v0  a  http://dbpedia.org/ontology/Website
+triple:   ?v1  ?p  ?v0
+ PropertySet..... [<http://dbpedia.org/ontology/service>, <http://dbpedia.org/ontology/industry>]
+entity:   ?v2
+entity class type:   []
+entity:   ?v3
+entity class type:   []
+triple:   ?v2  http://aksw.org/notInWiki/500000  ?v3
+inside connecting function ... p
+inside connecting function ... p
+ Connecting step finished
+ size of FinalTemplateList = 0
+ size of TemporaryTemplateList = 0
+ list of final templates:   []

@@ -1,0 +1,4 @@
+1|What is the time zone of Salt Lake City?|http://dbpedia.org/resource/Salt_Lake_City, |http://dbpedia.org/ontology/timeZone, ||1|1|1
+179|What were the names of the three ships by Columbus?|http://dbpedia.org/resource/COLUMBUS, http://aksw.org/notInWiki/three, |http://dbpedia.org/ontology/otherName, http://dbpedia.org/ontology/Ship, |http://dbpedia.org/ontology/Ship, |3|0|0
+86|What is the highest mountain in Germany?|http://dbpedia.org/resource/Germany, |http://dbpedia.org/ontology/Mountain, |http://dbpedia.org/ontology/MountainRange, |1|1|1
+43|Give me the websites of companies with more than 500000 employees.|http://aksw.org/notInWiki/500000, |http://dbpedia.org/ontology/Website, http://dbpedia.org/ontology/Company, |http://dbpedia.org/ontology/Company, http://dbpedia.org/ontology/Employer, http://dbpedia.org/ontology/Website, |43|0|0

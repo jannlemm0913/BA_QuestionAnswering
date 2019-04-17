@@ -30,6 +30,10 @@ import java.util.List;
 
 //added imports
 import org.json.*;
+import java.io.PrintWriter;
+import java.io.File;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * start the spring application
@@ -45,6 +49,9 @@ public class QaldEvaluatorApplication {
 
     String uriServer = "http://localhost:8080/startquestionansweringwithtextquestion";
 
+    // prepare data to print to csv file
+    List<String[]> dataLines = new ArrayList<>();
+
     private void process(String components, int maxQuestionsToBeProcessed)
             throws UnsupportedEncodingException, IOException {
         Double globalPrecision = 0.0;
@@ -59,8 +66,7 @@ public class QaldEvaluatorApplication {
 
         FileReader filereader = new FileReader();
 
-        //filereader.getQuestion(1).getUris();
-        filereader.getQuestion(19).getUris();
+        filereader.getQuestion(1).getUris();
 
         // send to pipeline
         List<QaldQuestion> questions = new LinkedList<>(filereader.getQuestions());
@@ -72,9 +78,10 @@ public class QaldEvaluatorApplication {
             List<String> expectedAnswers = questions.get(i).getAnswersAsString();
             logger.info("{}. Question: {}", questions.get(i).getQaldId(), questions.get(i).getQuestion());
 
-            // questions.get(0).setQuestion("How many goals did Pelé score?");
+            String questionString = questions.get(i).getQuestion();
+            Integer questionId = questions.get(i).getQaldId();
 
-            // Send the question
+            // Send the question 
             RestTemplate restTemplate = new RestTemplate();
             UriComponentsBuilder service = UriComponentsBuilder.fromHttpUrl(uriServer);
 
@@ -159,7 +166,7 @@ public class QaldEvaluatorApplication {
 
             // Compute precision and recall
             Metrics m = new Metrics();
-            m.compute(expectedAnswers, systemAnswers);
+            int correctlyAnswered = m.compute(expectedAnswers, systemAnswers);
             globalPrecision += m.precision;
             globalRecall += m.recall;
             globalFMeasure += m.fMeasure;
@@ -170,10 +177,102 @@ public class QaldEvaluatorApplication {
             } else {
                 fullRecall.add(0);
             }
+
+            // get entities from kb by sparql
+            sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+                    + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+                    + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+                    + "SELECT ?uri { " //
+                    + "  GRAPH <" + namedGraph + "> { " //
+                    + "    ?a a qa:AnnotationOfInstance . " //
+                    + "    ?a oa:hasBody ?uri " //
+                    + "} }";
+            ResultSet rs = selectTripleStore(sparql, endpoint);
+            List<String> resourceUris = new ArrayList<String>();
+            
+            while (rs.hasNext()) {
+                QuerySolution s = rs.next();
+                if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
+                    resourceUris.add(s.getResource("uri").toString());
+                }
+            }
+
+            // get properties from kb by sparql
+            sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+                    + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+                    + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+                    + "SELECT ?uri { " //
+                    + "  GRAPH <" + namedGraph + "> { " //
+                    + "    ?a a qa:AnnotationOfRelation . " //
+                    + "    ?a oa:hasBody ?uri " //
+                    + "} }";
+            ResultSet rss = selectTripleStore(sparql, endpoint);
+            List<String> propertyUris = new ArrayList<String>();
+            
+            while (rss.hasNext()) {
+                QuerySolution s = rss.next();
+                if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
+                    propertyUris.add(s.getResource("uri").toString());
+                }
+            }
+
+            // get ontologies from kb by sparql
+            sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+                    + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+                    + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+                    + "SELECT ?uri { " //
+                    + "  GRAPH <" + namedGraph + "> { " //
+                    + "    ?a a qa:AnnotationOfClass . " //
+                    + "    ?a oa:hasBody ?uri " //
+                    + "} }";
+            ResultSet rsss = selectTripleStore(sparql, endpoint);
+            List<String> ontologyUris = new ArrayList<String>();
+            
+            while (rsss.hasNext()) {
+                QuerySolution s = rsss.next();
+                if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
+                    ontologyUris.add(s.getResource("uri").toString());
+                }
+            }
+
+            // add string array to dataLines
+            String resourceUrisString = makeStringFromArray(resourceUris);
+            String propertyUrisString = makeStringFromArray(propertyUris);
+            String ontologyUrisString = makeStringFromArray(ontologyUris);
+            dataLines.add(new String[]
+            {questionId.toString(), questionString, resourceUrisString, propertyUrisString, ontologyUrisString,
+                 Integer.toString(expectedAnswers.size()), Integer.toString(systemAnswers.size()), Integer.toString(correctlyAnswered)});
         }
+
+        //print data to csv file
+        csvToOutput();
+
         logger.info("Global Precision={}", globalPrecision / count);
         logger.info("Global Recall={}", globalRecall / count);
         logger.info("Global F-measure={}", globalFMeasure / count);
+    }
+
+    // convert data to csv
+    public String convertToCSV(String[] data) {
+        return Stream.of(data)
+            .collect(Collectors.joining("|"));
+    }
+
+    public void csvToOutput() throws IOException {
+        File csvOutputFile = new File("../../eval-results/ScriptnamederPipeline.csv");
+        try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
+            dataLines.stream()
+                .map(this::convertToCSV)
+                .forEach(pw::println);
+        }
+    }
+
+    public String makeStringFromArray(List<String> input) {
+        String endprodukt = "";
+        for(String s : input) {
+            endprodukt += (s + ", ");
+        }
+        return endprodukt;
     }
 
     class Metrics {
@@ -182,7 +281,7 @@ public class QaldEvaluatorApplication {
         private Double fMeasure = 0.0;
 
 
-        public void compute(List<String> expectedAnswers, List<String> systemAnswers) {
+        public int compute(List<String> expectedAnswers, List<String> systemAnswers) {
             //Compute the number of retrieved answers
             int correctRetrieved = 0;
             for (String s : systemAnswers) {
@@ -215,6 +314,8 @@ public class QaldEvaluatorApplication {
                     fMeasure = (2 * precision * recall) / (precision + recall);
                 }
             }
+
+            return correctRetrieved;
         }
     }
 

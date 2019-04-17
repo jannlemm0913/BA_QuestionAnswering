@@ -17,10 +17,9 @@ public class FileReader {
     private HashMap<Integer, QaldQuestion> questions = new HashMap<>();
 
     public FileReader() throws UnsupportedEncodingException, IOException {
-        Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-test-multilingual.json"),
+        Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-test-multilingual-short.json"),
+        //Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-test-multilingual.json"),
         //Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-train-multilingual.json"),
-        //Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-train-multilingual-short.json"),
-        //Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald-9-test-multilingual-fixed.json"), //...gual-short.json
         //Reader reader = new InputStreamReader(FileReader.class.getResourceAsStream("/qald-benchmark/qald6-train-questions.json"), // Evaluierung möglich ohne QB
                 "UTF-8");
         Gson gson = new GsonBuilder().create();
