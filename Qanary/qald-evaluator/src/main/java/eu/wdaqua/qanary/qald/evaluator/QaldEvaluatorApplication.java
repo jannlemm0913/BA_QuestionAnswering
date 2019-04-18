@@ -235,12 +235,32 @@ public class QaldEvaluatorApplication {
                 }
             }
 
+            // get the query from kb by sparql
+            sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+                    + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+                    + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+                    + "SELECT ?body { " //
+                    + "  GRAPH <" + namedGraph + "> { " //
+                    + "    ?a a qa:AnnotationOfAnswerSPARQL . " //
+                    + "    ?a oa:hasBody ?body " //
+                    + "} }";
+            ResultSet rssss = selectTripleStore(sparql, endpoint);
+            List<String> sparqlQueries = new ArrayList<String>();
+            
+            while (rssss.hasNext()) {
+                QuerySolution s = rssss.next();
+                if (s.getLiteral("body") != null && !s.getLiteral("body").toString().endsWith("null")) {
+                    sparqlQueries.add(s.getLiteral("body").toString());
+                }
+            }
+
             // add string array to dataLines
             String resourceUrisString = makeStringFromArray(resourceUris);
             String propertyUrisString = makeStringFromArray(propertyUris);
             String ontologyUrisString = makeStringFromArray(ontologyUris);
+            String sparqlQueriesString = makeStringFromArray(sparqlQueries);
             dataLines.add(new String[]
-            {questionId.toString(), questionString, resourceUrisString, propertyUrisString, ontologyUrisString,
+            {questionId.toString(), questionString, resourceUrisString, propertyUrisString, ontologyUrisString, sparqlQueriesString, 
                  Integer.toString(expectedAnswers.size()), Integer.toString(systemAnswers.size()), Integer.toString(correctlyAnswered)});
         }
 
@@ -259,7 +279,7 @@ public class QaldEvaluatorApplication {
     }
 
     public void csvToOutput() throws IOException {
-        File csvOutputFile = new File("../../eval-results/1_DBpedia-Spotlight-NERD_Earl_CLS-CLISNLIOD_SINA.csv");
+        File csvOutputFile = new File("../../eval-results/13_Tagme-NED_RNLIWOD_CLS-CLISNLIOD_SINA.csv");
         try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
             dataLines.stream()
                 .map(this::convertToCSV)
@@ -363,7 +383,7 @@ public class QaldEvaluatorApplication {
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,ClsNliodCls,QueryBuilder");
         //componentConfigurations.add("NERD-DBpediaSpotlight,RelNliodRel,ClsNliodCls,QueryBuilder");
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,DiambiguationClass,SINA");
-        componentConfigurations.add("NERD-DBpediaSpotlight,EarlRelationLinking,ClsNliodCls,SINA");
+        componentConfigurations.add("TagmeNED,RelNliodRel,ClsNliodCls,SINA");
 
 
         for (String componentConfiguration : componentConfigurations) {
