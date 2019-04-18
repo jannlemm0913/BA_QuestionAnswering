@@ -34,6 +34,7 @@ import java.io.PrintWriter;
 import java.io.File;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.regex.Pattern;
 
 /**
  * start the spring application
@@ -58,6 +59,9 @@ public class QaldEvaluatorApplication {
         Double globalRecall = 0.0;
         Double globalFMeasure = 0.0;
         int count = 0;
+        
+        // add header to csv file
+        dataLines.add(new String[] {"QuestionID","QuestionString", "ResourceURLs", "PropertyURLs", "OntologyURLs", "SPARQLQuery", "NrExpected","NrSystem","NrCorrect"});
 
         ArrayList<Integer> fullRecall = new ArrayList<Integer>();
         ArrayList<Integer> fullFMeasure = new ArrayList<Integer>();
@@ -211,8 +215,10 @@ public class QaldEvaluatorApplication {
             
             while (rss.hasNext()) {
                 QuerySolution s = rss.next();
-                if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
-                    propertyUris.add(s.getResource("uri").toString());
+                if(Pattern.matches(".*dbpedia\\.org.*",s.getResource("uri").getURI())) {
+                    if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
+                        propertyUris.add(s.getResource("uri").toString());
+                    }
                 }
             }
 
@@ -230,8 +236,10 @@ public class QaldEvaluatorApplication {
             
             while (rsss.hasNext()) {
                 QuerySolution s = rsss.next();
-                if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
-                    ontologyUris.add(s.getResource("uri").toString());
+                if(Pattern.matches(".*dbpedia\\.org.*",s.getResource("uri").getURI())) {
+                    if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
+                        ontologyUris.add(s.getResource("uri").toString());
+                    }
                 }
             }
 
