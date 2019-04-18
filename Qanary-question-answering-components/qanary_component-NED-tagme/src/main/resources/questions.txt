@@ -157,3 +157,4 @@ What is Angela Merkel?s birth name? Answer: [{"begin":8,"end":22,"link":"http://
 What is Angela Merkel?s birth name? Answer: [{"begin":8,"end":22,"link":"http://dbpedia.org/resource/Angela_Merkel"}]
 What is Angela Merkel?s birth name? Answer: [{"begin":8,"end":22,"link":"http://dbpedia.org/resource/Angela_Merkel"}]
 What is Angela Merkel?s birth name? Answer: [{"begin":8,"end":22,"link":"http://dbpedia.org/resource/Angela_Merkel"}]
+What is Angela Merkel?s birth name? Answer: [{"begin":8,"end":22,"link":"http://dbpedia.org/resource/Angela_Merkel"}]
