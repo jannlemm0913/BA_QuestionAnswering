@@ -1,0 +1,1050 @@
+outgraph: urn:qanary:answer:bf009349-9a99-4cd6-93a4-6d17a212f9b5
+What is the revenue of IBM?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 108
+
+outgraph: urn:qanary:answer:817d1a8b-64d0-4e1d-8df6-906cae0b2a9c
+Which airports are located in California, USA?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:d047eab4-07f0-472c-bbf2-e153f522203d
+Are Taiko some kind of Japanese musical instrument?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 96
+
+outgraph: urn:qanary:answer:8abb5c20-bc75-45f6-9c96-afd05990f68d
+Give me all cars that are produced in Germany.
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 131
+
+outgraph: urn:qanary:answer:1ebf9ac6-ec6c-47a3-8856-06f8e314f9c4
+Who founded Intel?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 110
+
+outgraph: urn:qanary:answer:98e8e2be-f0c9-45d8-ad85-725e08364d8c
+In which city is the headquarter of Air China?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 212
+
+outgraph: urn:qanary:answer:901e17bb-be24-4b59-8c5d-739df90fd55e
+How many students does the Free University of Amsterdam have?
+Number of entities: 2
+Number of properties: 2
+Number of classes: 0
+Length of generated query: 245
+
+outgraph: urn:qanary:answer:3bc91033-c539-401e-9e70-06c33074c8b8
+Which politicians were married to a German?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:74e0804c-6585-4800-9ca3-974deab7cb4b
+Show me hiking trails in the Grand Canyon where there's no danger of flash floods.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:4acc068d-8d1a-4abe-ad31-6acfdc9e9eff
+How short is the shortest active NBA player?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:86f5771a-3ada-49f1-9be9-894873d7bab4
+Who became president after JFK died?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:52b82a13-6d88-449e-8f78-ef341bdfd342
+How many calories does a baguette have?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:8707c2ae-3866-4742-968a-1a52792e0d5e
+Who created English Wikipedia?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 122
+
+outgraph: urn:qanary:answer:4d9f773b-4897-46ec-af0b-5fc6ca242c03
+How many grand-children did Jacques Cousteau have?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 137
+
+outgraph: urn:qanary:answer:311c3239-57f0-436d-a8b1-0bb90ead8c18
+Which software has been published by Mean Hamster Software?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 226
+
+outgraph: urn:qanary:answer:09b98d51-1884-4614-83fd-4706c469898e
+How many emperors did China have?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:7de48761-0c88-49c0-a466-13eb620711e2
+What is the longest river in China?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:1fa4236e-372f-4056-81aa-b7791033c90b
+What is the atmosphere of the Moon composed of?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:fb1b3cd1-8f74-4838-a930-428b4545ac8c
+Which rivers flow into the North Sea?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:39fe9217-1255-4f01-aaf0-b12aeeded2ba
+Which countries in the European Union adopted the Euro?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:17e37a86-3ba3-4957-b7cb-76e7d4280c88
+Who is the mayor of Berlin?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:81f89faa-de1a-4104-b746-9223d9ae1ebb
+What is Angela Merkel?s birth name?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:9bc1e6a7-6d28-4647-b495-8e85d9832974
+Give me all female German chancellors.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:9e62b51e-fb01-4922-b6d6-a20b83bcef43
+What are the nicknames of San Francisco?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:bcc493e0-f0a4-4cfa-9bce-08403a357e18
+Give me all Frisian islands that belong to the Netherlands.
+Number of entities: 2
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:31d23cc8-4111-4a0d-91fe-768a2c138a78
+Which poet wrote the most books?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:38faf792-eb61-4add-9c97-8b634b6cc349
+Who were the parents of Queen Victoria?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:79c7fce3-e674-4f8b-b14a-0fa59f513e44
+Which countries have places with more than two caves?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:dcb64d1a-bec1-4442-891c-5bf348a78a4e
+Give me the websites of companies with more than 500000 employees.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:91d94811-944b-41aa-a01b-41b3bb58a10c
+Which European countries have a constitutional monarchy?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 127
+
+outgraph: urn:qanary:answer:50ec9345-3f11-477f-9e93-9d76df8d92f8
+Where did Abraham Lincoln die?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:0c973c0c-3ab3-4731-9739-2766deca5c4f
+Which frequent flyer program has the most airlines?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 127
+
+outgraph: urn:qanary:answer:4037e6d6-bcfd-4eb6-9ed4-16513daacaf6
+What is the highest volcano in Africa?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:208dc990-1116-421c-981c-64944ee684d7
+When is the movie Worst Case Scenario going to be in cinemas in the Netherlands?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:929bf38a-8b0a-418c-8a07-4a96b70f12ec
+Give me all movies with Tom Cruise.
+Number of entities: 2
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:c226772a-6ce5-4ebe-9eee-b397372be68c
+How many seats does the home stadium of FC Porto have?
+Number of entities: 1
+Number of properties: 2
+Number of classes: 0
+Length of generated query: 185
+
+outgraph: urn:qanary:answer:577b47e7-f542-405b-8474-5f804a48dbfc
+Which space probes were sent into orbit around the sun?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:811d51fa-32d7-4279-9f35-d9aadf5258b5
+Who is the governor of Texas?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 123
+
+outgraph: urn:qanary:answer:5c7db778-95a5-4c91-a751-9929e2e0ff38
+What is the highest place of Karakoram?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 212
+
+outgraph: urn:qanary:answer:6168fc1d-5ab7-40f0-abbb-6521f2177f51
+Who was called Scarface?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 123
+
+outgraph: urn:qanary:answer:3504fd38-7e5d-462b-b20f-0a5a0c19a0a8
+What is the profession of Frank Herbert?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 121
+
+outgraph: urn:qanary:answer:349a658b-3bb2-45b9-b640-8599cae06daa
+Which artists were born on the same date as Rachel Stevens?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 122
+
+outgraph: urn:qanary:answer:eed26b72-d714-49e3-8de5-ffcfc9d31eb9
+Which country was Bill Gates born in?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:7e14edc2-0ccf-4519-a56e-40e462fad0e4
+Give me all spacecrafts that flew to Mars.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:1bf4eed5-b686-4ed1-b33f-1005750f0be9
+How many gold medals did Michael Phelps win at the 2008 Olympics?
+Number of entities: 2
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:7d60b51c-0c78-4d49-bae3-7da79a879ceb
+When was the De Beers company founded?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 113
+
+outgraph: urn:qanary:answer:2cbd533e-ae97-4805-9192-1d0c3e241c4d
+Are there any castles in the United States?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:8cfd24aa-e991-494d-8a31-7cc29692db3d
+Give me a list of all critically endangered birds.
+Number of entities: 2
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:abce769c-49f6-48c1-8075-d36e7db39a73
+Butch Otter is the governor of which U.S. state?
+Number of entities: 2
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:2e2ad61c-6365-4313-9ac7-2e08fd277b89
+When was Jack Wolfskin founded?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:70c14e9b-13b6-49f0-a375-133432ad0b20
+Give me all gangsters from the prohibition era.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:4fafcd95-337d-4896-96a2-f665d7cf5eda
+Which American presidents were in office during the Vietnam War?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 217
+
+outgraph: urn:qanary:answer:c79749a7-c1bf-4fa5-8ee5-001de78a3bcb
+What is the highest mountain in Germany?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:7d893369-8a3c-4e5e-87ba-7b4531e1e615
+Which book has the most pages?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:040569df-eb10-4e11-a897-f81bb96ba48e
+What is the wavelength of Indigo?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:2db8bd30-6f86-4c6e-827b-b258bcf3631f
+Is the wife of President Obama called Michelle?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:396582ac-df92-4d03-994e-e2095e02368a
+When did princess Diana die?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:00f2520d-f52d-45fd-a554-79b78c606457
+Who is the youngest player in the Premier League?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:b8d86ffe-d127-4d0d-a19a-88c86d996a60
+Which professional surfers were born on the Philippines?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 119
+
+outgraph: urn:qanary:answer:4b9b982b-f560-4098-aea7-8956d1cfd45f
+Give me the official websites of actors of the television show Charmed.
+Number of entities: 2
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:083af6f9-c0e9-459a-95b6-683002cbea14
+Who killed Caesar?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:a5b38b3b-4a3f-4ff2-80f0-da036edb5182
+What is the time zone of Salt Lake City?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 117
+
+outgraph: urn:qanary:answer:d3079409-afa2-4f3b-b46a-367f228da8cb
+How many companies were founded by the founder of Facebook?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 125
+
+outgraph: urn:qanary:answer:90445d14-8926-47b8-8156-0ff1c93b0406
+When did Dracula's creator die?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:d1bd0bb3-2056-4238-8d73-ec9ccca917d0
+Where does Piccadilly start?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:e21ce10a-d8c0-44e1-a503-5476c475defd
+Who is the daughter of Robert Kennedy married to?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:e0e80f8e-468b-42e1-b6af-394cac532158
+Which countries have more than ten volcanoes?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:66249eaa-e566-4f8c-b614-3e0f8869d704
+Who was the father of Queen Elizabeth II?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:ed61bd00-fb0c-4ed4-940b-88d449bc8cfb
+When did Paraguay proclaim its independence?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:a279384b-5a77-48e1-8828-71abae89f43c
+Which movies did Kurosawa direct?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:b32cb1a4-e8eb-4906-b28d-c396d28ef7bf
+How many awards has Bertrand Russell?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 131
+
+outgraph: urn:qanary:answer:2b91f5bd-552e-43ab-afda-e39a428a4a6b
+Which German cities have more than 250000 inhabitants?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:59b49f92-a376-454b-b6f8-5dede853797d
+How big is the earth's diameter?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:16e43224-0f76-49a6-a075-aff0872bdd0a
+How many rivers and lakes are in South Carolina?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:fd72fd8e-0438-4804-bcd2-9b72aedc562b
+Who was called Rodzilla?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:b1e0ada5-b07a-4e69-ac94-422fac149f05
+Is Pamela Anderson a vegan?
+Number of entities: 2
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:d631918c-0bda-4fa4-9dc9-1c6f7d9d1dfe
+Which instruments does Cat Stevens play?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:a61c071a-35ae-481f-8d3c-9d8ae84ff9d9
+Who is the daughter of Bill Clinton married to?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 227
+
+outgraph: urn:qanary:answer:c2f6e04d-9422-4e6d-85ce-ec82627c302a
+Who was the wife of President Lincoln?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:27c8d0f5-54a0-4979-ab71-d18a2bf04617
+Give me all animals that are extinct.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:1596fa78-6130-4be0-b320-bc704c0190d2
+When was Carlo Giuliani shot?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:49b94892-833e-4c6d-8c88-849091df307c
+How many years was the Ford Model T manufactured?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:38cdc809-ef87-47e1-935b-caa404ad1ed9
+Sean Parnell was the governor of which U.S. state?
+Number of entities: 2
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:d679be35-1d6d-4f1b-8c28-c0ef217698cb
+Who is the author of WikiLeaks?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 113
+
+outgraph: urn:qanary:answer:b052522b-ad8d-4273-8078-208d124f342a
+Who does the voice of Bart Simpson?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 215
+
+outgraph: urn:qanary:answer:5ee470ce-0ab9-4628-9ab0-02eb4452c0e5
+What languages are spoken in Pakistan?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 114
+
+outgraph: urn:qanary:answer:0b8b3cc0-88b5-45eb-a682-52760b928606
+What is Elon Musk famous for?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:52c57558-382e-4dc5-8c44-9e01166d464e
+What are the names of the Teenage Mutant Ninja Turtles?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:8c95bd6c-e574-4f2a-95d2-167015bad377
+What is Batman's real name?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 133
+
+outgraph: urn:qanary:answer:8dc1b90f-dd55-4d96-aa56-0735b3998103
+When did Michael Jackson die?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:d80c053d-fc0b-4fc6-870b-daaf8e4cf3ef
+How many moons does Mars have?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:56b826de-3255-467a-bf10-2cbb66ece145
+Give me all Dutch parties.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:cd74b8a9-c4fa-441a-9a0e-14e0264121e8
+Give me the capitals of all countries in Africa.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:ca04afcc-5918-40ee-a194-ceeb592e1232
+Which professional surfers were born in Australia?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:76f00f2e-e1b2-46f7-8593-9b0f60730b12
+How many scientists graduated from an Ivy League university?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:a76e2805-357c-4ba5-a8ba-2d87adbdbd99
+Which languages are spoken in Estonia?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:84858103-95fe-4f7b-8c98-7f1f08be80df
+What is the area code of Berlin?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:f9db35ad-bca4-4796-861d-e2695e11d439
+Whom did Lance Bass marry?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:f84afa6c-95fc-4c2a-a6ac-5f83157004a8
+Who owns Aldi?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 107
+
+outgraph: urn:qanary:answer:a9e64158-f9fc-4663-bbdb-98feefc5f4a0
+What is the largest state in the United States?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:d294ba9a-c5e9-4eb9-b2d5-dd152428c687
+Which U.S. state has the highest population density?
+Number of entities: 2
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:36d0e52f-0b2b-42d0-8e51-61391f359f89
+In which city was the president of Montenegro born?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 224
+
+outgraph: urn:qanary:answer:b6cef98a-4152-477f-9976-3e77ef8ee3fd
+Give me all B-sides of the Ramones.
+Number of entities: 2
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:650173ac-fbd9-412c-8665-b7ca22cecf4f
+Which beer brewing companies are located in North-Rhine Westphalia?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:30c3a75c-8230-43ea-9637-582dd6bbc645
+Which books were written by Danielle Steel?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:2f71f347-4cdb-43ea-9214-61d7d103c698
+What is the nick name of Baghdad?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 113
+
+outgraph: urn:qanary:answer:4b93dd7b-0c1c-489a-8e3f-2a2849316363
+Where is Fort Knox located?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:f8019edb-163d-4900-909c-5415f1f9645e
+Give me English actors starring in Lovesick.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:2429e75b-ce7b-4078-8ae7-7cbd268dd05f
+Give me all writers that won the Nobel Prize in literature.
+Number of entities: 2
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:b1b6096c-c4da-404f-a0e1-4857957d272b
+Which countries are connected by the Rhine?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:f06a5025-d080-4ea7-b67a-460d57d4ed62
+Who wrote Harry Potter?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 116
+
+outgraph: urn:qanary:answer:fff06e1c-82ed-4eec-9d2e-95b1a315b70a
+How deep is Lake Chiemsee?
+Number of entities: 2
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:1cf143b6-acaa-4331-a49d-0d2ec07d6872
+Give me all chemical elements.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:c18f1218-eed3-418e-b5ed-0af3b33f05b3
+Who was on the Apollo 11 mission?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:5ed2f4eb-1f0a-48e9-b38b-91b6e27359ab
+What is the name of the university where Obama's wife studied?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:55998511-4318-4368-a9eb-c56d4e4f8ce3
+Which computer scientist won an oscar?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:0f53f448-a7f5-4d39-b0fb-f237e89f72ab
+Which subsidiary of TUI Travel serves both Glasgow and Dublin?
+Number of entities: 3
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:66283b00-4e41-4b25-a68c-bae561a46a72
+Which actors play in Big Bang Theory?
+Number of entities: 1
+Number of properties: 2
+Number of classes: 0
+Length of generated query: 175
+
+outgraph: urn:qanary:answer:e58ff854-3fd6-44ea-980f-fb7a126eceab
+Give me all libraries established before 1400.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:d29ee46c-62de-47d1-9dd3-8e598f4b8740
+When did the Boston Tea Party take place?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:051c141d-a517-4ae7-8d38-0153db5905f0
+When did Finland join the EU?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:da05febf-14e7-498b-a4bb-7cd04a1fcd04
+Who is the novelist of the work a song of ice and fire?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 3
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:7e1ec917-78bc-4edc-ac88-373226d91639
+When did Muhammad die?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:e889b881-7bad-4f8b-93b2-a43d4d296b73
+Who painted The Storm on the Sea of Galilee?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 136
+
+outgraph: urn:qanary:answer:127b6393-7066-4948-a120-cbe35907ba2c
+Which bridges are of the same type as the Manhattan Bridge?
+Number of entities: 1
+Number of properties: 2
+Number of classes: 0
+Length of generated query: 165
+
+outgraph: urn:qanary:answer:f074de7b-78f8-426c-8849-79fc5a2bc7d6
+How many James Bond movies do exist?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:61b4da3c-3691-4798-8f52-5be4be047464
+What were the names of the three ships by Columbus?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:e8bd40e3-2879-41c6-ba58-298a811861fd
+Through which countries does the Yenisei river flow?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:e7a978a8-0d39-4673-b93a-7d6536f913d1
+Which animals are critically endangered?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:ed40dbb7-9e3b-4668-86c3-804c1caa15a2
+Who was Tom Hanks married to?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:d1084c85-31e2-4932-85bc-1e8b5ec9318e
+Who is the husband of Amanda Palmer?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 117
+
+outgraph: urn:qanary:answer:6084a663-9132-46ad-a902-f34218f8b0b2
+Give me the homepage of Forbes.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:b11a77fe-edd3-4465-9bed-cb6325ae0fff
+In which studio did the Beatles record their first album?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 1
+Length of generated query: 215
+
+outgraph: urn:qanary:answer:15d2bbe1-0510-457b-a129-abe975301ad7
+Who are the parents of the wife of Juan Carlos I?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 126
+
+outgraph: urn:qanary:answer:fdb213cb-38ad-4fb1-88aa-e7e5e067f488
+Which museum exhibits The Scream by Munch?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:b9bf8c3d-ac0e-430f-a0c5-74b18146bb60
+Which U.S. state has the abbreviation MN?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 115
+
+outgraph: urn:qanary:answer:5c338b6c-0d02-449c-96c0-7c7f2d5b29b2
+Which classes does the Millepede belong to?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:f97b0dcc-39cf-4103-98a0-3fcf6f96044e
+Which U.S. state has been admitted latest?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:9579deb0-dd08-4384-8cb3-6fe9366ba377
+Who was influenced by Socrates?
+Number of entities: 1
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 116
+
+outgraph: urn:qanary:answer:82460d32-8178-445b-82fd-e45c70502b2c
+Give me all Argentine films.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:9316e34a-6849-41ce-ba6f-c63b4d757861
+What is the founding year of the brewery that produces Pilsner Urquell?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:c94276c7-3641-441c-a607-09d45deea96e
+How did Michael Jackson die?
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:2dbeabf7-db8a-4f7c-bce1-f9a4a3654832
+What was the name of the famous battle in 1836 in San Antonio?
+Number of entities: 0
+Number of properties: 2
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:1b444695-23b0-48b5-8b48-02d85715a1d9
+Which daughters of British earls died at the same place they were born at?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:6da61703-8afc-480e-91c7-94fc42864bc5
+Give me all taikonauts.
+Number of entities: 2
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:218c5644-face-435f-b0f4-3346df4be23d
+Which monarchs of the United Kingdom were married to a German?
+Number of entities: 0
+Number of properties: 1
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:5ba7fba3-3861-47f7-992d-8cb93f661a3c
+Give me all American presidents of the last 20 years.
+Number of entities: 1
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:791080b4-ddc8-4a4e-aa24-4b9a38775346
+Which companies work in the aerospace industry as well as in medicine?
+Number of entities: 0
+Number of properties: 0
+Number of classes: 1
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:70b8af2b-345e-4a45-b1cc-ff2bdd8b6378
+Show me all Czech movies.
+Number of entities: 0
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
+outgraph: urn:qanary:answer:8d45542d-c516-4377-a38b-9d21b2edaf6e
+Give me all professional skateboarders from Sweden.
+Number of entities: 2
+Number of properties: 0
+Number of classes: 0
+Length of generated query: 0
+
