@@ -255,11 +255,14 @@ public class SINA extends QanaryComponent {
 
 		while (r.hasNext()) {
 			QuerySolution s = r.next();
-			classes.add(s.getResource("uri").getURI());
-			logger.info("uri info {}", s.getResource("uri").getURI());
-			Entity entityTemp = new Entity();
-			entityTemp.uri = s.getResource("uri").getURI();
-			argument += entityTemp.uri + ", ";
+			// hier wird manchmal der filepfad des CL statt der class-uri mitgegeben. regex zur behebung
+			if(Pattern.matches("*dbpedia.org*",s.getResource("uri").getURI())) {
+				classes.add(s.getResource("uri").getURI());
+				logger.info("uri info {}", s.getResource("uri").getURI());
+				Entity entityTemp = new Entity();
+				entityTemp.uri = s.getResource("uri").getURI();
+				argument += entityTemp.uri + ", ";
+			}
 		}
 
 
