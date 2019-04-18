@@ -220,11 +220,69 @@ public class QaldQuestion {
     }
 
     /**
+     * returns all instances that are DBpedia ontology URIs
+     */
+    private List<QaldQuestionUri> getConceptUris() {
+        List<QaldQuestionUri> ontologyUris = new LinkedList<>();
+        QaldQuestionUri qaldQuestionUri;
+
+        Iterator<QaldQuestionUri> iter = this.uris.values().iterator();
+        while (iter.hasNext()) {
+            qaldQuestionUri = iter.next();
+            if (qaldQuestionUri.isDBpediaConcept()) {
+                ontologyUris.add(qaldQuestionUri);
+            }
+        }
+
+        return ontologyUris;
+    }
+
+    /**
+     * returns all instances that are DBpedia property URIs
+     */
+    private List<QaldQuestionUri> getPropertyUris() {
+        List<QaldQuestionUri> propertyUris = new LinkedList<>();
+        QaldQuestionUri qaldQuestionUri;
+
+        Iterator<QaldQuestionUri> iter = this.uris.values().iterator();
+        while (iter.hasNext()) {
+            qaldQuestionUri = iter.next();
+            if (qaldQuestionUri.isDBpediaProperty()) {
+                propertyUris.add(qaldQuestionUri);
+            }
+        }
+
+        return propertyUris;
+    }
+
+    /**
      * returns a list of strings representing the dbpedia:resource URIs
      */
     public List<String> getResourceUrisAsString() {
         List<String> result = new LinkedList<>();
         for (QaldQuestionUri uri : this.getResourceUris()) {
+            result.add(uri.getUri().toString());
+        }
+        return result;
+    }
+
+    /**
+     * returns a list of strings representing the dbpedia:ontology URIs
+     */
+    public List<String> getConceptUrisAsString() {
+        List<String> result = new LinkedList<>();
+        for (QaldQuestionUri uri : this.getConceptUris()) {
+            result.add(uri.getUri().toString());
+        }
+        return result;
+    }
+
+    /**
+     * returns a list of strings representing the dbpedia:property URIs
+     */
+    public List<String> getPropertiesUrisAsString() {
+        List<String> result = new LinkedList<>();
+        for (QaldQuestionUri uri : this.getPropertyUris()) {
             result.add(uri.getUri().toString());
         }
         return result;

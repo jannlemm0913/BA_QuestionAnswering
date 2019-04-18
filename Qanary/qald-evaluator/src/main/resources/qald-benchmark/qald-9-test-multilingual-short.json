@@ -1,0 +1,498 @@
+{
+  "dataset" : {
+    "id" : "qald-9-test-multilingual"
+  },
+  "questions" : [ {
+    "id" : "1",
+    "answertype" : "resource",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "In welcher Zeitzone liegt Salt Lake City?",
+      "keywords" : "Salt Lake City,  Zeitzone"
+    }, {
+      "language" : "ru",
+      "string" : "Какие является  время зона из Поваренная соль Озеро Город? ",
+      "keywords" : "Поваренная соль Озеро город ,   время зона "
+    }, {
+      "language" : "pt",
+      "string" : "o que é a Tempo zona do Sal Lago Cidade? ",
+      "keywords" : "Sal Lago Cidade ,   Tempo zona "
+    }, {
+      "language" : "en",
+      "string" : "What is the time zone of Salt Lake City?",
+      "keywords" : "Salt Lake City,  time zone"
+    }, {
+      "language" : "hi_IN",
+      "string" : "साल्ट लेक सिटी का समय क्षेत्र क्या है?",
+      "keywords" : "साल्ट लेक सिटी,  समय क्षेत्र"
+    }, {
+      "language" : "fa",
+      "string" : "منطقه زمانی سالت لیک سیتی چیست؟",
+      "keywords" : "سالت‌لیک‌سیتی,  منطقه زمانی"
+    }, {
+      "language" : "pt_BR",
+      "string" : "Qual o fuso horário de Salt Lake City?",
+      "keywords" : "fuso horário,  Salt Lake City"
+    }, {
+      "language" : "it",
+      "string" : "In quale fuso orario si trova Salt Lake City?",
+      "keywords" : "Salt Lake City,  fuso orario"
+    }, {
+      "language" : "fr",
+      "string" : "Quel est le fuseau horaire de Salt Lake City?",
+      "keywords" : "fuseau horaire,  Salt Lake City"
+    }, {
+      "language" : "ro",
+      "string" : "Ce este  timp zona de Sare Lac Oraș? ",
+      "keywords" : "Sare Lac Oraș ,   timp zona "
+    }, {
+      "language" : "es",
+      "string" : "¿En qué zona horaria se encuentra Salt Lake City?",
+      "keywords" : "Salt Lake City,  zona horaria"
+    }, {
+      "language" : "nl",
+      "string" : "In welke tijdzone ligt Salt Lake City?",
+      "keywords" : "Salt Lake City,  tijdzone"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Salt_Lake_City <http://dbpedia.org/ontology/timeZone> ?uri }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "uri" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://dbpedia.org/resource/Mountain_Time_Zone"
+          }
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "86",
+    "answertype" : "resource",
+    "aggregation" : false,
+    "onlydbo" : true,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was ist das höchste Berg im Deutschland? ",
+      "keywords" : "höchste ,   Berg ,   Deutschland "
+    }, {
+      "language" : "ru",
+      "string" : "Какие является  наибольший гора в Германия? ",
+      "keywords" : "наибольший ,   гора ,   Германия "
+    }, {
+      "language" : "pt",
+      "string" : "o que é a maior montanha dentro Alemanha? ",
+      "keywords" : "maior ,   montanha ,   Alemanha "
+    }, {
+      "language" : "hi_IN",
+      "string" : "जर्मनी में सबसे ऊंचा पर्वत क्या है?",
+      "keywords" : "उच्चतम ,   पर्वत ,   जर्मनी "
+    }, {
+      "language" : "en",
+      "string" : "What is the highest mountain in Germany?",
+      "keywords" : "highest,  mountain,  germany"
+    }, {
+      "language" : "it",
+      "string" : "Che cosa è il massimo montagna in Germania? ",
+      "keywords" : "massimo ,   montagna ,   Germania "
+    }, {
+      "language" : "fa",
+      "string" : "  آلمان؟  که در  کوه  بالاترین  این  است  چی",
+      "keywords" : "  بالاترین,     کوه,     آلمان"
+    }, {
+      "language" : "fr",
+      "string" : "Quelle est la le plus élevé Montagne dans Allemagne? ",
+      "keywords" : "le plus élevé ,   Montagne ,   Allemagne "
+    }, {
+      "language" : "ro",
+      "string" : "Ce este  cel mai inalt Munte în Germania? ",
+      "keywords" : "cel mai inalt ,   Munte ,   Germania "
+    }, {
+      "language" : "es",
+      "string" : "Qué es el más alto montaña en ¿Alemania? ",
+      "keywords" : "más alto ,   montaña ,   Alemania "
+    }, {
+      "language" : "nl",
+      "string" : "Wat is de hoogst berg- in Duitsland? ",
+      "keywords" : "hoogst ,   berg- ,   Duitsland "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX onto: <http://dbpedia.org/ontology/> SELECT ?uri WHERE { ?uri rdf:type onto:Mountain ; onto:elevation ?elevation ; onto:locatedInArea <http://dbpedia.org/resource/Germany> } ORDER BY DESC(?elevation) LIMIT 1"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "uri" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://dbpedia.org/resource/Zugspitze"
+          }
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "43",
+    "answertype" : "resource",
+    "aggregation" : false,
+    "onlydbo" : false,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Gib mir alle Webseiten von Unternehmen mit mehr als 500000 Angestellten.",
+      "keywords" : "Webseite,  Unternehmen,  Angestellte,  mehr als 500000"
+    }, {
+      "language" : "ru",
+      "string" : "Дайте меня  сайты из компании с Больше чем +500000 сотрудники. ",
+      "keywords" : "Веб-сайт ,   Компания ,   наемный рабочий ,   Больше чем +500000 "
+    }, {
+      "language" : "pt",
+      "string" : "Dar mim a websites do empresas com Mais do que 500000 funcionários. ",
+      "keywords" : "local na rede Internet ,   companhia ,   empregado ,   Mais do que 500000 "
+    }, {
+      "language" : "hi_IN",
+      "string" : "देना मुझे  वेबसाइटों का कंपनियों साथ में अधिक से 500000 कर्मचारियों। ",
+      "keywords" : "वेबसाइट ,   कंपनी ,   कर्मचारी ,   अधिक से 500000 "
+    }, {
+      "language" : "en",
+      "string" : "Give me the websites of companies with more than 500000 employees.",
+      "keywords" : "website,  company,  employee,  more than 500000"
+    }, {
+      "language" : "fa",
+      "string" : "وبسایت شرکت های با بیش از 500000 کارمند را لیست کن.",
+      "keywords" : "وبسایت، شرکت های، بیش از 500000، کارمند"
+    }, {
+      "language" : "it",
+      "string" : "Dammi tutti i siti internet di aziende con più di 500000 dipendenti.",
+      "keywords" : "sito internet,  azienda,  dipendenti,  più di 500000"
+    }, {
+      "language" : "fr",
+      "string" : "Donnes-moi les sites webs de companies avec plus de 500000 employés.",
+      "keywords" : "sites webs,  companies,  plus de 500000 employés"
+    }, {
+      "language" : "ro",
+      "string" : "Dă-mi toate website-urile de la companiile cu mai mult de 500000 de angajați",
+      "keywords" : "website,  companie,  angajat,  mai mult de 500000"
+    }, {
+      "language" : "es",
+      "string" : "Dame todas las páginas de Web de empresas con más de 500000 empleados.",
+      "keywords" : "página de Web,  empreasas,  empleados,  más de 500000"
+    }, {
+      "language" : "nl",
+      "string" : "Geef me de websites van alle ondernemingen met meer dan 500000 werknemers.",
+      "keywords" : "website,  onderneming,  werknemers,  meer dan 500000"
+    } ],
+    "query" : {
+      "sparql" : "PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT distinct ?web WHERE { ?sub dbo:numberOfEmployees ?obj . ?sub foaf:homepage ?web FILTER( xsd:integer(?obj) > 500000 ) . }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "uri" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "uri" : {
+            "type" : "uri",
+            "value" : "https://www.usps.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.baytexenergy.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.petrochina.com.cn/ptr/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.koelnmesse.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.umw.com.my"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.molmed.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://en.mvd.ru"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.sgcc.com.cn/ywlm/default.shtml"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.moe.gov.my/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://volkswagenag.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.tcs.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.umw.com.my/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.oxy.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.peopleready.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.issworld.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.foxconn.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.defense.gov"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.yum.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.carverbank.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.chinapost.com.cn"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.molmed.com/financial-reports?language=en"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.marykay.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.cpgroupglobal.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.errt.org/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.mod.gov.pk/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.baytexenergy.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://lindenlab.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.tesco.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.tcs.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.permasteelisagroup.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://rostec.ru/en/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://en.mvd.ru/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.bundespost.de/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.cnpc.com.cn/en/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.bahriatown.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.tata.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.indianrailways.gov.in"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.avic.com/en"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.nuffnang.com"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.telent.com/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.moiegypt.gov.eg/english"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://www.indianrailways.gov.in/"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://g4s.com"
+          }
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "179",
+    "answertype" : "resource",
+    "aggregation" : false,
+    "onlydbo" : false,
+    "hybrid" : false,
+    "question" : [ {
+      "language" : "de",
+      "string" : "Was waren die Namen der drei Schiffe von die Columbus?",
+      "keywords" : "drei Schiffe,  Columbus,  benutzte"
+    }, {
+      "language" : "ru",
+      "string" : "Какие мы  имена из  три судов используемый от Columbus? ",
+      "keywords" : "три судов ,   используемый ,   Колумбус "
+    }, {
+      "language" : "pt",
+      "string" : "o que estavam a nomes do a três navios usava de Columbus? ",
+      "keywords" : "três navios ,   usava ,   Colombo "
+    }, {
+      "language" : "hi_IN",
+      "string" : "कोलम्बस द्वारा उपयोग किए जाने वाले तीन जहाजों के नाम क्या थे?",
+      "keywords" : "तीन जहाजों ,   उपयोग किया गया ,   कोलंबस "
+    }, {
+      "language" : "en",
+      "string" : "What were the names of the three ships by Columbus?",
+      "keywords" : "three ships,  used,  Columbus"
+    }, {
+      "language" : "fa",
+      "string" : "نام سه کشتی مورد استفاده کلمبوس چیست؟",
+      "keywords" : "هس  اه یتشک  ,   هدش هدافتسا  ,   سوبملک  "
+    }, {
+      "language" : "it",
+      "string" : "Quali furono i nomi delle tre navi utilizzate da Colombo?",
+      "keywords" : "tre navi,  utilizzate,  Colombo"
+    }, {
+      "language" : "fr",
+      "string" : "Quels sont les noms des trois bateaux utilisés par Colomb?",
+      "keywords" : "trois bateaux,  utilisés,  Colomb"
+    }, {
+      "language" : "ro",
+      "string" : "Care erau numele celor trei nave folosite de Columb?",
+      "keywords" : "Trei nave ,   folosit ,   Columbus "
+    }, {
+      "language" : "es",
+      "string" : "¿Cuáles fueron los nombres de las tres naves utilizadas por Colón?",
+      "keywords" : "Tres naves ,   usado ,   Colón "
+    }, {
+      "language" : "nl",
+      "string" : "Wat waren de namen van de drie schepen die door Columbus werden gebruikt?",
+      "keywords" : "drie schepen ,   gebruikt ,   Columbus "
+    } ],
+    "query" : {
+      "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dct: <http://purl.org/dc/terms/> PREFIX dbc: <http://dbpedia.org/resource/Category:> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri rdf:type dbo:Ship ; dct:subject dbc:Christopher_Columbus ; dct:subject dbc:Exploration_ships }"
+    },
+    "answers" : [ {
+      "head" : {
+        "vars" : [ "uri" ]
+      },
+      "results" : {
+        "bindings" : [ {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://dbpedia.org/resource/Santa_María_(ship)"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://dbpedia.org/resource/Pinta_(ship)"
+          }
+        }, {
+          "uri" : {
+            "type" : "uri",
+            "value" : "http://dbpedia.org/resource/Niña"
+          }
+        } ]
+      }
+    } ]
+  } ]
+}
