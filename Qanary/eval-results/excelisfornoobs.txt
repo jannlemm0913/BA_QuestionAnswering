@@ -1,3 +1,23 @@
+Pipeline: 1
+Precision: 0.8010
+Recall: 0.075795
+F-Measure: 0.049322
+
+Pipeline: 
+Precision: 
+Recall: 
+F-Measure: 
+
+Pipeline: 
+Precision: 
+Recall: 
+F-Measure: 
+
+Pipeline: 
+Precision: 
+Recall: 
+F-Measure: 
+
 Pipeline: 12
 Precision: 0.8967
 Recall: 0.04787879
@@ -28,13 +48,18 @@ Precision: 0.8234
 Recall: 0.054962
 F-Measure: 0.035051
 
-Pipeline: 
-Precision: 
-Recall: 
-F-Measure: 
+Pipeline: 22
+Precision: 0.9453
+Recall: 0.027878
+F-Measure: 0.028642
 
-Pipeline: 
-Precision: 
-Recall: 
-F-Measure: 
+Pipeline: 23
+Precision: 0.8287
+Recall: 0.038295
+F-Measure: 0.03374
+
+Pipeline: 24
+Precision: 0.9342
+Recall: 0.034545
+F-Measure: 0.031975
 
