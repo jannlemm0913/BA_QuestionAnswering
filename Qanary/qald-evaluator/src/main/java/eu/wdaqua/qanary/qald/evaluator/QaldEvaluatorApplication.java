@@ -287,7 +287,7 @@ public class QaldEvaluatorApplication {
     }
 
     public void csvToOutput() throws IOException {
-        File csvOutputFile = new File("../../eval-results/19_Stanford-NER-AGDISTIS-NED_Earl_OKBAQA-DM-CLS_SINA.csv");
+        File csvOutputFile = new File("../../eval-results/21_Stanford-NER-AGDISTIS-NED_RNLIWOD_CLS-CLISNLIOD_SINA.csv");
         try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
             dataLines.stream()
                 .map(this::convertToCSV)
@@ -391,7 +391,7 @@ public class QaldEvaluatorApplication {
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,ClsNliodCls,QueryBuilder");
         //componentConfigurations.add("NERD-DBpediaSpotlight,RelNliodRel,ClsNliodCls,QueryBuilder");
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,EarlRelationLinking,DiambiguationClass,SINA");
-        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,EarlRelationLinking,DiambiguationClass,SINA");
+        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,ClsNliodCls,SINA");
 
 
         for (String componentConfiguration : componentConfigurations) {
