@@ -33,7 +33,8 @@ import java.lang.ProcessBuilder;
 @Component
 public class DBpediaSpotlightNERD extends QanaryComponent {
     private static final Logger logger = LoggerFactory.getLogger(DBpediaSpotlightNERD.class);
-    private String service = "http://api.dbpedia-spotlight.org/en/annotate/";
+    //private String service = "http://api.dbpedia-spotlight.org/en/annotate/";
+    private String service = "http://146.136.25.205:2222/rest/annotate/";
 
     public QanaryMessage process(QanaryMessage myQanaryMessage) throws Exception {
         logger.info("process: {}", myQanaryMessage);
