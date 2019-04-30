@@ -3,7 +3,7 @@ Precision: 0.8010
 Recall: 0.075795
 F-Measure: 0.049322
 
-Pipeline: 3
+Pipeline: 7
 Precision: 0.866
 Recall: 0.01829545
 F-Measure: 0.0170733
