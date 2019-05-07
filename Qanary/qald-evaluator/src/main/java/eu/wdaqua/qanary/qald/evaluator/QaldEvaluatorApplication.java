@@ -54,7 +54,7 @@ public class QaldEvaluatorApplication {
     List<String[]> dataLines = new ArrayList<>();
 
     private void process(String components, int maxQuestionsToBeProcessed)
-            throws UnsupportedEncodingException, IOException {
+            throws UnsupportedEncodingException, IOException { 
         Double globalPrecision = 0.0;
         Double globalRecall = 0.0;
         Double globalFMeasure = 0.0;
