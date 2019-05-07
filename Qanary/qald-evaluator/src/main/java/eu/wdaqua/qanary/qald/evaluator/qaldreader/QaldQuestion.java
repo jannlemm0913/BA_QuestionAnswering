@@ -59,31 +59,11 @@ public class QaldQuestion {
         URIDetector uriDetector;
 
         // neu
-        //JsonArray answersdata;
-        //JsonArray bindingsdata;
         this.qaldQuestion = qaldQuestion;
 
         questiondata = qaldQuestion.getAsJsonArray("question");
         qaldId = qaldQuestion.get("id").getAsInt();
 
-        // neu. logger info für Anzahl erwarteten Lösungen und ob es URIs, Strings oder Zahlen sind
-        /*answersdata = qaldQuestion.getAsJsonArray("answers");
-        bindingsdata = answersdata.get(0).getAsJsonObject().get("results").getAsJsonObject().getAsJsonArray("bindings");
-        JsonObject test1 = answersdata.get(0).getAsJsonObject();
-        JsonObject test2 = test1.get("head").getAsJsonObject();
-        JsonArray  test3 = test2.getAsJsonArray("vars");
-        if(test3 == null) {
-             logger.info("==== vars is null, can happen when answer is boolean");
-             
-             }
-             else {
-
-             }
-        //JsonElement test5 = test3.get(0);
-        String     test4 = test3.getAsString();
-        // logger.info("==== Answer Type: {}",test4);
-        //answerType = answersdata.get(0).getAsJsonObject().get("head").getAsJsonObject().getAsJsonArray("vars").get(0).getAsString();
-        */
         answerType = qaldQuestion.get("answertype").getAsString();
         logger.info("==== Answer Type: {}",answerType);
         
@@ -110,10 +90,10 @@ public class QaldQuestion {
                     addNodeToLists(qaldId, uriDetector.getObjects(), NodePosition.OBJECT);
                     break;
                 }
-            } else { // this else is bad. it gives out unneeded error messages that confuse the user
+            } else {
                 sparqlquery = null;
                 // actually this can happending considering the QALD-6 data
-                // ==== logger.warn("No SPARQL query found in {}.", qaldQuestion);
+                // logger.warn("No SPARQL query found in {}.", qaldQuestion);
             }
 
         }
@@ -219,41 +199,41 @@ public class QaldQuestion {
         return resourceUris;
     }
 
-    /**
-     * returns all instances that are DBpedia ontology URIs
-     */
-    private List<QaldQuestionUri> getConceptUris() {
-        List<QaldQuestionUri> ontologyUris = new LinkedList<>();
-        QaldQuestionUri qaldQuestionUri;
+    // /**
+    //  * returns all instances that are DBpedia ontology URIs
+    //  */
+    // private List<QaldQuestionUri> getConceptUris() {
+    //     List<QaldQuestionUri> ontologyUris = new LinkedList<>();
+    //     QaldQuestionUri qaldQuestionUri;
 
-        Iterator<QaldQuestionUri> iter = this.uris.values().iterator();
-        while (iter.hasNext()) {
-            qaldQuestionUri = iter.next();
-            if (qaldQuestionUri.isDBpediaConcept()) {
-                ontologyUris.add(qaldQuestionUri);
-            }
-        }
+    //     Iterator<QaldQuestionUri> iter = this.uris.values().iterator();
+    //     while (iter.hasNext()) {
+    //         qaldQuestionUri = iter.next();
+    //         if (qaldQuestionUri.isDBpediaConcept()) {
+    //             ontologyUris.add(qaldQuestionUri);
+    //         }
+    //     }
 
-        return ontologyUris;
-    }
+    //     return ontologyUris;
+    // }
 
-    /**
-     * returns all instances that are DBpedia property URIs
-     */
-    private List<QaldQuestionUri> getPropertyUris() {
-        List<QaldQuestionUri> propertyUris = new LinkedList<>();
-        QaldQuestionUri qaldQuestionUri;
+    // /**
+    //  * returns all instances that are DBpedia property URIs
+    //  */
+    // private List<QaldQuestionUri> getPropertyUris() {
+    //     List<QaldQuestionUri> propertyUris = new LinkedList<>();
+    //     QaldQuestionUri qaldQuestionUri;
 
-        Iterator<QaldQuestionUri> iter = this.uris.values().iterator();
-        while (iter.hasNext()) {
-            qaldQuestionUri = iter.next();
-            if (qaldQuestionUri.isDBpediaProperty()) {
-                propertyUris.add(qaldQuestionUri);
-            }
-        }
+    //     Iterator<QaldQuestionUri> iter = this.uris.values().iterator();
+    //     while (iter.hasNext()) {
+    //         qaldQuestionUri = iter.next();
+    //         if (qaldQuestionUri.isDBpediaProperty()) {
+    //             propertyUris.add(qaldQuestionUri);
+    //         }
+    //     }
 
-        return propertyUris;
-    }
+    //     return propertyUris;
+    // }
 
     /**
      * returns a list of strings representing the dbpedia:resource URIs
@@ -266,27 +246,27 @@ public class QaldQuestion {
         return result;
     }
 
-    /**
-     * returns a list of strings representing the dbpedia:ontology URIs
-     */
-    public List<String> getConceptUrisAsString() {
-        List<String> result = new LinkedList<>();
-        for (QaldQuestionUri uri : this.getConceptUris()) {
-            result.add(uri.getUri().toString());
-        }
-        return result;
-    }
+    // /**
+    //  * returns a list of strings representing the dbpedia:ontology URIs
+    //  */
+    // public List<String> getConceptUrisAsString() {
+    //     List<String> result = new LinkedList<>();
+    //     for (QaldQuestionUri uri : this.getConceptUris()) {
+    //         result.add(uri.getUri().toString());
+    //     }
+    //     return result;
+    // }
 
-    /**
-     * returns a list of strings representing the dbpedia:property URIs
-     */
-    public List<String> getPropertiesUrisAsString() {
-        List<String> result = new LinkedList<>();
-        for (QaldQuestionUri uri : this.getPropertyUris()) {
-            result.add(uri.getUri().toString());
-        }
-        return result;
-    }
+    // /**
+    //  * returns a list of strings representing the dbpedia:property URIs
+    //  */
+    // public List<String> getPropertiesUrisAsString() {
+    //     List<String> result = new LinkedList<>();
+    //     for (QaldQuestionUri uri : this.getPropertyUris()) {
+    //         result.add(uri.getUri().toString());
+    //     }
+    //     return result;
+    // }
 
     /**
      * returns all QALD answers to this question
@@ -315,16 +295,6 @@ public class QaldQuestion {
             default:
                 result.add("No resource question");
         }
-        /*
-        try {
-            for (int j = 0; j < bindingsdata.size(); j++) {
-                String expectedAnswer = bindingsdata.get(j).getAsJsonObject().get(this.answerType).getAsJsonObject().get("value").getAsString();
-                 result.add(expectedAnswer);
-            }
-        } catch (Exception e) {
-            logger.error("==== Error with bindingsdata from QaldQuestion");
-        }
-        */
         return result;
     }
 
