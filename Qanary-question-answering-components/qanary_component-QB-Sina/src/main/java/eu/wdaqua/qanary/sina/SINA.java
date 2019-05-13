@@ -315,8 +315,10 @@ public class SINA extends QanaryComponent {
 					Matcher m = pattern.matcher(ar);
 					if(m.find()){
 						ar = m.group(0);
+						logger.info("==== Geregexte Query: {}",ar);
 					}
 					ar = ar.replaceAll("\\s(http.*?)\\s", " <$1> ");
+					logger.info("==== Geregexte Query mit korrekten URLs: {}",ar);
 				} catch (Exception e) {
 					ar = "[]";
 				}
