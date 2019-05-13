@@ -152,7 +152,13 @@ public class QaldEvaluatorApplication {
                                 JSONObject test2Json = bindingsJson.getJSONObject(j);
                                 String answerUri = test2Json.getJSONObject(typeJson).getString("value");
                                 logger.info("System answers: {} ", answerUri);
-                                systemAnswers.add(answerUri);
+                                
+                            /* Problem: System scheint Antworten mehrmals zurückzugeben, d.h. expectedAnswers kann 3 sein, correctAnswers aber 7.
+                            Vermutung ist, dass mehrmals das gleiche in systemAnswers steht (z.B. zweimal die Entität ...:Barack_Obama)
+                            Da dies sinnlos ist und Auswirkungen auf den Recall hat, sollen systemAnswers einzigartig sein. */
+                                if(!(systemAnswers.contains(answerUri))) {
+                                    systemAnswers.add(answerUri);
+                                }
                             }
                         }
                     } catch (Exception e) {
@@ -312,6 +318,7 @@ public class QaldEvaluatorApplication {
         public int compute(List<String> expectedAnswers, List<String> systemAnswers) {
             //Compute the number of retrieved answers
             int correctRetrieved = 0;
+
             for (String s : systemAnswers) {
                 if (expectedAnswers.contains(s)) {
                     correctRetrieved++;
