@@ -7,3 +7,5 @@
 **/*.jar
 Notes/
 **/questions.txt
+GERBIL/
+gerbil_data/

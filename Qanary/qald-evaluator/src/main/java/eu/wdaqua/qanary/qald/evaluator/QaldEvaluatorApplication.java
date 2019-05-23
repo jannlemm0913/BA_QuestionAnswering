@@ -293,7 +293,7 @@ public class QaldEvaluatorApplication {
     }
 
     public void csvToOutput() throws IOException {
-        File csvOutputFile = new File("../../eval-results/SINARegexFehlersuche.csv");
+        File csvOutputFile = new File("../../eval-results/Frage181.csv");
         try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
             dataLines.stream()
                 .map(this::convertToCSV)

@@ -160,9 +160,15 @@ public class QanaryGerbilController {
         JSONObject question = new JSONObject();
         JSONArray language = new JSONArray();
         JSONObject sparql = new JSONObject();
-        sparql.put("SPARQL", myQanaryQuestion.getSparqlResult());
-    	language.add(sparql);
-    	question.put("answers", myQanaryQuestion.getJsonResult());
+        try {
+            sparql.put("SPARQL", myQanaryQuestion.getSparqlResult());
+            language.add(sparql);
+            question.put("answers", myQanaryQuestion.getJsonResult());
+        } catch (Exception e) {
+            sparql.put("SPARQL", "");
+            language.add(sparql);
+            question.put("answers", "");
+        }
     	question.put("language", language);
     	item.put("question", question);
     	questions.add(item);

@@ -1,0 +1,40 @@
+{
+  "dataset" : {
+    "id" : "qald-9-test-multilingual-181"
+  },
+  "questions" : [ 
+    {
+      "id" : "1",
+      "answertype" : "resource",
+      "aggregation" : false,
+      "onlydbo" : true,
+      "hybrid" : false,
+      "question" : [ {
+        "language" : "en",
+        "string" : "Through which countries does the Yenisei river flow?",
+        "keywords" : "Yenisei river,  flow through,  country"
+      } ],
+      "query" : {
+        "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Yenisei_River <http://dbpedia.org/ontology/country> ?uri }"
+      },
+      "answers" : [ {
+        "head" : {
+          "vars" : [ "uri" ]
+        },
+        "results" : {
+          "bindings" : [ {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Russia"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Mongolia"
+            }
+          } ]
+        }
+      } ]
+    }
+   ]
+}

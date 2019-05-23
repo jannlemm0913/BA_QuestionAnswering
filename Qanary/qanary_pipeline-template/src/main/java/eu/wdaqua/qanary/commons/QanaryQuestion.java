@@ -530,6 +530,7 @@ public class QanaryQuestion<T> {
 	}
 
 	public String getJsonResult() {
+		String returnedJson = "";
 		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> "
 				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> "
 				+ "SELECT ?json "
