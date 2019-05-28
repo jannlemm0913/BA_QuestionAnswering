@@ -11,6 +11,7 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -157,19 +158,29 @@ public class QanaryGerbilController {
         JSONObject obj = new JSONObject();
         JSONArray questions = new JSONArray();
         JSONObject item = new JSONObject();
-        JSONObject question = new JSONObject();
-        JSONArray language = new JSONArray();
-        JSONObject sparql = new JSONObject();
+        JSONArray question = new JSONArray();
+        JSONObject queryJson = new JSONObject();
+        JSONArray answers = new JSONArray();
+        JSONArray answersArray = new JSONArray();
+        //JSONObject sparql = new JSONObject();
+        JSONParser parser = new JSONParser();
         try {
-            sparql.put("SPARQL", myQanaryQuestion.getSparqlResult());
-            language.add(sparql);
-            question.put("answers", myQanaryQuestion.getJsonResult());
+            // hier wird nichts gemacht!!  queryJson.put("sparql", myQanaryQuestion.getSparqlResult());
+            JSONObject answerContent = (JSONObject) parser.parse(myQanaryQuestion.getJsonResult());
+            answersArray.add(answerContent);
+            item.put("answers", answersArray);
+            //item.put("answers", myQanaryQuestion.getJsonResult());
+
         } catch (Exception e) {
-            sparql.put("SPARQL", "");
-            language.add(sparql);
-            question.put("answers", "");
+           // queryJson.put("sparql", "");
+           // language.add(sparql);
+            //question.put("answers", "{   \"head\": {     \"vars\": [ \"\" ]   } ,   \"results\": { \"bindings\": [ ]   } }");
+            item.put("answers", answers);
         }
-    	question.put("language", language);
+        JSONObject temp = new JSONObject();
+        temp.put("language", "en");
+        question.add(temp);
+        item.put("query", queryJson);
     	item.put("question", question);
     	questions.add(item);
     	obj.put("questions", questions);

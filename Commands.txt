@@ -18,3 +18,8 @@ ___________________________________________________
 
 http://localhost:8080/#/overview
 http://localhost:8080/startquestionansweringwithtextquestion
+
+___________________________________________________
+GERBIL
+___________________________________________________
+mvn clean -Dmaven.tomcat.port=6969 tomcat:run
