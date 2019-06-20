@@ -167,7 +167,9 @@ public class QanaryGerbilController {
         try {
             // hier wird nichts gemacht!!  queryJson.put("sparql", myQanaryQuestion.getSparqlResult());
             JSONObject answerContent = (JSONObject) parser.parse(myQanaryQuestion.getJsonResult());
-            answersArray.add(answerContent);
+            if(!(answerContent.isEmpty())){   //if empty, dont push into answers array, for gerbil is easily confused
+                answersArray.add(answerContent);
+            }
             item.put("answers", answersArray);
             //item.put("answers", myQanaryQuestion.getJsonResult());
 
