@@ -62,7 +62,8 @@ public class QaldEvaluatorApplication {
         
         // add header to csv file
         dataLines.add(new String[] {"QuestionID","QuestionString", "ResourceURLs", "PropertyURLs", "OntologyURLs", "SPARQLQuery", "NrExpected","NrSystem","NrCorrect"});
-
+        // Antworten im CSV speichern
+        //dataLines.add(new String[] {"QuestionID","QuestionString", "ResourceURLs", "PropertyURLs", "OntologyURLs", "SPARQLQuery", "SystemAnswers", "NrExpected","NrSystem","NrCorrect"});
         ArrayList<Integer> fullRecall = new ArrayList<Integer>();
         ArrayList<Integer> fullFMeasure = new ArrayList<Integer>();
 
@@ -273,9 +274,14 @@ public class QaldEvaluatorApplication {
             String propertyUrisString = makeStringFromArray(propertyUris);
             String ontologyUrisString = makeStringFromArray(ontologyUris);
             String sparqlQueriesString = makeStringFromArray(sparqlQueries);
+            // Probieren, Antworten ins CSV zu schreiben
+            // String answersString = makeStringFromArray(systemAnswers);
             dataLines.add(new String[]
             {questionId.toString(), questionString, resourceUrisString, propertyUrisString, ontologyUrisString, sparqlQueriesString, 
                  Integer.toString(expectedAnswers.size()), Integer.toString(systemAnswers.size()), Integer.toString(correctlyAnswered)});
+            // dataLines.add(new String[]
+            //{questionId.toString(), questionString, resourceUrisString, propertyUrisString, ontologyUrisString, sparqlQueriesString, answersString,
+            //    Integer.toString(expectedAnswers.size()), Integer.toString(systemAnswers.size()), Integer.toString(correctlyAnswered)});
         }
 
         //print data to csv file
@@ -314,7 +320,6 @@ public class QaldEvaluatorApplication {
         private Double recall = 0.0;
         private Double fMeasure = 0.0;
 
-
         public int compute(List<String> expectedAnswers, List<String> systemAnswers) {
             //Compute the number of retrieved answers
             int correctRetrieved = 0;
@@ -325,6 +330,7 @@ public class QaldEvaluatorApplication {
                 }
             }
             //Compute precision and recall following the evaluation metrics of QALD
+            // see GERBIL Issue 322 for computation of QALD. This fMeasure is NOT how QALD calculates it
             if (expectedAnswers.size() == 0) {
                 if (systemAnswers.size() == 0) {
                     recall = 1.0;
