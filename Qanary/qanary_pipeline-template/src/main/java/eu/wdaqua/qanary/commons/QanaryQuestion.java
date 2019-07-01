@@ -740,4 +740,35 @@ public class QanaryQuestion<T> {
         return found;
     }
 
+    public String getEntities(){
+    String	sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+                    + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+                    + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+                    + "SELECT ?uri { " //
+                    + "  GRAPH <" + this.getInGraph() + "> { " //
+                    + "    ?a a qa:AnnotationOfInstance . " //
+                    + "    ?a oa:hasBody ?uri " //
+                    + "} }";
+            ResultSet rs = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
+            List<String> resourceUris = new ArrayList<String>();
+            
+            while (rs.hasNext()) {
+                QuerySolution s = rs.next();
+                if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
+                    resourceUris.add(s.getResource("uri").toString());
+                }
+            }
+            return makeStringFromArray(resourceUris);
+    }
+
+
+     public String makeStringFromArray(List<String> input) {
+        String endprodukt = "";
+        for(String s : input) {
+            endprodukt += (s + ", ");
+        }
+        return endprodukt;
+    }
+
 }
+

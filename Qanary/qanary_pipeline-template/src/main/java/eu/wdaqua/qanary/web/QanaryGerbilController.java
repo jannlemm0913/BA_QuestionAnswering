@@ -42,16 +42,16 @@ import eu.wdaqua.qanary.message.QanaryQuestionAnsweringRun;
  */
 @Controller
 public class QanaryGerbilController {
-	
+
     private static final Logger logger = LoggerFactory.getLogger(QanaryGerbilController.class);
     private final QanaryConfigurator qanaryConfigurator;
     private final QanaryQuestionController qanaryQuestionController;
- 
+
      @Value("${server.host}")
      private String host;
      @Value("${server.port}")
      private int port;
- 
+
     //Set this to allow browser requests from other websites
     @ModelAttribute
     public void setVaryResponseHeader(HttpServletResponse response) {
@@ -162,6 +162,8 @@ public class QanaryGerbilController {
         JSONObject queryJson = new JSONObject();
         JSONArray answers = new JSONArray();
         JSONArray answersArray = new JSONArray();
+
+        JSONObject qanaryAnno = new JSONObject();
         //JSONObject sparql = new JSONObject();
         JSONParser parser = new JSONParser();
         try {
@@ -185,7 +187,10 @@ public class QanaryGerbilController {
         item.put("query", queryJson);
     	item.put("question", question);
     	questions.add(item);
-    	obj.put("questions", questions);
-    	return new ResponseEntity<org.json.simple.JSONObject>(obj,HttpStatus.OK);  	
+        obj.put("questions", questions);
+
+        qanaryAnno.put("entities", myQanaryQuestion.getEntities());
+        question.add(qanaryAnno);
+    	return new ResponseEntity<org.json.simple.JSONObject>(obj,HttpStatus.OK);
 	}
 }
