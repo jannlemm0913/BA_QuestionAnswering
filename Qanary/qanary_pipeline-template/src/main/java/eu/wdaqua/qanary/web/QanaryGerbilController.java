@@ -184,13 +184,17 @@ public class QanaryGerbilController {
         JSONObject temp = new JSONObject();
         temp.put("language", "en");
         question.add(temp);
-        item.put("query", queryJson);
+        item.put("query", myQanaryQuestion.getQueries());
     	item.put("question", question);
     	questions.add(item);
         obj.put("questions", questions);
 
         qanaryAnno.put("entities", myQanaryQuestion.getEntities());
-        question.add(qanaryAnno);
+        qanaryAnno.put("properties", myQanaryQuestion.getProperties());
+        qanaryAnno.put("classes", myQanaryQuestion.getClasses());
+
+        item.put("qanaryAnno",qanaryAnno);
+
     	return new ResponseEntity<org.json.simple.JSONObject>(obj,HttpStatus.OK);
 	}
 }

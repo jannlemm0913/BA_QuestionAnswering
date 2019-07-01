@@ -26,6 +26,8 @@ import java.util.UUID;
 
 import static eu.wdaqua.qanary.commons.QanaryUtils.loadTripleStore;
 
+import java.util.regex.Pattern;
+
 /**
  * represents the access to a question in a triplestore
  *
@@ -51,13 +53,13 @@ public class QanaryQuestion<T> {
 	private final URI namedGraph; // where the question is stored
 	private List<String> language;
 	private List<String> knwoledgeBase;
-	
+
 	private QanaryConfigurator myQanaryConfigurator;
 
 	/**
-	 * init the graph in the triplestore (c.f., application.properties) a new
-	 * graph is constructed
-	 * 
+	 * init the graph in the triplestore (c.f., application.properties) a new graph
+	 * is constructed
+	 *
 	 * @param questionUri
 	 * @param qanaryConfigurator
 	 * @throws URISyntaxException
@@ -121,10 +123,9 @@ public class QanaryQuestion<T> {
 	}
 
 	/**
-	 * create QanaryQuestion from the information available in the provided
-	 * graph (data is retrieved from the Qanary triplestore, see
-	 * application.properties)
-	 * 
+	 * create QanaryQuestion from the information available in the provided graph
+	 * (data is retrieved from the Qanary triplestore, see application.properties)
+	 *
 	 * @param namedGraph
 	 * @param qanaryConfigurator
 	 * @throws URISyntaxException
@@ -138,7 +139,7 @@ public class QanaryQuestion<T> {
 
 	/**
 	 * create a QanaryQuestion from a QanaryMessage
-	 * 
+	 *
 	 * @param qanaryMessage
 	 */
 	public QanaryQuestion(QanaryMessage qanaryMessage) {
@@ -150,7 +151,7 @@ public class QanaryQuestion<T> {
 
 	/**
 	 * init object properties from a given triplestore URI
-	 * 
+	 *
 	 * @param triplestore
 	 * @throws URISyntaxException
 	 */
@@ -192,17 +193,16 @@ public class QanaryQuestion<T> {
 
 	/**
 	 * graph where the question is stored
-	 * 
+	 *
 	 * @return
 	 */
 	public URI getNamedGraph() {
 		return this.namedGraph;
 	}
 
-	
 	/**
 	 * retrieves current instance of configurator
-	 * 
+	 *
 	 * @return
 	 */
 	private QanaryConfigurator getQanaryConfigurator() {
@@ -218,9 +218,8 @@ public class QanaryQuestion<T> {
 			if (this.getInGraph() == null) {
 				throw new QanaryExceptionNoOrMultipleQuestions("inGraph is null.");
 			} else {
-				ResultSet resultset = qanaryUtil.selectFromTripleStore(
-						"SELECT ?question FROM <" + this.getInGraph()
-								+ "> {?question <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wdaqua.eu/qa#Question>}",
+				ResultSet resultset = qanaryUtil.selectFromTripleStore("SELECT ?question FROM <" + this.getInGraph()
+						+ "> {?question <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wdaqua.eu/qa#Question>}",
 						this.getEndpoint().toString());
 
 				int i = 0;
@@ -285,9 +284,9 @@ public class QanaryQuestion<T> {
 	}
 
 	/**
-	 * returns the raw data of the question fetched from the URI provided via
-	 * the constructor, the result is cached to prevent unnecessary calls to
-	 * remote services
+	 * returns the raw data of the question fetched from the URI provided via the
+	 * constructor, the result is cached to prevent unnecessary calls to remote
+	 * services
 	 *
 	 * TODO: replace with Spring rest client using the message class from the
 	 * QanaryPipeline
@@ -426,8 +425,7 @@ public class QanaryQuestion<T> {
 	 *
 	 * if scores are available, then they are also saved to the triplestore
 	 *
-	 * if resource URIs are available, then they are also saved to the
-	 * triplestore
+	 * if resource URIs are available, then they are also saved to the triplestore
 	 *
 	 * TODO: move this to a SPARQL builder
 	 */
@@ -482,24 +480,13 @@ public class QanaryQuestion<T> {
 
 	public List<SparqlAnnotation> getSparqlResults() {
 		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> "
-				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> "
-				+ "SELECT ?sparql ?confidence ?kb "
-				+ "FROM <" + this.getInGraph() + "> "
-				+ "WHERE { "
-				+ "  ?a a qa:AnnotationOfAnswerSPARQL . "
-				+ "  OPTIONAL {?a oa:hasBody ?sparql . } "
-				+ "  OPTIONAL {?a qa:hasScore ?score . } "
-				+ "  OPTIONAL {?a qa:hasConfidence ?confidence . } "
-				+ "  OPTIONAL {?a qa:overKb ?kb . } "
-				+ "  ?a oa:annotatedAt ?time1 . "
-				+ "  { "
-				+ "   select ?time1 { "
-				+ "    ?a a qa:AnnotationOfAnswerSPARQL . "
-				+ "    ?a oa:annotatedAt ?time1 "
-				+ "    } order by DESC(?time1) limit 1 "
-				+ "  } "
-				+ "} "
-				+ "ORDER BY DESC(?score)";
+				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " + "SELECT ?sparql ?confidence ?kb "
+				+ "FROM <" + this.getInGraph() + "> " + "WHERE { " + "  ?a a qa:AnnotationOfAnswerSPARQL . "
+				+ "  OPTIONAL {?a oa:hasBody ?sparql . } " + "  OPTIONAL {?a qa:hasScore ?score . } "
+				+ "  OPTIONAL {?a qa:hasConfidence ?confidence . } " + "  OPTIONAL {?a qa:overKb ?kb . } "
+				+ "  ?a oa:annotatedAt ?time1 . " + "  { " + "   select ?time1 { "
+				+ "    ?a a qa:AnnotationOfAnswerSPARQL . " + "    ?a oa:annotatedAt ?time1 "
+				+ "    } order by DESC(?time1) limit 1 " + "  } " + "} " + "ORDER BY DESC(?score)";
 		ResultSet resultset = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
 
 		int i = 0;
@@ -508,12 +495,12 @@ public class QanaryQuestion<T> {
 			QuerySolution next = resultset.next();
 			SparqlAnnotation sparqlAnnotation = new SparqlAnnotation();
 			sparqlAnnotation.query = next.get("sparql").asLiteral().toString();
-			if (next.get("confidence")!=null){
-                            sparqlAnnotation.confidence = next.get("confidence").asLiteral().toString();
-                        }
-                        if (next.get("kb")!=null){
-			    sparqlAnnotation.kb = next.get("kb").asLiteral().toString();
-                        }
+			if (next.get("confidence") != null) {
+				sparqlAnnotation.confidence = next.get("confidence").asLiteral().toString();
+			}
+			if (next.get("kb") != null) {
+				sparqlAnnotation.kb = next.get("kb").asLiteral().toString();
+			}
 			annotationList.add(sparqlAnnotation);
 		}
 		return annotationList;
@@ -532,13 +519,9 @@ public class QanaryQuestion<T> {
 	public String getJsonResult() {
 		String returnedJson = "";
 		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> "
-				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> "
-				+ "SELECT ?json "
-				+ "FROM <" + this.getInGraph() + "> "
-				+ "WHERE { "
-				+ "  ?a a qa:AnnotationOfAnswerJSON . "
-				+ "  ?a oa:hasBody ?json "
-				+ "}";
+				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " + "SELECT ?json " + "FROM <"
+				+ this.getInGraph() + "> " + "WHERE { " + "  ?a a qa:AnnotationOfAnswerJSON . "
+				+ "  ?a oa:hasBody ?json " + "}";
 		ResultSet resultset = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
 
 		int i = 0;
@@ -546,7 +529,7 @@ public class QanaryQuestion<T> {
 		while (resultset.hasNext()) {
 			sparqlAnnotation = resultset.next().get("json").asLiteral().toString();
 		}
-		return sparqlAnnotation.replace("\\\"","\"");
+		return sparqlAnnotation.replace("\\\"", "\"");
 	}
 
 	public void putTextRepresentation(String text) throws Exception {
@@ -561,47 +544,30 @@ public class QanaryQuestion<T> {
 		logger.info("store data in graph {}", this.qanaryMessage.getEndpoint());
 		String sparql = "prefix qa: <http://www.wdaqua.eu/qa#> "
 				+ "prefix oa: <http://www.w3.org/ns/openannotation/core/> "
-				+ "prefix xsd: <http://www.w3.org/2001/XMLSchema#> "
-				+ "INSERT { " + "GRAPH <" + this.getOutGraph() + "> { "
-				+ "  ?a a qa:AnnotationOfTextualRepresentation . "
-				+ "  ?a oa:hasTarget <" + this.getUri() + "> . "
-				+ "  ?a oa:hasBody <" + uriTextRepresention + "> ;"
-				+ "     oa:annotatedBy <" + qanaryUtil.getComponentUri() + "> ; "
-				+ "	    oa:AnnotatedAt ?time  " + "}} "
-				+ "WHERE { "
-				+ "BIND (IRI(str(RAND())) AS ?a) ."
-				+ "BIND (now() as ?time) "
-				+ "}";
+				+ "prefix xsd: <http://www.w3.org/2001/XMLSchema#> " + "INSERT { " + "GRAPH <" + this.getOutGraph()
+				+ "> { " + "  ?a a qa:AnnotationOfTextualRepresentation . " + "  ?a oa:hasTarget <" + this.getUri()
+				+ "> . " + "  ?a oa:hasBody <" + uriTextRepresention + "> ;" + "     oa:annotatedBy <"
+				+ qanaryUtil.getComponentUri() + "> ; " + "	    oa:AnnotatedAt ?time  " + "}} " + "WHERE { "
+				+ "BIND (IRI(str(RAND())) AS ?a) ." + "BIND (now() as ?time) " + "}";
 		logger.info("Sparql query {}", sparql);
 		this.qanaryUtil.updateTripleStore(sparql, this.getQanaryConfigurator());
 	}
 
-
 	/**
-	 * set a new language for the current question, stored in the Qanary
-	 * triplestore
+	 * set a new language for the current question, stored in the Qanary triplestore
 	 *
 	 * @param language
 	 */
 	public void setLanguageText(List<String> language) throws Exception {
 		String part = "";
-		for (int i=0; i<language.size(); i++){
+		for (int i = 0; i < language.size(); i++) {
 			part += "?a oa:hasBody \"" + language.get(i) + "\" . ";
 		}
 		String sparql = "prefix qa: <http://www.wdaqua.eu/qa#> "
-				+ "prefix oa: <http://www.w3.org/ns/openannotation/core/> "
-				+ "INSERT { " 
-                                + "GRAPH <"+ this.getOutGraph() + "> { "
-				+ "?a a qa:AnnotationOfQuestionLanguage . "
-				+ part
-				+ "?a oa:hasTarget <" + this.getUri() + "> ; "
-				+ "   oa:annotatedBy <www.wdaqua.eu/qanary> ; "
-				+ "   oa:annotatedAt ?time  " 
-                                + " }} "
-				+ "WHERE { "
-				+ "BIND (IRI(str(RAND())) AS ?a) . "
-				+ "BIND (now() as ?time) . "
-				+ "}";
+				+ "prefix oa: <http://www.w3.org/ns/openannotation/core/> " + "INSERT { " + "GRAPH <"
+				+ this.getOutGraph() + "> { " + "?a a qa:AnnotationOfQuestionLanguage . " + part + "?a oa:hasTarget <"
+				+ this.getUri() + "> ; " + "   oa:annotatedBy <www.wdaqua.eu/qanary> ; " + "   oa:annotatedAt ?time  "
+				+ " }} " + "WHERE { " + "BIND (IRI(str(RAND())) AS ?a) . " + "BIND (now() as ?time) . " + "}";
 		qanaryUtil.updateTripleStore(sparql, this.getQanaryConfigurator());
 	}
 
@@ -617,39 +583,32 @@ public class QanaryQuestion<T> {
 					+ "FROM <" + this.getInGraph() + "> " //
 					+ "WHERE { " //
 					+ "  ?a a qa:AnnotationOfQuestionLanguage . " //
-					+ "  OPTIONAL {?a oa:hasBody ?uri . } " //look for a bug in stardog
-					+ "  ?a oa:annotatedAt ?time . "
-					+ "  { "
-					+ "    SELECT ?time { "
-					+ "     ?a a qa:AnnotationOfQuestionLanguage . "
-					+ "     ?a oa:annotatedAt ?time . "
-					+ "    } order by ?time limit 1 "
-					+ "  } "
-					+ "}";
+					+ "  OPTIONAL {?a oa:hasBody ?uri . } " // look for a bug in stardog
+					+ "  ?a oa:annotatedAt ?time . " + "  { " + "    SELECT ?time { "
+					+ "     ?a a qa:AnnotationOfQuestionLanguage . " + "     ?a oa:annotatedAt ?time . "
+					+ "    } order by ?time limit 1 " + "  } " + "}";
 
 			ResultSet resultset = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
 
 			int i = 0;
 			List<String> language = new ArrayList();
 			while (resultset.hasNext()) {
-                                language.add(resultset.next().get("uri").toString());
-                                i++;
+				language.add(resultset.next().get("uri").toString());
+				i++;
 			}
 			if (i > 1) {
-				throw new Exception("More than 1 language (count: " + i + ") in graph " + this.getInGraph()
-						+ " at " + this.getEndpoint());
-			} else if (i == 0) {
-				throw new Exception("No language available in graph " + this.getInGraph() + " at "
+				throw new Exception("More than 1 language (count: " + i + ") in graph " + this.getInGraph() + " at "
 						+ this.getEndpoint());
+			} else if (i == 0) {
+				throw new Exception(
+						"No language available in graph " + this.getInGraph() + " at " + this.getEndpoint());
 			}
 
-			logger.info("language {} found in {} at {}", language, this.getInGraph(),
-					this.getEndpoint());
+			logger.info("language {} found in {} at {}", language, this.getInGraph(), this.getEndpoint());
 			this.language = language;
 		}
 		return this.language;
 	}
-
 
 	/**
 	 * set a new knowledge-base for the current question, stored in the Qanary
@@ -659,24 +618,15 @@ public class QanaryQuestion<T> {
 	 */
 	public void setTargetData(List<String> targetData) throws Exception {
 		String part = "";
-		for (int i=0; i<targetData.size(); i++){
+		for (int i = 0; i < targetData.size(); i++) {
 			part += "?a oa:hasBody \"" + targetData.get(i) + "\" . ";
 		}
 		String sparql = "prefix qa: <http://www.wdaqua.eu/qa#> "
-				+ "prefix oa: <http://www.w3.org/ns/openannotation/core/> "
-				+ "INSERT { "
-				+ "GRAPH <" + this.getOutGraph() + "> { "
-				+ "?a a qa:AnnotationDataset . "
-				+ part
-				+ "?a oa:hasTarget <" + this.getUri() +"> ; "
-				+ "   oa:annotatedBy <www.wdaqua.eu/qa> ; "
-				+ "   oa:annotatedAt ?time ; "
-				+ " }} "
-				+ "WHERE { "
-				+ "BIND (IRI(str(RAND())) AS ?a) . "
-				+ "BIND (now() as ?time) . "
-				+ "}";
-                System.out.println(sparql);
+				+ "prefix oa: <http://www.w3.org/ns/openannotation/core/> " + "INSERT { " + "GRAPH <"
+				+ this.getOutGraph() + "> { " + "?a a qa:AnnotationDataset . " + part + "?a oa:hasTarget <"
+				+ this.getUri() + "> ; " + "   oa:annotatedBy <www.wdaqua.eu/qa> ; " + "   oa:annotatedAt ?time ; "
+				+ " }} " + "WHERE { " + "BIND (IRI(str(RAND())) AS ?a) . " + "BIND (now() as ?time) . " + "}";
+		System.out.println(sparql);
 		qanaryUtil.updateTripleStore(sparql, this.getQanaryConfigurator());
 	}
 
@@ -692,83 +642,144 @@ public class QanaryQuestion<T> {
 					+ "FROM <" + this.getInGraph() + "> " //
 					+ "WHERE { " //
 					+ "  ?a a qa:AnnotationDataset . " //
-					+ "  OPTIONAL {?a oa:hasBody ?uri . } " //look for a bug in stardog
-					+ "  ?a oa:annotatedAt ?time . "
-					+ "  { "
-					+ "    SELECT ?time { "
-					+ "     ?a a qa:AnnotationDataset . "
-					+ "     ?a oa:annotatedAt ?time . "
-					+ "    } order by ?time limit 1 "
-					+ "  } "
-					+ "}";
-                        System.out.println(sparql);
+					+ "  OPTIONAL {?a oa:hasBody ?uri . } " // look for a bug in stardog
+					+ "  ?a oa:annotatedAt ?time . " + "  { " + "    SELECT ?time { "
+					+ "     ?a a qa:AnnotationDataset . " + "     ?a oa:annotatedAt ?time . "
+					+ "    } order by ?time limit 1 " + "  } " + "}";
+			System.out.println(sparql);
 			ResultSet resultset = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
 
 			int i = 0;
 			List<String> knowledgeBase = new ArrayList<String>();
 			while (resultset.hasNext()) {
 				knowledgeBase.add(resultset.next().get("uri").toString());
-                                i++;
+				i++;
 			}
 			if (i == 0) {
-				throw new Exception("No knwoledgebase available in graph " + this.getInGraph() + " at "
-						+ this.getEndpoint());
+				throw new Exception(
+						"No knwoledgebase available in graph " + this.getInGraph() + " at " + this.getEndpoint());
 			}
 
-			logger.info("knowledge base {} found in {} at {}", knowledgeBase, this.getInGraph(),
-					this.getEndpoint());
+			logger.info("knowledge base {} found in {} at {}", knowledgeBase, this.getInGraph(), this.getEndpoint());
 			this.knwoledgeBase = knowledgeBase;
 		}
 		return this.knwoledgeBase;
 	}
 
-	public String getAnswerFound(){
-        String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
-                + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
-                + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
-                + "SELECT ?found " //
-                + "FROM <" + this.getInGraph() + "> " //
-                + "WHERE { " //
-                + "  <URIAnswer> qa:found ?found .  "
-                + "}";
-        ResultSet resultset = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
+	public String getAnswerFound() {
+		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+				+ "SELECT ?found " //
+				+ "FROM <" + this.getInGraph() + "> " //
+				+ "WHERE { " //
+				+ "  <URIAnswer> qa:found ?found .  " + "}";
+		ResultSet resultset = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
 
-        String found="undefined";
-        while (resultset.hasNext()) {
-            found = resultset.next().get("found").toString();
-        }
-        return found;
-    }
+		String found = "undefined";
+		while (resultset.hasNext()) {
+			found = resultset.next().get("found").toString();
+		}
+		return found;
+	}
 
-    public String getEntities(){
-    String	sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
-                    + "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
-                    + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
-                    + "SELECT ?uri { " //
-                    + "  GRAPH <" + this.getInGraph() + "> { " //
-                    + "    ?a a qa:AnnotationOfInstance . " //
-                    + "    ?a oa:hasBody ?uri " //
-                    + "} }";
-            ResultSet rs = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
-            List<String> resourceUris = new ArrayList<String>();
-            
-            while (rs.hasNext()) {
-                QuerySolution s = rs.next();
-                if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
-                    resourceUris.add(s.getResource("uri").toString());
-                }
-            }
-            return makeStringFromArray(resourceUris);
-    }
+	public String getEntities() {
+		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+				+ "SELECT ?uri { " //
+				+ "  GRAPH <" + this.getInGraph() + "> { " //
+				+ "    ?a a qa:AnnotationOfInstance . " //
+				+ "    ?a oa:hasBody ?uri " //
+				+ "} }";
+		ResultSet rs = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
+		List<String> resourceUris = new ArrayList<String>();
 
+		while (rs.hasNext()) {
+			QuerySolution s = rs.next();
+			if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
+				resourceUris.add(s.getResource("uri").toString());
+			}
+		}
+		return makeStringFromArray(resourceUris);
+	}
 
-     public String makeStringFromArray(List<String> input) {
-        String endprodukt = "";
-        for(String s : input) {
-            endprodukt += (s + ", ");
-        }
-        return endprodukt;
-    }
+	public String getProperties() {
+
+		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+				+ "SELECT ?uri { " //
+				+ "  GRAPH <" + this.getInGraph() + "> { " //
+				+ "    ?a a qa:AnnotationOfRelation . " //
+				+ "    ?a oa:hasBody ?uri " //
+				+ "} }";
+		ResultSet rs = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
+		List<String> propertyUris = new ArrayList<String>();
+
+		while (rs.hasNext()) {
+			QuerySolution s = rs.next();
+			if (Pattern.matches(".*dbpedia\\.org.*", s.getResource("uri").getURI())) {
+				if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
+					propertyUris.add(s.getResource("uri").toString());
+				}
+			}
+		}
+
+		return makeStringFromArray(propertyUris);
+	}
+
+	public String getClasses() {
+		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+				+ "SELECT ?uri { " //
+				+ "  GRAPH <" + this.getInGraph() + "> { " //
+				+ "    ?a a qa:AnnotationOfClass . " //
+				+ "    ?a oa:hasBody ?uri " //
+				+ "} }";
+		ResultSet rs = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
+		List<String> ontologyUris = new ArrayList<String>();
+
+		while (rs.hasNext()) {
+			QuerySolution s = rs.next();
+			if (Pattern.matches(".*dbpedia\\.org.*", s.getResource("uri").getURI())) {
+				if (s.getResource("uri") != null && !s.getResource("uri").toString().endsWith("null")) {
+					ontologyUris.add(s.getResource("uri").toString());
+				}
+			}
+		}
+
+		return makeStringFromArray(ontologyUris);
+	}
+
+	public String getQueries() {
+		String sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
+				+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
+				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
+				+ "SELECT ?body { " //
+				+ "  GRAPH <" + this.getInGraph() + "> { " //
+				+ "    ?a a qa:AnnotationOfAnswerSPARQL . " //
+				+ "    ?a oa:hasBody ?body " //
+				+ "} }";
+		ResultSet rs = qanaryUtil.selectFromTripleStore(sparql, this.getEndpoint().toString());
+		List<String> sparqlQueries = new ArrayList<String>();
+
+		while (rs.hasNext()) {
+			QuerySolution s = rs.next();
+			if (s.getLiteral("body") != null && !s.getLiteral("body").toString().endsWith("null")) {
+				sparqlQueries.add(s.getLiteral("body").toString());
+			}
+		}
+		return makeStringFromArray(sparqlQueries);
+	}
+
+	public String makeStringFromArray(List<String> input) {
+		String endprodukt = "";
+		for (String s : input) {
+			endprodukt += (s + ", ");
+		}
+		return endprodukt;
+	}
 
 }
-
