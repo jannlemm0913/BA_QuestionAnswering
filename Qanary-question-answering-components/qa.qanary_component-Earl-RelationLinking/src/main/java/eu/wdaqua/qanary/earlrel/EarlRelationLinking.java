@@ -63,7 +63,7 @@ public class EarlRelationLinking extends QanaryComponent {
 
 			//String[] entityLinkCmd = { "curl", "-XPOST", "http://sda.tech/earl/api/processQuery", "-H",
 			//		"Content-Type: application/json", "-d", jsonThePath };
-			String[] entityLinkCmd = { "curl", "-XPOST", "-H", "\"Content-Type: application/json\"", "-d", "\"{ \\\"nlquery\\\": \\\""+myQuestion+"\\\", \\\"pagerankflag\\\": \\\"true\\\" }\"" , "http://sda.tech/earl/api/processQuery"};
+			String[] entityLinkCmd = { "curl", "-XPOST", "-H", "\"Content-Type: application/json\"", "-d", "\"{ \\\"nlquery\\\": \\\""+myQuestion+"\\\", \\\"pagerankflag\\\": \\\"true\\\" }\"" , "http://earldemo.sda.tech/earl/api/processQuery"};
 			logger.info("\n\r\n\r==== entityLinkCmd: {}\n\r\n\r",entityLinkCmd);
 			logger.info("EntityLinkCmd: {}",Arrays.toString(entityLinkCmd));
 			ProcessBuilder processEL = new ProcessBuilder(entityLinkCmd);
