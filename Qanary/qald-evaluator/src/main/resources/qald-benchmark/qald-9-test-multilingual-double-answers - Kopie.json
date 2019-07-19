@@ -1,0 +1,697 @@
+{
+  "dataset" : {
+    "id" : "qald-9-test-multilingual-double-answers"
+  },
+  "questions" : [ 
+    {
+      "id" : "1",
+      "answertype" : "resource",
+      "aggregation" : false,
+      "onlydbo" : true,
+      "hybrid" : false,
+      "question" : [ {
+        "language" : "en",
+        "string" : "Which movies did Kurosawa direct?",
+        "keywords" : "film,  direct,  Kurosawa"
+      } ],
+      "query" : {
+        "sparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:director res:Akira_Kurosawa }"
+      },
+      "answers" : [ {
+        "head" : {
+          "vars" : [ "uri" ]
+        },
+        "results" : {
+          "bindings" : [ {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Idiot_(1951_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Dreams_(1990_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Bad_Sleep_Well"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Hidden_Fortress"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Throne_of_Blood"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Drunken_Angel"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Kagemusha"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Dersu_Uzala_(1975_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Rhapsody_in_August"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Sanshiro_Sugata"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Seven_Samurai"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Sanjuro"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Sanshiro_Sugata_Part_II"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Scandal_(1950_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/One_Wonderful_Sunday"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Most_Beautiful"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Quiet_Duel"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Madadayo"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/High_and_Low_(1963_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Ikiru"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Those_Who_Make_Tomorrow"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Dodes'ka-den"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Red_Beard"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Rashomon"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Yojimbo_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Stray_Dog_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Horse_(1941_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/No_Regrets_for_Our_Youth"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Lower_Depths_(1957_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Ran_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Men_Who_Tread_on_the_Tiger's_Tail"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/I_Live_in_Fear"
+            }
+          } ]
+        }
+      } ]
+    }, {
+      "id" : "52",
+      "answertype" : "resource",
+      "aggregation" : false,
+      "onlydbo" : true,
+      "hybrid" : false,
+      "question" : [ {
+        "language" : "en",
+        "string" : "Give me all movies with Tom Cruise.",
+        "keywords" : "movies,  tom,  cruise"
+      } ],
+      "query" : {
+        "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX onto: <http://dbpedia.org/ontology/> PREFIX prop: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Film { ?uri prop:starring res:Tom_Cruise } UNION { ?uri onto:starring res:Tom_Cruise } OPTIONAL { ?uri rdfs:label ?string FILTER ( lang(?string) = \"en\" ) } }"
+      },
+      "answers" : [ {
+        "head" : {
+          "vars" : [ "uri" ]
+        },
+        "results" : {
+          "bindings" : [ {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/All_the_Right_Moves_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Collateral_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Interview_with_the_Vampire_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Outsiders_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Far_and_Away"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Last_Samurai"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Top_Gun"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Risky_Business"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/A_Few_Good_Men"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Color_of_Money"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Mummy_(2017_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Jerry_Maguire"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Legend_(1985_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Vanilla_Sky"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Valkyrie_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Knight_and_Day"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Lions_for_Lambs"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Mission:_Impossible_(film_series)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Cocktail_(1988_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Mission:_Impossible_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Born_on_the_Fourth_of_July_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Magnolia_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/The_Firm_(1993_film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Minority_Report_(film)"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Rain_Man"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Losin'_It"
+            }
+          } ]
+        }
+      } ]
+    }, {
+      "id" : "131",
+      "answertype" : "resource",
+      "aggregation" : false,
+      "onlydbo" : true,
+      "hybrid" : false,
+      "question" : [ {
+        "language" : "en",
+        "string" : "What languages are spoken in Pakistan?",
+        "keywords" : "languages,  Pakistan"
+      } ],
+      "query" : {
+        "sparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pakistan> <http://dbpedia.org/ontology/language> ?uri }"
+      },
+      "answers" : [ {
+        "head" : {
+          "vars" : [ "uri" ]
+        },
+        "results" : {
+          "bindings" : [ {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Gawar-Bati_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/English_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Balochi_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Urdu"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Balti_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Punjabi_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Kashmiri_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Sindhi_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Domaaki_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Brahui_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Khowar_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Kalash_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Dameli_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Burushaski"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Pashto_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Shina_language"
+            }
+          } ]
+        }
+      } ]
+    },  {
+      "id" : "141",
+      "answertype" : "resource",
+      "aggregation" : false,
+      "onlydbo" : true,
+      "hybrid" : false,
+      "question" : [ {
+        "language" : "en",
+        "string" : "Which languages are spoken in Estonia?",
+        "keywords" : "language,  spoken,  Estonia"
+      } ],
+      "query" : {
+        "sparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spokenIn> <http://dbpedia.org/resource/Estonia> }"
+      },
+      "answers" : [ {
+        "head" : {
+          "vars" : [ "uri" ]
+        },
+        "results" : {
+          "bindings" : [ {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Laiuse_Romani_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Estonian_Sign_Language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Seto_dialect"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Russian_Sign_Language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Baltic_Romani"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Võro_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Estonian_language"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Modern_Swedish"
+            }
+          } ]
+        }
+      } ]
+    }, {
+      "id" : "156",
+      "answertype" : "resource",
+      "aggregation" : false,
+      "onlydbo" : true,
+      "hybrid" : false,
+      "question" : [ {
+        "language" : "en",
+        "string" : "Where is Fort Knox located?",
+        "keywords" : "where ,  Fort Knox,  located"
+      } ],
+      "query" : {
+        "sparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Fort_Knox> <http://dbpedia.org/ontology/location> ?uri. ?uri a <http://dbpedia.org/ontology/Place>. }"
+      },
+      "answers" : [ {
+        "head" : {
+          "vars" : [ "uri" ]
+        },
+        "results" : {
+          "bindings" : [ {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Kentucky"
+            }
+          } ]
+        }
+      } ]
+    }, {
+      "id" : "181",
+      "answertype" : "resource",
+      "aggregation" : false,
+      "onlydbo" : true,
+      "hybrid" : false,
+      "question" : [ {
+        "language" : "en",
+        "string" : "Through which countries does the Yenisei river flow?",
+        "keywords" : "Yenisei river,  flow through,  country"
+      } ],
+      "query" : {
+        "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Yenisei_River <http://dbpedia.org/ontology/country> ?uri }"
+      },
+      "answers" : [ {
+        "head" : {
+          "vars" : [ "uri" ]
+        },
+        "results" : {
+          "bindings" : [ {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Russia"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Mongolia"
+            }
+          } ]
+        }
+      } ]
+    }, {
+      "id" : "198",
+      "answertype" : "resource",
+      "aggregation" : false,
+      "onlydbo" : true,
+      "hybrid" : false,
+      "question" : [ {
+        "language" : "en",
+        "string" : "Who was influenced by Socrates?",
+        "keywords" : "influenced,  Socrated"
+      } ],
+      "query" : {
+        "sparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/influencedBy> <http://dbpedia.org/resource/Socrates> }"
+      },
+      "answers" : [ {
+        "head" : {
+          "vars" : [ "uri" ]
+        },
+        "results" : {
+          "bindings" : [ {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Peter_Kreeft"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Epictetus"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Seyhan_Kurt"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Allan_Bloom"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Diogenes_of_Sinope"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Georg_Wilhelm_Friedrich_Hegel"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Lucian"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Euclid_of_Megara"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Pyrrho"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/John_Henry_Newman__Western_philosophy__1"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Niccolò_Machiavelli"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Aristippus"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Edmund_Burke"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Traian_Brăileanu"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Karl_Popper"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Hannah_Arendt"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Aristotle"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Yaşar_Nuri_Öztürk"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Plato"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Antisthenes"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Leo_Strauss"
+            }
+          }, {
+            "uri" : {
+              "type" : "uri",
+              "value" : "http://dbpedia.org/resource/Søren_Kierkegaard"
+            }
+          } ]
+        }
+      } ]
+    }
+   ]
+}

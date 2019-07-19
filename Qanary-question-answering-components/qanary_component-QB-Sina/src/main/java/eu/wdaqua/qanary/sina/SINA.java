@@ -315,8 +315,10 @@ public class SINA extends QanaryComponent {
 					Matcher m = pattern.matcher(ar);
 					if(m.find()){
 						ar = m.group(0);
+						logger.info("==== Geregexte Query: {}",ar);
 					}
 					ar = ar.replaceAll("\\s(http.*?)\\s", " <$1> ");
+					logger.info("==== Geregexte Query mit korrekten URLs: {}",ar);
 				} catch (Exception e) {
 					ar = "[]";
 				}
@@ -344,6 +346,7 @@ public class SINA extends QanaryComponent {
 					logger.info("==== string der zu query wird: {}", parts[i].replace("\n", " "));
 
 					Query query = QueryFactory.create(parts[i].replace("\n", " "));
+					logger.info("==== {}", query);
 					QueryExecution exec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
 					String json = "{}";
 					// new by jannlemm0913. ResultSetException on question 8, "not a ResultSet"
@@ -353,6 +356,7 @@ public class SINA extends QanaryComponent {
 
 						ResultSetFormatter.outputAsJSON(outputStream, results);
 						json = new String(outputStream.toByteArray(), "UTF-8");
+						System.out.println("=====    " + json);
 					} catch (Exception e) {
 						logger.error("==== Could not get a ResultSet for this question!");
 					}

@@ -11,6 +11,7 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,16 +42,16 @@ import eu.wdaqua.qanary.message.QanaryQuestionAnsweringRun;
  */
 @Controller
 public class QanaryGerbilController {
-	
+
     private static final Logger logger = LoggerFactory.getLogger(QanaryGerbilController.class);
     private final QanaryConfigurator qanaryConfigurator;
     private final QanaryQuestionController qanaryQuestionController;
- 
+
      @Value("${server.host}")
      private String host;
      @Value("${server.port}")
      private int port;
- 
+
     //Set this to allow browser requests from other websites
     @ModelAttribute
     public void setVaryResponseHeader(HttpServletResponse response) {
@@ -157,16 +158,43 @@ public class QanaryGerbilController {
         JSONObject obj = new JSONObject();
         JSONArray questions = new JSONArray();
         JSONObject item = new JSONObject();
-        JSONObject question = new JSONObject();
-        JSONArray language = new JSONArray();
-        JSONObject sparql = new JSONObject();
-        sparql.put("SPARQL", myQanaryQuestion.getSparqlResult());
-    	language.add(sparql);
-    	question.put("answers", myQanaryQuestion.getJsonResult());
-    	question.put("language", language);
+        JSONArray question = new JSONArray();
+        JSONObject queryJson = new JSONObject();
+        JSONArray answers = new JSONArray();
+        JSONArray answersArray = new JSONArray();
+
+        JSONObject qanaryAnno = new JSONObject();
+        //JSONObject sparql = new JSONObject();
+        JSONParser parser = new JSONParser();
+        try {
+            // hier wird nichts gemacht!!  queryJson.put("sparql", myQanaryQuestion.getSparqlResult());
+            JSONObject answerContent = (JSONObject) parser.parse(myQanaryQuestion.getJsonResult());
+            if(!(answerContent.isEmpty())){   //if empty, dont push into answers array, for gerbil is easily confused
+                answersArray.add(answerContent);
+            }
+            item.put("answers", answersArray);
+            //item.put("answers", myQanaryQuestion.getJsonResult());
+
+        } catch (Exception e) {
+           // queryJson.put("sparql", "");
+           // language.add(sparql);
+            //question.put("answers", "{   \"head\": {     \"vars\": [ \"\" ]   } ,   \"results\": { \"bindings\": [ ]   } }");
+            item.put("answers", answers);
+        }
+        JSONObject temp = new JSONObject();
+        temp.put("language", "en");
+        question.add(temp);
+        item.put("query", myQanaryQuestion.getQueries());
     	item.put("question", question);
     	questions.add(item);
-    	obj.put("questions", questions);
-    	return new ResponseEntity<org.json.simple.JSONObject>(obj,HttpStatus.OK);  	
+        obj.put("questions", questions);
+
+        qanaryAnno.put("entities", myQanaryQuestion.getEntities());
+        qanaryAnno.put("properties", myQanaryQuestion.getProperties());
+        qanaryAnno.put("classes", myQanaryQuestion.getClasses());
+
+        item.put("qanaryAnno",qanaryAnno);
+
+    	return new ResponseEntity<org.json.simple.JSONObject>(obj,HttpStatus.OK);
 	}
 }

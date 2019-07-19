@@ -54,7 +54,7 @@ public class QaldEvaluatorApplication {
     List<String[]> dataLines = new ArrayList<>();
 
     private void process(String components, int maxQuestionsToBeProcessed)
-            throws UnsupportedEncodingException, IOException {
+            throws UnsupportedEncodingException, IOException { 
         Double globalPrecision = 0.0;
         Double globalRecall = 0.0;
         Double globalFMeasure = 0.0;
@@ -62,7 +62,8 @@ public class QaldEvaluatorApplication {
         
         // add header to csv file
         dataLines.add(new String[] {"QuestionID","QuestionString", "ResourceURLs", "PropertyURLs", "OntologyURLs", "SPARQLQuery", "NrExpected","NrSystem","NrCorrect"});
-
+        // Antworten im CSV speichern
+        //dataLines.add(new String[] {"QuestionID","QuestionString", "ResourceURLs", "PropertyURLs", "OntologyURLs", "SPARQLQuery", "SystemAnswers", "NrExpected","NrSystem","NrCorrect"});
         ArrayList<Integer> fullRecall = new ArrayList<Integer>();
         ArrayList<Integer> fullFMeasure = new ArrayList<Integer>();
 
@@ -152,7 +153,13 @@ public class QaldEvaluatorApplication {
                                 JSONObject test2Json = bindingsJson.getJSONObject(j);
                                 String answerUri = test2Json.getJSONObject(typeJson).getString("value");
                                 logger.info("System answers: {} ", answerUri);
-                                systemAnswers.add(answerUri);
+                                
+                            /* Problem: System scheint Antworten mehrmals zurückzugeben, d.h. expectedAnswers kann 3 sein, correctAnswers aber 7.
+                            Vermutung ist, dass mehrmals das gleiche in systemAnswers steht (z.B. zweimal die Entität ...:Barack_Obama)
+                            Da dies sinnlos ist und Auswirkungen auf den Recall hat, sollen systemAnswers einzigartig sein. */
+                                if(!(systemAnswers.contains(answerUri))) {
+                                    systemAnswers.add(answerUri);
+                                }
                             }
                         }
                     } catch (Exception e) {
@@ -267,9 +274,14 @@ public class QaldEvaluatorApplication {
             String propertyUrisString = makeStringFromArray(propertyUris);
             String ontologyUrisString = makeStringFromArray(ontologyUris);
             String sparqlQueriesString = makeStringFromArray(sparqlQueries);
+            // Probieren, Antworten ins CSV zu schreiben
+            // String answersString = makeStringFromArray(systemAnswers);
             dataLines.add(new String[]
             {questionId.toString(), questionString, resourceUrisString, propertyUrisString, ontologyUrisString, sparqlQueriesString, 
                  Integer.toString(expectedAnswers.size()), Integer.toString(systemAnswers.size()), Integer.toString(correctlyAnswered)});
+            // dataLines.add(new String[]
+            //{questionId.toString(), questionString, resourceUrisString, propertyUrisString, ontologyUrisString, sparqlQueriesString, answersString,
+            //    Integer.toString(expectedAnswers.size()), Integer.toString(systemAnswers.size()), Integer.toString(correctlyAnswered)});
         }
 
         //print data to csv file
@@ -287,7 +299,7 @@ public class QaldEvaluatorApplication {
     }
 
     public void csvToOutput() throws IOException {
-        File csvOutputFile = new File("../../eval-results/NameDerPipeline.csv");
+        File csvOutputFile = new File("../../eval-results/AktuellsteEvaluation.csv");
         try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
             dataLines.stream()
                 .map(this::convertToCSV)
@@ -308,16 +320,17 @@ public class QaldEvaluatorApplication {
         private Double recall = 0.0;
         private Double fMeasure = 0.0;
 
-
         public int compute(List<String> expectedAnswers, List<String> systemAnswers) {
             //Compute the number of retrieved answers
             int correctRetrieved = 0;
+
             for (String s : systemAnswers) {
                 if (expectedAnswers.contains(s)) {
                     correctRetrieved++;
                 }
             }
             //Compute precision and recall following the evaluation metrics of QALD
+            // see GERBIL Issue 322 for computation of QALD. This fMeasure is NOT how QALD calculates it
             if (expectedAnswers.size() == 0) {
                 if (systemAnswers.size() == 0) {
                     recall = 1.0;
@@ -391,7 +404,7 @@ public class QaldEvaluatorApplication {
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,RelNliodRel,ClsNliodCls,QueryBuilder");
         //componentConfigurations.add("NERD-DBpediaSpotlight,RelNliodRel,ClsNliodCls,QueryBuilder");
         //componentConfigurations.add("NER-Stanford,NED-AGDISTIS,EarlRelationLinking,DiambiguationClass,SINA");
-        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,EarlRelationLinking,DiambiguationClass,SINA");
+        componentConfigurations.add("NER-Stanford,NED-AGDISTIS,EarlRelationLinking,DiambiguationClass,QueryBuilder");
 
 
         for (String componentConfiguration : componentConfigurations) {

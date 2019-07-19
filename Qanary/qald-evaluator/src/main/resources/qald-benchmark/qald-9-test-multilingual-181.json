@@ -1,0 +1,68 @@
+{
+  "dataset" : {
+    "id" : "qald-9-test-multilingual-181"
+  },
+  "questions" : [ 
+    {
+      "id" : "1",
+      "answertype" : "date",
+      "aggregation" : false,
+      "onlydbo" : true,
+      "hybrid" : false,
+      "question" : [ {
+        "language" : "de",
+        "string" : "Wann wurde Carlo Giuliani erschossen?",
+        "keywords" : "Datum,  Carlo Giuliani,  erschossen"
+      }, {
+        "language" : "ru",
+        "string" : "когда был Карло Giuliani выстрел? ",
+        "keywords" : "Дата ,   Карло Giuliani ,   выстрел "
+      }, {
+        "language" : "pt",
+        "string" : "Quando estava Carlo Giuliani tiro? ",
+        "keywords" : "encontro ,   Carlo Giuliani ,   tiro "
+      }, {
+        "language" : "hi_IN",
+        "string" : "कब था कार्लो गियूलियानी शॉट? ",
+        "keywords" : "तारीख ,   कार्लो गियूलियानी ,   शॉट "
+      }, {
+        "language" : "en",
+        "string" : "When was Carlo Giuliani shot?",
+        "keywords" : "date,  Carlo Giuliani,  shot"
+      }, {
+        "language" : "fa",
+        "string" : "  شات؟  جولیانی  کارلو  بود  چه زمانی",
+        "keywords" : "  تاریخ,     جولیانی  کارلو,     شات"
+      }, {
+        "language" : "it",
+        "string" : "Quando è stato ucciso Carlo Giuliani?",
+        "keywords" : "data,  Carlo Giuliani,  ucciso"
+      }, {
+        "language" : "fr",
+        "string" : "Quand a été tué Carlo Giuliani?",
+        "keywords" : "date de décès,  Carlo Guiliani"
+      }, {
+        "language" : "ro",
+        "string" : "Când a fost ucis Carlo Giuliani?",
+        "keywords" : "dată,  Carlo Giuliani,  ucis"
+      }, {
+        "language" : "es",
+        "string" : "¿Cuándo fue disparado Carlo Giuliani?",
+        "keywords" : "fecha,  disparo,  Carlo Giuliani"
+      }, {
+        "language" : "nl",
+        "string" : "Wanneer werd Carlo Giuliani neergeschoten?",
+        "keywords" : "datum,  Carlo Giuliani,  neergeschoten"
+      } ],
+      "query" : {
+        "sparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT xsd:date(?date) WHERE { res:Death_of_Carlo_Giuliani dbo:deathDate ?date }"
+      },
+      "answers" : [ {
+        "head" : {
+          "vars" : [ "date" ]
+        },
+        "results" : { }
+      } ]
+    }
+   ]
+}

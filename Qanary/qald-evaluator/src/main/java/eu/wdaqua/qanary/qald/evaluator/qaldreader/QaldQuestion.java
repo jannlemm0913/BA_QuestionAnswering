@@ -251,7 +251,8 @@ public class QaldQuestion {
         catch(Exception e) {
             logger.error("==== Error from getResults");
             e.printStackTrace();
-            result.add("");
+            // NICHTS adden, auch keinen leeren String, da array.size() dann nicht null ist
+            //result.add("");
         }
         return result;
     }

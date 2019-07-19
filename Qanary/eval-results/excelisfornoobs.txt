@@ -52,3 +52,8 @@ Pipeline: 24
 Precision: 0.9342
 Recall: 0.034545
 F-Measure: 0.031975
+
+Pipeline: 19 und 17 OHNE CL
+Precision: 0.804
+Recall: 0.0974621
+F-Measure: 0.079796
